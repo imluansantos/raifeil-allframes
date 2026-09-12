@@ -1,0 +1,28 @@
+{
+  "eyebrow": "06 · Kundenstimmen",
+  "title": "Alle, die schon im Laden waren, erzählen, wie es war.",
+  "clientRole": "Kunde",
+  "ratingLabel": "{{rating}} von 5 Sternen",
+  "prevLabel": "Vorherige Bewertung",
+  "nextLabel": "Nächste Bewertung",
+  "quotes": {
+    "t01": "Sie haben das Problem mit meinem PC mit einer detaillierten Diagnose in nur 2 Tagen gelöst. Schwer zu findende Peripheriegeräte und exzellenter Service!",
+    "t02": "Ich war schon zweimal dort und die Jungs waren sehr aufmerksam, richtig gute Leute. Sie haben mir PC-Tipps gegeben und ich habe mich rundum gut behandelt gefühlt.",
+    "t03": "Exzellenter Service und Produkte von sehr guter Qualität! Das Team ist aufmerksam und immer bereit zu helfen. Sehr zu empfehlen!",
+    "t04": "Der Service war großartig, sie haben mit Exzellenz und Schnelligkeit gearbeitet. Weit mehr als erwartet! Glückwunsch.",
+    "t05": "Sehr guter Service, ich empfehle es! Ich war mit meinem Notebook bei 3 Werkstätten in der Stadt, keine hat es repariert, sie haben es am selben Tag gelöst.",
+    "t06": "Sehr guter Service! Der Mitarbeiter, der mich bedient hat, hatte viel Geduld und Professionalität.",
+    "t07": "Ich kam mit einem PC rein, der nicht funktionierte, ohne zu wissen warum, und ging mit einer laufenden Maschine und quasi einem Crashkurs im PC-Zusammenbau, so gut waren die Erklärungen.",
+    "t08": "Der beste Laden in Bento Gonçalves, die Jungs sind sehr höflich, immer hilfsbereit! Zuverlässige Peripheriegeräte und PCs gibt es nur bei ihnen!",
+    "t09": "Wunderbar! Exzellenter Service, Produkte von sehr guter Qualität und eine super gemütliche Atmosphäre! Sehr zu empfehlen!",
+    "t10": "Richtig stark, die Jungs helfen sofort. Service: 10 von 10. Sie haben mir diese Maschine gebaut. Nichts zu beanstanden.",
+    "t11": "Der beste in Bento, nur gute Sachen, gute Preise, günstig und fair.",
+    "t12": "Sehr guter Ort, nette und höfliche Mitarbeiter, ich komme auf jeden Fall wieder.",
+    "t13": "Ich brauchte einen PC für anspruchsvolle Arbeit und Gaming. Der Service hat meine Erwartungen übertroffen. Es ist jetzt 1 Jahr her und der PC ist immer noch ein Monster.",
+    "t14": "Toller Laden mit Fachleuten, die bei allen Fragen sehr helfen.",
+    "t15": "Tolle Arbeit, das Team ist zu 100% zuverlässig! Ich empfehle es.",
+    "t16": "Einfach wunderbar, einer der besten Läden, die in den letzten Jahren in Bento eröffnet haben. Sie bauen unglaubliche PCs und die Mitarbeiter sind super nette Leute!",
+    "t17": "Sehr gut, exzellenter technischer Support.",
+    "t18": "Toller Service, ich empfehle es sehr!"
+  }
+}

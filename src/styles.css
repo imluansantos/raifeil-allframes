@@ -1,0 +1,818 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * All Frames Technology — design system.
+ * Dark by default. Individual sections can opt into one of three other
+ * tones — .theme-charcoal, .theme-gray, .theme-light — by locally
+ * redefining the same custom properties, so the page reads as an
+ * intentional rhythm of preto / cinza-chumbo / cinza / branco rather than
+ * one flat background. No color anywhere — every tier stays black, white
+ * and gray, with the site's structure carrying all the contrast.
+ * Type: Inter (loaded via <link> in src/routes/__root.tsx).
+ */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: oklch(0.62 0.21 25);
+  --color-destructive-foreground: oklch(0.98 0 0);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--border);
+  --color-ring: var(--accent);
+
+  --shadow-glow: 0 0 0 1px var(--accent-dim), 0 8px 40px -12px var(--accent-dim);
+}
+
+/* Tier 1 — PRETO. The site's home base; every section is this unless it
+   opts into one of the tiers below. */
+:root,
+.dark {
+  color-scheme: dark;
+
+  --background: oklch(0.14 0.004 250);
+  --foreground: oklch(0.97 0.002 250);
+  --surface: oklch(0.175 0.005 250);
+  --surface-2: oklch(0.215 0.006 250);
+  --muted-foreground: oklch(0.66 0.008 250);
+
+  --primary: oklch(0.97 0.002 250);
+  --primary-foreground: oklch(0.14 0.004 250);
+
+  --accent: oklch(1 0 0);
+  --accent-dim: oklch(1 0 0 / 0.35);
+  --accent-foreground: oklch(0.14 0.004 250);
+
+  --border: oklch(1 0 0 / 8%);
+  --border-strong: oklch(1 0 0 / 16%);
+
+  /* cor da textura padrão (grid + grain) — clara sobre o tier 1 escuro.
+     .light (alternância global dark/light, ver abaixo) inverte pra escura. */
+  --texture-line: rgba(255, 255, 255, 0.05);
+  --texture-dot: rgba(255, 255, 255, 0.14);
+
+  /* logos de marca em Hardware.tsx (Intel, AMD, etc.) são achatadas pra
+     preto sólido via brightness(0) e então, só no tier 1 escuro, invertidas
+     pra branco — .light (abaixo) desliga essa inversão, deixando a logo
+     preta mesmo, já que o fundo virou branco. .theme-charcoal não declara
+     essa variável, então herda o valor daqui (ou de :root.light quando o
+     toggle está ativo) automaticamente. */
+  --logo-invert: 1;
+
+  /* logo da própria All Frames (logo.webp, Footer.tsx) — o arquivo em si já
+     é branco/claro (pensado pra ficar sobre fundo escuro), o oposto das
+     logos de marca acima (que nascem pretas). Sem inversão nenhuma no tier
+     1 escuro (a logo já nasce certa); .light (abaixo) liga a inversão,
+     virando preta, já que o fundo do Footer virou branco. */
+  --brand-logo-invert: 0;
+
+  /* sombra dos cards (ServiceCard em Services.tsx, TeamCard em Team.tsx) —
+     preta no escuro (padrão), branca só quando o modo claro está ativo
+     (ver :root.light abaixo). */
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 30px 70px -20px rgba(0, 0, 0, 0.6);
+
+  /* legenda (nome/cargo/bio) dos cards de Nossa Equipe (TeamCard em
+     Team.tsx) — degradê + placa sólida que garantem o texto legível por
+     cima de qualquer foto (ou do placeholder sem foto). No tema escuro é
+     um véu preto (--foreground já é quase-branco, então o texto sai
+     branco). No tema claro (ver :root.light abaixo) isso inverte pra um
+     véu branco com texto escuro — senão sobra um bloco preto solto em
+     cima de um card claro, destoando do resto do site. */
+  --card-caption-overlay: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  --card-caption-bg: rgba(0, 0, 0, 0.7);
+
+  /* TiltCard (Services.tsx, "O que fazemos") — cor de fundo/texto que o
+     card assume no hover, e sombra ambiente atrás do card em repouso.
+     Sempre o oposto do tom do próprio card, pra continuar sendo um
+     "flash" de contraste no hover em qualquer tema: aqui (escuro), vira
+     branco com texto preto; no claro (ver :root.light abaixo) vira preto
+     com texto branco. Sem sombra própria aqui — o preto do card já lê
+     contra o fundo preto da seção sem precisar de sombra nenhuma. */
+  --tilt-card-hover-bg: oklch(0.995 0.001 250);
+  --tilt-card-hover-fg: oklch(0.16 0.004 250);
+  --tilt-card-hover-fg-muted: oklch(0.16 0.004 250 / 0.6);
+  --tilt-card-shadow: none;
+}
+
+/* ---- Alternância global dark / light ---- */
+/* .light no <html> (ver ThemeToggle.tsx) troca só o tier 1 (preto, padrão)
+   para os mesmos tons já desenhados no tier 4 (branco) — reaproveita o
+   design system existente em vez de inventar paleta nova. Seções com tom
+   próprio (.theme-charcoal, .theme-gray, .theme-light) continuam com sua
+   cor: fazem parte do ritmo de tons do site, não do "modo" preto/branco de
+   base. Preto continua sendo o padrão (sem classe) — o toggle é opt-in. */
+:root.light {
+  color-scheme: light;
+
+  --background: oklch(0.995 0.001 250);
+  --foreground: oklch(0.16 0.004 250);
+  --surface: oklch(0.975 0.003 250);
+  --surface-2: oklch(0.95 0.004 250);
+  --muted-foreground: oklch(0.44 0.008 250);
+
+  --primary: oklch(0.16 0.004 250);
+  --primary-foreground: oklch(0.995 0.001 250);
+
+  --accent: oklch(0.16 0.004 250);
+  --accent-dim: oklch(0.16 0.004 250 / 0.35);
+  --accent-foreground: oklch(0.995 0.001 250);
+
+  --border: oklch(0 0 0 / 9%);
+  --border-strong: oklch(0 0 0 / 16%);
+
+  --texture-line: rgba(0, 0, 0, 0.05);
+  --texture-dot: rgba(0, 0, 0, 0.14);
+
+  --logo-invert: 0;
+  --brand-logo-invert: 1;
+
+  --card-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.35), 0 30px 70px -20px rgba(255, 255, 255, 0.2);
+
+  /* diferente do dark: aqui o degradê fica bem colado na base, só o
+     suficiente pra emendar com a placa da legenda (--card-caption-bg) sem
+     deixar uma linha dura. Curto de propósito — a FOTO em si (o resto do
+     card, acima disso) fica intocada, sem nenhum véu branco lavando a
+     imagem. */
+  --card-caption-overlay: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0) 18%
+  );
+  --card-caption-bg: rgba(255, 255, 255, 0.82);
+
+  /* TiltCard no modo claro: hover vira preto/texto branco (invertido do
+     card claro em repouso), e o card em repouso ganha uma sombra preta
+     sutil pra se destacar do fundo branco da seção — sem isso ele fica
+     "flutuando" sem nenhuma separação visual do fundo. */
+  --tilt-card-hover-bg: oklch(0.16 0.004 250);
+  --tilt-card-hover-fg: oklch(0.995 0.001 250);
+  --tilt-card-hover-fg-muted: oklch(0.995 0.001 250 / 0.6);
+  --tilt-card-shadow:
+    0 14px 32px -14px rgba(0, 0, 0, 0.28),
+    0 6px 14px -8px rgba(0, 0, 0, 0.16);
+}
+
+/* Tier 2 — CINZA CHUMBO. Dark charcoal, one notch up from preto — a
+   section break that stays moody without going all the way to black. */
+.theme-charcoal {
+  color-scheme: dark;
+
+  --background: oklch(0.26 0.006 250);
+  --foreground: oklch(0.97 0.002 250);
+  --surface: oklch(0.305 0.007 250);
+  --surface-2: oklch(0.345 0.008 250);
+  --muted-foreground: oklch(0.74 0.008 250);
+
+  --primary: oklch(0.97 0.002 250);
+  --primary-foreground: oklch(0.16 0.004 250);
+
+  --accent: oklch(1 0 0);
+  --accent-dim: oklch(1 0 0 / 0.35);
+  --accent-foreground: oklch(0.16 0.004 250);
+
+  --border: oklch(1 0 0 / 10%);
+  --border-strong: oklch(1 0 0 / 18%);
+}
+
+/* Tier 3 — CINZA. A light-medium gray band, sitting between branco and
+   cinza chumbo — reads as a deliberate pause, not a washed-out white. */
+.theme-gray {
+  color-scheme: light;
+
+  --background: oklch(0.91 0.003 250);
+  --foreground: oklch(0.14 0.004 250);
+  --surface: oklch(0.865 0.004 250);
+  --surface-2: oklch(0.81 0.005 250);
+  --muted-foreground: oklch(0.36 0.008 250);
+
+  --primary: oklch(0.16 0.004 250);
+  --primary-foreground: oklch(0.97 0.002 250);
+
+  --accent: oklch(0.16 0.004 250);
+  --accent-dim: oklch(0.16 0.004 250 / 0.35);
+  --accent-foreground: oklch(0.97 0.002 250);
+
+  --border: oklch(0 0 0 / 12%);
+  --border-strong: oklch(0 0 0 / 20%);
+}
+
+/* Tier 4 — BRANCO. Near-white — reserved for where it earns its keep
+   (e.g. depoimentos), never the default. */
+.theme-light {
+  color-scheme: light;
+
+  --background: oklch(0.995 0.001 250);
+  --foreground: oklch(0.16 0.004 250);
+  --surface: oklch(0.975 0.003 250);
+  --surface-2: oklch(0.95 0.004 250);
+  --muted-foreground: oklch(0.44 0.008 250);
+
+  --primary: oklch(0.16 0.004 250);
+  --primary-foreground: oklch(0.995 0.001 250);
+
+  --accent: oklch(0.16 0.004 250);
+  --accent-dim: oklch(0.16 0.004 250 / 0.35);
+  --accent-foreground: oklch(0.995 0.001 250);
+
+  --border: oklch(0 0 0 / 9%);
+  --border-strong: oklch(0 0 0 / 16%);
+}
+
+/* .light no <html> (alternância global, ver ThemeToggle.tsx) precisa
+   "vencer" os tons próprios de cada tier (cinza chumbo etc.) — do
+   contrário essas seções ficam presas na cor delas mesmo com o site
+   inteiro em modo claro, porque uma variável declarada direto no
+   elemento (.theme-charcoal) sempre tem prioridade sobre uma herdada do
+   :root, não importa o que :root.light diga. Aqui, em modo claro, o
+   ritmo de tons (preto/cinza chumbo/cinza/branco) é desligado de
+   propósito: todo o site vira sólido branco com texto preto/cinza
+   escuro, sem seção nenhuma ficando pra trás. */
+:root.light .theme-charcoal,
+:root.light .theme-gray,
+:root.light .theme-light {
+  color-scheme: light;
+
+  --background: oklch(0.995 0.001 250);
+  --foreground: oklch(0.16 0.004 250);
+  --surface: oklch(0.975 0.003 250);
+  --surface-2: oklch(0.95 0.004 250);
+  --muted-foreground: oklch(0.44 0.008 250);
+
+  --primary: oklch(0.16 0.004 250);
+  --primary-foreground: oklch(0.995 0.001 250);
+
+  --accent: oklch(0.16 0.004 250);
+  --accent-dim: oklch(0.16 0.004 250 / 0.35);
+  --accent-foreground: oklch(0.995 0.001 250);
+
+  --border: oklch(0 0 0 / 9%);
+  --border-strong: oklch(0 0 0 / 16%);
+
+  --texture-line: rgba(0, 0, 0, 0.05);
+  --texture-dot: rgba(0, 0, 0, 0.14);
+}
+
+/* Banner do Portfólio (PortfolioHero.tsx, id="portfolio-hero") — por pedido
+   explícito, fica sempre escuro (foto + véu preto), mesmo com o site
+   inteiro no modo claro (.light). É uma exceção de propósito à regra do
+   bloco ":root.light .theme-charcoal, .theme-gray, .theme-light" logo
+   acima ("nenhuma seção fica pra trás") — aqui uma seção específica FICA
+   pra trás de propósito. Como esta classe não é uma das três listadas
+   ali, o toggle .light nunca a alcança: --foreground/--muted-foreground/
+   --border continuam nos valores do tier 1 (preto) não importa o tema
+   global, e --portfolio-hero-overlay (o véu sobre a foto da fachada) é
+   sempre preto, nunca precisa virar branco. */
+.portfolio-hero-scope {
+  --foreground: oklch(0.97 0.002 250);
+  --muted-foreground: oklch(0.66 0.008 250);
+  --border: oklch(1 0 0 / 8%);
+
+  --portfolio-hero-overlay: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    /* Textura padrão do site: grid técnico (linhas finas) + grain (pontos
+       finos). Fixa, então funciona como uma "superfície" única por trás de
+       toda a página, não um recurso que se repete e corta a cada seção.
+       Seções com fundo de tier próprio (theme-charcoal etc.) são opacas e
+       cobrem esta camada — por isso replicam a mesma receita localmente
+       via <SiteTexture />, mantendo um único "background padrão"
+       visualmente idêntico em todo o site.
+       De propósito só com linear-gradient/radial-gradient + rgba() — sem
+       theme(), color-mix() ou data-URI de SVG. São as três tentativas
+       anteriores, e cada uma quebrou a propriedade inteira (background-image
+       é uma lista: um item inválido invalida a lista toda) por depender de
+       alguma função que não roda fora do compilador do Tailwind ou que o
+       navegador não suportava. rgba()/gradient puro não depende de nada
+       disso e funciona em qualquer navegador. */
+    background-image:
+      radial-gradient(var(--texture-dot) 0.4px, transparent 0.4px),
+      linear-gradient(var(--texture-line) 1px, transparent 1px),
+      linear-gradient(to right, var(--texture-line) 1px, transparent 1px);
+    background-size: 5px 5px, 56px 56px, 56px 56px;
+    /* o grain (5px) e a grade (56px) têm tamanhos "primos entre si" — a cada
+       280px (mínimo múltiplo comum de 5 e 56) o padrão dos dois se
+       realinha e um ponto do grain cai bem em cima de um cruzamento da
+       grade, somando a opacidade dos dois ali e criando um "ponto" mais
+       claro periódico (era isso que aparecia nos cruzamentos marcados).
+       Deslocando o grain por meio ciclo (2.5px, metade de 5px) os pontos
+       do grain nunca mais caem num pixel inteiro (múltiplo de 56), então
+       esse realinhamento nunca mais acontece, em qualquer tamanho de tela. */
+    background-position:
+      2.5px 2.5px,
+      0 0,
+      0 0;
+    /* `fixed` (removido) obrigava o navegador a manter esse fundo grudado na
+       janela em vez do documento — isso empurra a rolagem da página inteira
+       pra fora do caminho rápido (acelerado por GPU) e derruba o FPS durante
+       o scroll, principalmente no Windows/Chrome/Edge. Sem isso a textura
+       rola junto com a página (efeito quase imperceptível num padrão tão
+       sutil) e o scroll volta a ser 100% acelerado. */
+    background-attachment: scroll;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #000000;
+  }
+}
+
+/* ---- Nível de animação global (painel de Configurações → Animações) ---- */
+/* .motion-none no <html> corta a duração de toda transição/@keyframes do
+   site pra praticamente zero — cobre reveal-left/up, hovers com
+   transition-*, e os "drifts" em @keyframes (pfGlowDrift, pfHeroDrawLine,
+   finalCtaPathDrift, pdCardIn, cookie-float, marquee-01) de uma vez, sem
+   precisar tocar em cada componente um por um. Efeitos que rodam via
+   JavaScript puro em vez de CSS (ClippedCircle, o loop de scroll do
+   ShowcaseMarquee) são desligados à parte, dentro do próprio componente —
+   ver use-animation-level.ts — porque isso é o que gera ganho real de
+   processamento, não só visual. */
+.motion-none *,
+.motion-none *::before,
+.motion-none *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0s !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+/* .motion-reduced é mais cirúrgico: só os "drifts" contínuos em loop (glow
+   blurs do PortfolioHero e do FinalCTA) somem — fades/translates simples de
+   entrada (reveal-left etc.) continuam normais. O ClippedCircle some à
+   parte, no próprio TiltCard.tsx. */
+.motion-reduced .glow-drift,
+.motion-reduced .final-cta-bg-path {
+  animation: none !important;
+}
+
+/* ---- Assinatura do dev (easter egg / código Konami — DevSignature.tsx) ---- */
+@keyframes signatureRgbGlow {
+  from {
+    filter: blur(10px) hue-rotate(0deg);
+  }
+  to {
+    filter: blur(10px) hue-rotate(360deg);
+  }
+}
+.signature-rgb-glow {
+  animation: signatureRgbGlow 4s linear infinite;
+}
+
+@keyframes devSignatureIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.dev-signature-in {
+  animation: devSignatureIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Cursor personalizado (painel de Configurações → Cursor) ---- */
+/* Cada opção vira uma classe no <html> (use-cursor.ts). O seletor universal
+   + !important é necessário porque botões/links do site já definem
+   cursor: pointer no próprio CSS deles — sem isso o cursor customizado
+   nunca apareceria em cima de nada clicável, só no fundo da página. O
+   hotspot (segundo par de números) é a ponta de cada desenho (bico do
+   avião, ponta da espada/seta), pra clicar exatamente onde a "ponta"
+   aponta, igual ao cursor padrão do sistema. */
+html.cursor-sword,
+html.cursor-sword * {
+  cursor: url("/cursors/sword.png") 0 0, auto !important;
+}
+
+html.cursor-plane,
+html.cursor-plane * {
+  cursor: url("/cursors/plane.png") 1 0, auto !important;
+}
+
+html.cursor-sukuna,
+html.cursor-sukuna * {
+  cursor: url("/cursors/sukuna.png") 2 0, auto !important;
+}
+
+html.cursor-playstation,
+html.cursor-playstation * {
+  cursor: url("/cursors/playstation.png") 1 0, auto !important;
+}
+
+/* ---- Typographic utilities ---- */
+
+@utility display {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-wrap: balance;
+  /* a sombra abaixo só serve pra dar contraste contra o grid/grain do
+     background padrão (tier 1, preto) — nos outros tiers (cinza chumbo,
+     cinza, branco) esse padrão não aparece o suficiente pra precisar da
+     sombra, e ela só destoa num fundo liso. Por isso é cancelada logo
+     abaixo dentro de cada tier que não seja o preto padrão. */
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 6px 28px rgba(0, 0, 0, 0.85);
+}
+
+.theme-charcoal .display,
+.theme-gray .display,
+.theme-light .display,
+:root.light .display {
+  text-shadow: none;
+}
+
+/* ---- Véu de legibilidade atrás de blocos de texto ---- */
+/* Sobre o grid/grain do fundo padrão (tier 1, preto), qualquer texto com
+   opacidade reduzida (o "quem é a All Frames Technology" em cinza, a aspas
+   decorativa gigante etc.) deixa o padrão pontilhado "aparecer através" das
+   próprias letras, dando a impressão de que o texto está atrás do fundo.
+   Em vez de uma caixa/cartão visível atrás do bloco, um brilho radial preto
+   e desfocado que suaviza o grid bem debaixo do texto e se apaga aos poucos
+   nas bordas — texto sempre por cima (isolation cria um novo contexto de
+   empilhamento, então o z-index negativo do brilho nunca escapa por trás de
+   outra coisa na página). Só faz sentido onde o grid é visível (tier 1);
+   nos outros tiers (fundo liso) é cancelado, igual ao .display acima. */
+@utility text-veil {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1.75rem -1.5rem;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 75% 70% at 50% 50%,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.3) 45%,
+      transparent 75%
+    );
+    filter: blur(22px);
+  }
+}
+
+.theme-charcoal .text-veil::before,
+.theme-gray .text-veil::before,
+.theme-light .text-veil::before,
+:root.light .text-veil::before {
+  content: none;
+}
+
+/* ---- Iniciais "fantasma" do card placeholder da Equipe (Team.tsx) ---- */
+/* No escuro (padrão), muted-foreground é um cinza claro — a 20% de opacidade
+   sobre o gradiente escuro do placeholder dá um efeito sutil de "marca
+   d'água". No claro, esse MESMO cinza vira escuro e, ainda a 20%, praticamente
+   some sobre o gradiente claro — daí o card placeholder ficar "vazio" no modo
+   white. Aqui SÓ pro modo claro: cor baseada em foreground (quase preto) numa
+   opacidade um pouco maior, pra manter o efeito "marca d'água" legível sem
+   mexer em nada do visual escuro. */
+.placeholder-initials {
+  color: var(--muted-foreground);
+  opacity: 0.2;
+}
+
+:root.light .placeholder-initials {
+  color: var(--foreground);
+  opacity: 0.14;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility rule {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- Texture / depth ---- */
+
+@utility grain {
+  position: relative;
+}
+
+@utility noise-overlay {
+  background-image: radial-gradient(
+    var(--border-strong) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 4px 4px;
+}
+
+@utility glow-accent {
+  box-shadow: 0 0 24px -6px var(--accent-dim);
+}
+
+/* ---- Scroll reveal (padrão único do site) ---- */
+/* Toda seção/elemento que "entra" ao rolar a página (ou, no primeiro fold —
+   Hero, PortfolioHero, banner de ServicePage —, ao montar) usa esta mesma
+   animação: vem sutilmente da esquerda e pousa no lugar. Curta e discreta de
+   propósito (leve, sem exagero), com a MESMA curva de easing usada em toda
+   parte do site (cubic-bezier(0.16,1,0.3,1) — suaviza a chegada sem "quicar").
+   Antes cada seção tinha seu próprio keyframe (translateY, durações
+   diferentes) — unificado aqui pra o site inteiro se mover de um jeito só. */
+
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility reveal-left {
+  opacity: 0;
+  animation: revealIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Edge fade hinting a horizontally-scrollable row — mobile only, the row
+   doesn't scroll from sm: up so the mask is turned back off there. */
+.scroll-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+}
+@media (min-width: 640px) {
+  .scroll-fade-x {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+/* ---- Marquee ---- */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 42s linear infinite;
+}
+
+/* ---- Marquee primitive (src/components/ui/marquee-01-utils/marquee.tsx) ---- */
+/* duração controlada por --duration (ex: className="[--duration:20s]") */
+
+@keyframes marqueeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marqueeY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@utility animate-marquee-x {
+  animation: marqueeX var(--duration) linear infinite;
+}
+
+@utility animate-marquee-y {
+  animation: marqueeY var(--duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-x,
+  .animate-marquee-y,
+  .reveal-left,
+  .cookie-float {
+    animation: none;
+    opacity: 1;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---- Modal de cookies (CookiePreferencesModal.tsx) ---- */
+/* leve balanço do ícone de cookie no painel decorativo — só pra dar um
+   toque de vida, nada chamativo (desligado acima se prefers-reduced-motion). */
+@keyframes cookieFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(6deg);
+  }
+}
+
+@utility cookie-float {
+  animation: cookieFloat 4s ease-in-out infinite;
+}
+
+/* ---- 8-bit (página 404) ----
+   Fonte pixelada + renderização "sem suavização" pra imagens pequenas —
+   recriado a partir da 8bitcn-ui (https://www.8bitcn.com), usado só na
+   página 404. A fonte (Press Start 2P) é carregada via <link> em
+   __root.tsx, junto da Inter, em vez de @import aqui — mesmo padrão já
+   usado no resto do site. */
+
+@utility retro {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  /* fonte pixelada em corpo pequeno fica "melada" com o antialiasing padrão
+     do navegador — essas duas propriedades pedem o traço mais fino/nítido
+     que cada motor de fonte oferece, bem mais legível que o default. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@utility pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* "pílula pixelada" — recorta o retângulo em 3 degraus de 4px por canto
+   (em vez de canto reto ou border-radius) pra imitar um círculo desenhado
+   com blocos quadrados, do jeito clássico 8-bit. Usado pelas 3 camadas do
+   BitButton (sombra / moldura / preenchimento) em 8bit-button.tsx — todas
+   com o mesmo recorte, então a espessura da borda fica uniforme mesmo nos
+   degraus. */
+@utility pixel-corners {
+  --pxb: 4px;
+  clip-path: polygon(
+    0 calc(var(--pxb) * 3),
+    var(--pxb) calc(var(--pxb) * 3),
+    var(--pxb) calc(var(--pxb) * 2),
+    calc(var(--pxb) * 2) calc(var(--pxb) * 2),
+    calc(var(--pxb) * 2) var(--pxb),
+    calc(var(--pxb) * 3) var(--pxb),
+    calc(var(--pxb) * 3) 0,
+    calc(100% - var(--pxb) * 3) 0,
+    calc(100% - var(--pxb) * 3) var(--pxb),
+    calc(100% - var(--pxb) * 2) var(--pxb),
+    calc(100% - var(--pxb) * 2) calc(var(--pxb) * 2),
+    calc(100% - var(--pxb)) calc(var(--pxb) * 2),
+    calc(100% - var(--pxb)) calc(var(--pxb) * 3),
+    100% calc(var(--pxb) * 3),
+    100% calc(100% - var(--pxb) * 3),
+    calc(100% - var(--pxb)) calc(100% - var(--pxb) * 3),
+    calc(100% - var(--pxb)) calc(100% - var(--pxb) * 2),
+    calc(100% - var(--pxb) * 2) calc(100% - var(--pxb) * 2),
+    calc(100% - var(--pxb) * 2) calc(100% - var(--pxb)),
+    calc(100% - var(--pxb) * 3) calc(100% - var(--pxb)),
+    calc(100% - var(--pxb) * 3) 100%,
+    calc(var(--pxb) * 3) 100%,
+    calc(var(--pxb) * 3) calc(100% - var(--pxb)),
+    calc(var(--pxb) * 2) calc(100% - var(--pxb)),
+    calc(var(--pxb) * 2) calc(100% - var(--pxb) * 2),
+    var(--pxb) calc(100% - var(--pxb) * 2),
+    var(--pxb) calc(100% - var(--pxb) * 3),
+    0 calc(100% - var(--pxb) * 3)
+  );
+}
+
+/* ---- 404 — boss, HP bar, glows (8bit-not-found1.tsx) ---- */
+
+/* "respiração" do boss — só translateY + scale sutis, em loop; é a
+   animação temporária até o sprite sheet real existir. */
+@keyframes bossBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@utility boss-breathe {
+  animation: bossBreathe 2.4s ease-in-out infinite;
+}
+
+/* barra de HP do boss — zera em loop infinito (100% -> 0%), só decoração,
+   não reflete HP de verdade nenhum. */
+@keyframes hpDrain {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@utility hp-fill {
+  animation: hpDrain 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boss-breathe,
+  .hp-fill {
+    animation: none;
+  }
+}
+
+/* "404" — o herói da página: fonte grande (definida no componente via
+   clamp()), texto quase branco, com uma pilha de sombras sólidas
+   azul-escuras (efeito de bloco pixelado, sem blur) + um glow azul difuso
+   por trás. */
+@utility text-glow-404 {
+  color: #f0f0f0;
+  text-shadow:
+    2px 2px 0 #0a1a3d,
+    4px 4px 0 #0a1a3d,
+    6px 6px 0 #0a1a3d,
+    8px 8px 0 #0a1a3d,
+    0 0 24px rgba(93, 163, 255, 0.55),
+    0 0 48px rgba(93, 163, 255, 0.32);
+}
+
+/* "GAME OVER" — subtítulo menor, vermelho, com glow leve (bem mais sutil
+   que o do "404" — ele é o herói, isso aqui só reforça o clima). */
+@utility text-glow-gameover {
+  color: #e34040;
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(230, 64, 64, 0.6),
+    0 0 20px rgba(230, 64, 64, 0.32);
+}
+
+/* brilho radial azulado atrás do boss/404 — bem sutil, só pra dar
+   profundidade ao centro da tela sem virar um holofote. */
+@utility notfound-glow {
+  background: radial-gradient(
+    circle at 50% 38%,
+    rgba(93, 163, 255, 0.16) 0%,
+    rgba(93, 163, 255, 0.06) 35%,
+    transparent 70%
+  );
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Configurações",
+  "search": "Procurar",
+  "close": "Fechar configurações",
+  "sections": {
+    "tema": "Tema",
+    "cookies": "Cookies",
+    "idioma": "Idioma",
+    "animacoes": "Animações",
+    "cursor": "Cursor"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo escuro",
+    "enableDark": "Ativar modo escuro",
+    "enableLight": "Ativar modo claro",
+    "caption": "O mesmo interruptor do rodapé do site — muda aqui, muda lá, e vice-versa."
+  },
+  "cookies": {
+    "currentConsent": "Consentimento atual",
+    "summaryAllAccepted": "Todos os cookies aceitos",
+    "summaryOptionalRefused": "Cookies opcionais recusados",
+    "summaryCustom": "Preferências personalizadas",
+    "summaryNotSet": "Ainda não configurado (cookies opcionais ativos por padrão)",
+    "editButton": "Editar preferências de cookies"
+  },
+  "animations": {
+    "caption": "Essas opções mudam só a parte visual. O conteúdo do site continua o mesmo, muda só como ele se movimenta na tela. Se o computador for mais simples (ou só estiver com o navegador cheio de abas abertas), esses efeitos podem deixar a navegação com uma leve travada. Nesse caso, vale trocar pra \"Animações reduzidas\" ou \"Nenhuma animação\": o site fica bem mais leve, sem perder nada de informação.",
+    "all": {
+      "label": "Todas as animações",
+      "description": "Comportamento padrão do site, sem nenhuma alteração."
+    },
+    "reduced": {
+      "label": "Animações reduzidas",
+      "description": "Mantém as transições principais do site, mas desliga os efeitos extras de brilho e movimento."
+    },
+    "none": {
+      "label": "Nenhuma animação",
+      "description": "Desliga todos os efeitos de movimento, brilho e transição do site."
+    }
+  },
+  "cursor": {
+    "default": "Padrão",
+    "sword": "Espada de Diamante",
+    "plane": "Avião de Papel",
+    "sukuna": "Sukuna",
+    "playstation": "PlayStation",
+    "comingSoon": "Mais opções em breve",
+    "caption": "O cursor escolhido vale pro site inteiro (inclusive em cima de botões e links) e fica salvo neste navegador."
+  },
+  "language": {
+    "caption": "Escolha o idioma do site. A preferência fica salva neste navegador."
+  }
+}

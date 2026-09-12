@@ -1,0 +1,118 @@
+{
+  "chrome": {
+    "backLabel": "Home",
+    "updatedLabel": "Last updated: {{date}}",
+    "disclaimer": "This document is for general informational purposes only. For legal advice specific to your business, we recommend consulting a lawyer."
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updated": "September 2026",
+    "intro": "This Privacy Policy explains what data All Frames Technology collects through this website, how that data is used, and what your rights are as a data subject, in accordance with Brazil's General Data Protection Law (LGPD — Law No. 13,709/2018).",
+    "sections": [
+      {
+        "heading": "1. What data we collect",
+        "body": [
+          "Data you give us directly: name, phone/WhatsApp number, email and, when applicable, address — when you contact us for a quote or support, or when you sign up for our newsletter.",
+          "Browsing data: basic technical information collected automatically (such as device type and pages visited), used only to understand site usage and improve the experience."
+        ]
+      },
+      {
+        "heading": "2. What we use your data for",
+        "body": [
+          "Responding to quote requests and questions sent through WhatsApp, Instagram or the website's forms.",
+          "Sending communications you've opted in to receive, such as email updates (newsletter) — you can unsubscribe at any time.",
+          "Meeting legal and tax obligations related to the services provided.",
+          "We never sell or rent your personal data to third parties."
+        ]
+      },
+      {
+        "heading": "3. Who we share it with",
+        "body": [
+          "Your data may be shared with tools we use to run the website and support (such as hosting providers, WhatsApp Business and email services for the newsletter), always limited to what's necessary to provide the service.",
+          "We may share data when required by law or court order."
+        ]
+      },
+      {
+        "heading": "4. Cookies",
+        "body": [
+          "We use essential cookies for the website to function and, with your consent, analytics and marketing cookies. You can adjust your preferences at any time via the 'Cookie Settings' link in the site's footer."
+        ]
+      },
+      {
+        "heading": "5. Your rights",
+        "body": [
+          "You can request, at any time: confirmation that we process your data, access to that data, correction of incomplete or outdated data, deletion of your data, and information about who we share your data with.",
+          "To exercise any of these rights, reach out to us via the WhatsApp or Instagram listed in the site's footer."
+        ]
+      },
+      {
+        "heading": "6. Security and storage",
+        "body": [
+          "We take reasonable measures to protect your data against unauthorized access, loss or misuse. Data is kept only for as long as needed for the purposes described in this policy, or as required by law."
+        ]
+      },
+      {
+        "heading": "7. Changes to this policy",
+        "body": [
+          "This policy may be updated from time to time. The date at the top of this page shows the most recent version."
+        ]
+      }
+    ]
+  },
+  "termsOfUse": {
+    "title": "Terms of Use",
+    "updated": "September 2026",
+    "intro": "These Terms of Use govern access to and use of the All Frames Technology website. By browsing this site, you agree to the terms described below.",
+    "sections": [
+      {
+        "heading": "1. About the site",
+        "body": [
+          "This website is institutional and commercial in nature: it presents All Frames Technology's services (custom PC builds, upgrades, customization and technical support) and serves as a channel for quotes and contact, handled mainly through WhatsApp."
+        ]
+      },
+      {
+        "heading": "2. Quotes and services",
+        "body": [
+          "Prices, timelines and parts availability shared in quote conversations aren't binding until the order is formally confirmed — market and supplier conditions can change prices and timelines.",
+          "New parts follow each manufacturer's factory warranty. Assembly labor carries All Frames' own warranty, as informed when the quote is finalized."
+        ]
+      },
+      {
+        "heading": "3. Permitted use of the site",
+        "body": [
+          "You agree not to use this website for unlawful purposes, to attempt to access restricted areas without authorization, or to transmit malicious content."
+        ]
+      },
+      {
+        "heading": "4. Intellectual property",
+        "body": [
+          "Text, images, visual identity and other content on this site belong to All Frames Technology or are used with authorization. Reproduction without prior permission is not allowed."
+        ]
+      },
+      {
+        "heading": "5. Links and third-party services",
+        "body": [
+          "This site may contain links to WhatsApp, Instagram and other third-party services. We are not responsible for the content or privacy practices of these external services."
+        ]
+      },
+      {
+        "heading": "6. Limitation of liability",
+        "body": [
+          "We do our best to keep the information on this site up to date and accurate, but we don't guarantee it's completely free of errors. If you have questions about prices, timelines or specifications, please confirm directly via WhatsApp before deciding."
+        ]
+      },
+      {
+        "heading": "7. Changes to these terms",
+        "body": [
+          "These terms may be updated from time to time. The date at the top of this page shows the most recent version."
+        ]
+      },
+      {
+        "heading": "8. Contact",
+        "body": [
+          "Questions about these terms can be sent via the WhatsApp or Instagram listed in the site's footer."
+        ]
+      }
+    ]
+  }
+}

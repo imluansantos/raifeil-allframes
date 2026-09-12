@@ -1,0 +1,73 @@
+{
+  "eyebrow": "07 · FAQ",
+  "title": "Before you ask, we've already answered.",
+  "subtitle": "The questions that come up most on WhatsApp, organized by topic.",
+  "sidebarLabel": "Knowledge base",
+  "bottomLink": "Didn't find your answer? Reach out on WhatsApp",
+  "categories": [
+    {
+      "key": "budget",
+      "label": "Quotes & timelines",
+      "description": "How the quote works and how long the build takes.",
+      "questions": [
+        {
+          "question": "How long does it take to build a setup?",
+          "answer": "It depends on parts availability, but a standard build ships in 2 to 4 business days after the quote is approved. For a project with custom water cooling or made-to-measure sleeved cables, the timeline is agreed separately."
+        },
+        {
+          "question": "How does the quote work before I commit to a build?",
+          "answer": "You tell us what you need and we put together the quote part by part, no fixed package. Every swap is explained before any purchase."
+        }
+      ]
+    },
+    {
+      "key": "assembly",
+      "label": "Build & parts",
+      "description": "Parts, compatibility, and how we build your setup.",
+      "questions": [
+        {
+          "question": "Do you build with parts I already own?",
+          "answer": "Yes, we make use of whatever still makes sense in your current setup and only suggest swapping what's truly worth it. No pushing new parts you don't need."
+        },
+        {
+          "question": "Do I need to understand hardware before requesting a build?",
+          "answer": "No. You tell us the game you play or the software you run day to day, and we point you to the right parts for it."
+        }
+      ]
+    },
+    {
+      "key": "payment",
+      "label": "Payment",
+      "description": "Payment methods and installments.",
+      "questions": [
+        {
+          "question": "Can I pay the quote in installments?",
+          "answer": "Yes. We split payments by card and also accept a deposit plus an agreed remaining balance. The final amount and payment terms come together with the quote, no fine print."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "Card, Pix, and cash. Installments and terms are agreed together with the quote."
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "label": "After-sales & support",
+      "description": "Warranty, service, and support after delivery.",
+      "questions": [
+        {
+          "question": "Do you offer a warranty on parts and labor?",
+          "answer": "Yes. New parts carry each manufacturer's factory warranty, and the build labor has All Frames' own warranty. Any issue after delivery, you talk directly to whoever built it. No outsourced support."
+        },
+        {
+          "question": "Do I need to bring the PC to the store, or do you pick it up?",
+          "answer": "We serve customers in person in Bento Gonçalves, but we also pick up and deliver in nearby cities. For a quick fix, we can arrange pickup or you can bring it straight to the workshop."
+        },
+        {
+          "question": "How does support work after delivery?",
+          "answer": "Lifetime after-sales support: a question, a strange noise, or a future upgrade, you message us on WhatsApp and get help from whoever built your PC, not a call-center script."
+        }
+      ]
+    }
+  ]
+}

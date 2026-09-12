@@ -1,0 +1,139 @@
+{
+  "serviceBadge": "Service {{number}}",
+  "aboutServiceEyebrow": "About the service",
+  "overviewEyebrow": "Overview",
+  "overviewTitle": "What this service involves",
+  "overviewDescription": "A general picture of what usually goes into this kind of work. The final scope is always agreed with you before anything starts.",
+  "requestablesEyebrow": "Ask for exactly what you need",
+  "requestablesDescription": "There's no fixed package here — you ask for whatever makes sense for your setup. Some examples of what we've already handled:",
+  "requestablesCta": "Tell us what you need",
+  "otherServicesEyebrow": "Other services",
+  "viewMore": "View more",
+  "ctaEyebrow": "Let's talk",
+  "ctaTitle": "Tell us what you need.",
+  "ctaButton": "Chat on WhatsApp",
+  "services": {
+    "montagem-de-setups": {
+      "title": "Custom Builds",
+      "lead": "Setups built from scratch with the best parts for your profile and budget.",
+      "description": "Every build starts with a conversation: what you'll use the PC for, your budget, and what can't be missing. From there we choose the parts, build with real cable management, and only deliver after running stability and temperature tests.",
+      "items": [
+        "Parts consultation",
+        "Professional assembly",
+        "System installation",
+        "Optimization and testing",
+        "Delivery with support"
+      ],
+      "highlights": [
+        { "title": "No-nonsense consultation", "text": "Parts chosen for your real use, not to push what's left in stock." },
+        { "title": "Real cable management", "text": "Airflow and looks aligned, no loose wiring inside the case." },
+        { "title": "Tested before it leaves the bench", "text": "CPU and GPU stress tests, temperature checks and validation before delivery." }
+      ],
+      "requestables": [
+        "Parts and compatibility consultation",
+        "Full build from scratch",
+        "Custom cable management",
+        "Thermal paste application",
+        "Operating system installation",
+        "Driver and software installation",
+        "BIOS configuration",
+        "Stability testing (stress test)",
+        "Temperature checks",
+        "RGB configuration and lighting profiles",
+        "Cable organization and labeling",
+        "Transport and delivery to your address"
+      ]
+    },
+    "reforma-e-upgrade": {
+      "title": "Upgrades & Overhauls",
+      "lead": "We upgrade your current setup to make it faster, more powerful and more modern.",
+      "description": "Before swapping any part, we analyze what your current setup actually needs. The upgrade targets whatever's holding back performance (memory, SSD, cooling or graphics card), with a full cleanup and benchmark validation at the end.",
+      "items": [
+        "Current setup analysis",
+        "Component replacement",
+        "Cleaning and maintenance",
+        "Memory and SSD upgrade",
+        "Benchmark and validation"
+      ],
+      "highlights": [
+        { "title": "Honest diagnosis", "text": "We tell you what's actually worth replacing, without pushing parts you don't need." },
+        { "title": "Making the most of what already works", "text": "We only replace what's holding back your setup's performance." },
+        { "title": "Before-and-after comparison", "text": "Real benchmarks so you can see the performance gain in practice." }
+      ],
+      "requestables": [
+        "Current setup diagnosis",
+        "CPU replacement",
+        "Graphics card replacement",
+        "RAM upgrade",
+        "SSD/HDD replacement or addition",
+        "Power supply replacement",
+        "Full internal cleaning",
+        "Thermal paste replacement",
+        "Cooler and fan replacement",
+        "BIOS update",
+        "Before/after comparative benchmark",
+        "Data backup and migration"
+      ]
+    },
+    "personalizacao": {
+      "title": "Customization",
+      "lead": "We turn your setup into an extension of your identity, with looks and RGB.",
+      "description": "Color, lighting and theme are decided together with you before any part is moved. We work with made-to-measure sleeved cables, decals, wraps and custom water cooling to make the setup look exactly like the one in your head.",
+      "items": [
+        "RGB management",
+        "Sleeved cable replacement",
+        "Decals and wraps",
+        "Custom water cooling",
+        "Themed setup"
+      ],
+      "highlights": [
+        { "title": "Made-to-measure project", "text": "Colors, lighting and theme planned with you before any part is swapped." },
+        { "title": "Finishing that impresses", "text": "Sleeved cables, invisible routing and custom sleeving." },
+        { "title": "Water cooling without shortcuts", "text": "Safe assembly and maintenance of custom loops." }
+      ],
+      "requestables": [
+        "Swap to sleeved cables",
+        "Case decals and wraps",
+        "RGB strip and fan installation",
+        "Lighting profile configuration",
+        "Custom water cooling project",
+        "Coolant change and loop maintenance",
+        "Internal part painting",
+        "Side glass or acrylic replacement",
+        "Full theming (colors and theme)",
+        "Custom engraving and finishing"
+      ]
+    },
+    "suporte-tecnico": {
+      "title": "Technical Support",
+      "lead": "No customer forgotten. We're always here to sort it out.",
+      "description": "After-sales doesn't end at delivery. Whether it's a remote diagnosis, a system reinstall or an on-site visit, you talk directly to whoever built your PC, no call center, no script.",
+      "items": [
+        "Remote diagnosis",
+        "On-site visit",
+        "System reinstallation",
+        "Virus removal",
+        "Lifetime after-sales support"
+      ],
+      "highlights": [
+        { "title": "Direct support from whoever built it", "text": "No call center and no script, you talk to whoever knows your setup." },
+        { "title": "In person or remote", "text": "We solve what can be handled remotely, and come to you when it's needed." },
+        { "title": "Lifetime after-sales support", "text": "A question or a problem after delivery, you always have someone to help." }
+      ],
+      "requestables": [
+        "Remote diagnosis",
+        "On-site technical visit",
+        "System formatting and reinstallation",
+        "Virus and malware removal",
+        "File backup",
+        "Driver updates",
+        "Data recovery",
+        "Preventive maintenance",
+        "Physical equipment cleaning",
+        "Network and peripheral setup",
+        "Lifetime after-sales support",
+        "Guidance over WhatsApp"
+      ]
+    }
+  }
+}

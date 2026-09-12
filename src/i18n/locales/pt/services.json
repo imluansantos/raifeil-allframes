@@ -1,0 +1,23 @@
+{
+  "eyebrow": "02 · O que fazemos",
+  "title": "O que fazemos.",
+  "subtitle": "Tratamos cada setup como extensão da identidade de quem usa, do primeiro orçamento ao suporte pós-entrega.",
+  "cards": {
+    "montagem-de-setups": {
+      "title": "Montagem de Setups",
+      "lead": "Setups montados do zero com as melhores peças para o seu perfil e orçamento."
+    },
+    "reforma-e-upgrade": {
+      "title": "Reforma e Upgrade",
+      "lead": "Atualizamos seu setup atual para deixá-lo mais rápido, potente e moderno."
+    },
+    "personalizacao": {
+      "title": "Personalização",
+      "lead": "Transformamos seu setup em uma extensão da sua identidade, com estética e RGB."
+    },
+    "suporte-tecnico": {
+      "title": "Suporte Técnico",
+      "lead": "Nenhum cliente esquecido. Estamos sempre aqui para resolver."
+    }
+  }
+}

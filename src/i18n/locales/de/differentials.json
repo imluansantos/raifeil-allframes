@@ -1,0 +1,13 @@
+{
+  "eyebrow": "05 · Warum All Frames?",
+  "title": "Du merkst den Unterschied in den Details.",
+  "subtitle": "Jeder PC wird geplant, gebaut und begleitet, damit er für dich Sinn ergibt – vor, während und nach dem Kauf.",
+  "cards": {
+    "uso-real": { "title": "Echter Nutzen", "description": "Teile, die zu deiner tatsächlichen Nutzung passen, ob Gaming oder Arbeit." },
+    "orcamento": { "title": "Angebot", "description": "Du verstehst jede Komponente, bevor du kaufst." },
+    "cabos": { "title": "Verkabelung", "description": "Cable Management und Tests vor der Lieferung." },
+    "pos-entrega": { "title": "Nach der Lieferung", "description": "Lebenslanger Support, direkt von der Person, die deinen PC gebaut hat." },
+    "presencial": { "title": "Vor Ort", "description": "Persönlicher Service in Bento Gonçalves." },
+    "whatsapp": { "title": "WhatsApp", "description": "Direkt per WhatsApp, ohne Callcenter." }
+  }
+}

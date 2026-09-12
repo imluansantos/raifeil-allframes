@@ -1,0 +1,17 @@
+{
+  "stayConnected": "Mantente conectado.",
+  "newsletterText": "Suscríbete a nuestro boletín y recibe las últimas novedades y ofertas exclusivas.",
+  "newsletterSuccess": "¡Recibido! Pronto te enviaremos un correo.",
+  "emailLabel": "Tu correo electrónico",
+  "emailPlaceholder": "Escribe tu correo electrónico",
+  "subscribe": "Suscribirse al boletín",
+  "subscribing": "Enviando",
+  "navHeading": "Navegación",
+  "contactHeading": "Contacto",
+  "socialHeading": "Redes Sociales",
+  "copyright": "© {{year}} All Frames Technology. Todos los derechos reservados.",
+  "developedBy": "Sitio desarrollado por",
+  "privacyPolicy": "Política de Privacidad",
+  "termsOfUse": "Términos de Uso",
+  "cookieSettings": "Configuración de Cookies"
+}

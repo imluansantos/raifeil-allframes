@@ -1,0 +1,54 @@
+{
+  "title": "Configuración",
+  "search": "Buscar",
+  "close": "Cerrar configuración",
+  "sections": {
+    "tema": "Tema",
+    "cookies": "Cookies",
+    "idioma": "Idioma",
+    "animacoes": "Animaciones",
+    "cursor": "Cursor"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo oscuro",
+    "enableDark": "Activar modo oscuro",
+    "enableLight": "Activar modo claro",
+    "caption": "El mismo interruptor del pie de página del sitio: cámbialo aquí y cambia allá, y viceversa."
+  },
+  "cookies": {
+    "currentConsent": "Consentimiento actual",
+    "summaryAllAccepted": "Todas las cookies aceptadas",
+    "summaryOptionalRefused": "Cookies opcionales rechazadas",
+    "summaryCustom": "Preferencias personalizadas",
+    "summaryNotSet": "Aún no configurado (cookies opcionales activas por defecto)",
+    "editButton": "Editar preferencias de cookies"
+  },
+  "animations": {
+    "caption": "Estas opciones solo cambian la parte visual. El contenido del sitio sigue siendo el mismo, solo cambia cómo se mueve en la pantalla. Si tu computadora es más simple (o el navegador está lleno de pestañas abiertas), estos efectos pueden hacer que la navegación se sienta un poco trabada. En ese caso, vale la pena cambiar a \"Animaciones reducidas\" o \"Sin animaciones\": el sitio queda bastante más liviano, sin perder ninguna información.",
+    "all": {
+      "label": "Todas las animaciones",
+      "description": "Comportamiento predeterminado del sitio, sin ningún cambio."
+    },
+    "reduced": {
+      "label": "Animaciones reducidas",
+      "description": "Mantiene las transiciones principales del sitio, pero desactiva los efectos extra de brillo y movimiento."
+    },
+    "none": {
+      "label": "Sin animaciones",
+      "description": "Desactiva todos los efectos de movimiento, brillo y transición del sitio."
+    }
+  },
+  "cursor": {
+    "default": "Predeterminado",
+    "sword": "Espada de Diamante",
+    "plane": "Avión de Papel",
+    "sukuna": "Sukuna",
+    "playstation": "PlayStation",
+    "comingSoon": "Más opciones próximamente",
+    "caption": "El cursor elegido se aplica a todo el sitio (incluso sobre botones y enlaces) y se guarda en este navegador."
+  },
+  "language": {
+    "caption": "Elige el idioma del sitio. Tu preferencia se guarda en este navegador."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "eyebrow": "02 · What we do",
+  "title": "What we do.",
+  "subtitle": "We treat every setup as an extension of the person using it, from the first quote to after-sales support.",
+  "cards": {
+    "montagem-de-setups": {
+      "title": "Custom Builds",
+      "lead": "Setups built from scratch with the best parts for your profile and budget."
+    },
+    "reforma-e-upgrade": {
+      "title": "Upgrades & Overhauls",
+      "lead": "We upgrade your current setup to make it faster, more powerful and more modern."
+    },
+    "personalizacao": {
+      "title": "Customization",
+      "lead": "We turn your setup into an extension of your identity, with aesthetics and RGB."
+    },
+    "suporte-tecnico": {
+      "title": "Technical Support",
+      "lead": "No customer left behind. We're always here to help."
+    }
+  }
+}

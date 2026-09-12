@@ -1,0 +1,17 @@
+{
+  "dialogLabel": "Impostazioni cookie",
+  "title": "Impostazioni cookie",
+  "close": "Chiudi",
+  "description": "Usiamo cookie essenziali per far funzionare il sito e, facoltativamente, cookie di analisi e marketing per capire come usi il sito. Puoi modificare le tue preferenze qui sotto in qualsiasi momento.",
+  "essentialLabel": "Essenziali",
+  "essentialDescription": "Necessari per il funzionamento del sito. Sempre attivi.",
+  "analyticsLabel": "Analisi",
+  "analyticsDescription": "Ci aiutano a capire come viene usato il sito.",
+  "marketingLabel": "Marketing",
+  "marketingDescription": "Usati per annunci e contenuti più pertinenti.",
+  "cancel": "Annulla",
+  "save": "Salva preferenze",
+  "saved": "Preferenze salvate",
+  "whatAreCookies": "Cosa sono i cookie?",
+  "whatAreCookiesExplanation": "I cookie sono piccoli file che il sito salva nel tuo browser. Quelli essenziali sono obbligatori per il funzionamento del sito (ad esempio per ricordare il tuo tema e la tua lingua). Quelli di analisi e marketing sono invece facoltativi: ci aiutano a capire come viene usato il sito e a mostrare contenuti più pertinenti, ma puoi rifiutarli senza che questo influisca sulla navigazione."
+}

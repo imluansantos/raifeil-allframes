@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Rota de teste interna (componente em avaliação, sem link em nenhum lugar
+# do site) — não precisa ser indexada.
+Disallow: /teste-servicos-tilt
+
+Sitemap: https://allframestechnology.com.br/sitemap.xml

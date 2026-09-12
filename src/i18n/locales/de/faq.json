@@ -1,0 +1,73 @@
+{
+  "eyebrow": "07 · Häufige Fragen",
+  "title": "Bevor du fragst, haben wir schon geantwortet.",
+  "subtitle": "Die Fragen, die am häufigsten per WhatsApp kommen, nach Thema geordnet.",
+  "sidebarLabel": "Wissensdatenbank",
+  "bottomLink": "Keine Antwort gefunden? Schreib uns auf WhatsApp",
+  "categories": [
+    {
+      "key": "budget",
+      "label": "Angebot & Fristen",
+      "description": "Wie das Angebot funktioniert und wie lange der Zusammenbau dauert.",
+      "questions": [
+        {
+          "question": "Wie lange dauert es, ein Setup zusammenzubauen?",
+          "answer": "Das hängt von der Verfügbarkeit der Teile ab, aber ein Standard-Build ist 2 bis 4 Werktage nach Freigabe des Angebots fertig. Bei einem Projekt mit individueller Wasserkühlung oder maßgeschneiderten Sleeved-Kabeln wird die Frist separat vereinbart."
+        },
+        {
+          "question": "Wie funktioniert das Angebot, bevor der Zusammenbau bestätigt wird?",
+          "answer": "Du sagst uns, was du brauchst, und wir stellen das Angebot Teil für Teil zusammen, ohne festes Paket. Jede Änderung wird erklärt, bevor irgendetwas gekauft wird."
+        }
+      ]
+    },
+    {
+      "key": "assembly",
+      "label": "Zusammenbau & Teile",
+      "description": "Teile, Kompatibilität und wie wir dein Setup zusammenbauen.",
+      "questions": [
+        {
+          "question": "Baut ihr auch mit Teilen, die ich schon habe?",
+          "answer": "Ja, wir nutzen, was in deinem aktuellen Setup noch sinnvoll ist, und schlagen einen Austausch nur dort vor, wo es sich wirklich lohnt. Keine neuen Teile, die du nicht brauchst."
+        },
+        {
+          "question": "Muss ich mich mit Hardware auskennen, bevor ich einen Zusammenbau anfrage?",
+          "answer": "Nein. Du sagst uns, welches Spiel du spielst oder welche Software du täglich nutzt, und wir empfehlen die passenden Teile dafür."
+        }
+      ]
+    },
+    {
+      "key": "payment",
+      "label": "Zahlung",
+      "description": "Zahlungsarten und Ratenzahlung.",
+      "questions": [
+        {
+          "question": "Kann ich das Angebot in Raten bezahlen?",
+          "answer": "Ja, das geht. Wir bieten Ratenzahlung per Karte an und akzeptieren auch eine Anzahlung plus vereinbarten Restbetrag. Der Endbetrag und die Zahlungsbedingungen kommen zusammen mit dem Angebot, ohne Kleingedrucktes."
+        },
+        {
+          "question": "Welche Zahlungsarten akzeptiert ihr?",
+          "answer": "Karte, Pix und Bargeld. Ratenzahlung und Bedingungen werden zusammen mit dem Angebot vereinbart."
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "label": "After-Sales & Support",
+      "description": "Garantie, Service und Support nach der Lieferung.",
+      "questions": [
+        {
+          "question": "Gebt ihr Garantie auf Teile und Arbeit?",
+          "answer": "Ja. Neue Teile haben die Herstellergarantie des jeweiligen Herstellers, und die Zusammenbau-Arbeit hat eine eigene Garantie von All Frames. Bei jedem Problem nach der Lieferung sprichst du direkt mit der Person, die den PC gebaut hat. Kein ausgelagerter Support."
+        },
+        {
+          "question": "Muss ich den PC zum Laden bringen, oder holt ihr ihn ab?",
+          "answer": "Wir bieten persönlichen Service in Bento Gonçalves an, holen aber auch in umliegenden Städten ab und liefern dort. Für eine schnelle Wartung können wir eine Abholung vereinbaren, oder du bringst ihn direkt in die Werkstatt."
+        },
+        {
+          "question": "Wie funktioniert der Support nach der Lieferung?",
+          "answer": "Lebenslanger After-Sales-Support: bei einer Frage, einem seltsamen Geräusch oder einem zukünftigen Upgrade schreibst du uns auf WhatsApp und wirst von der Person betreut, die deinen PC gebaut hat, nicht von einem Callcenter-Skript."
+        }
+      ]
+    }
+  ]
+}

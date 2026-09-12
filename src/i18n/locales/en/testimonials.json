@@ -1,0 +1,28 @@
+{
+  "eyebrow": "06 · Testimonials",
+  "title": "Everyone who's been to the store tells us how it went.",
+  "clientRole": "Customer",
+  "ratingLabel": "{{rating}} out of 5 stars",
+  "prevLabel": "Previous testimonial",
+  "nextLabel": "Next testimonial",
+  "quotes": {
+    "t01": "They fixed my PC with a detailed diagnosis in just 2 days. Hard-to-find peripherals and excellent service!",
+    "t02": "I've been there twice and the guys were really attentive, great people. They gave me PC tips and I felt taken care of.",
+    "t03": "Excellent service and high-quality products! The team is attentive and always ready to help. Highly recommend!",
+    "t04": "Great service, they delivered with excellence and speed. Way beyond what I expected! Congrats.",
+    "t05": "Great service, I recommend it! I took my laptop to 3 repair shops in town, none of them fixed it, these guys solved it the same day.",
+    "t06": "Really great service! The guy who helped me was very patient and professional.",
+    "t07": "I walked in with a PC that didn't work and no idea why, and walked out with a working machine and basically a crash course in building PCs, the explanations were that good.",
+    "t08": "The best store in Bento Gonçalves, the guys are very polite, always willing to help! For reliable peripherals and PCs, it's only them!",
+    "t09": "Wonderful! Service with excellence, great quality products, and a super cozy atmosphere! Highly recommend!",
+    "t10": "Really solid, the guys go straight to helping out. Service: 10/10. They built this machine for me. Nothing to complain about.",
+    "t11": "The best in Bento, only good things, good prices, cheap and fair.",
+    "t12": "Really great place, nice and polite staff, I'll definitely be back.",
+    "t13": "I needed a PC for heavy work and gaming. The service exceeded my expectations. It's been 1 year and the PC is still a beast.",
+    "t14": "Great store with professionals who really help with your questions.",
+    "t15": "Great work, the team is 100% reliable! Recommend.",
+    "t16": "Simply wonderful, one of the best stores to open in Bento in recent years. They build out-of-this-world PCs and the staff are great people!",
+    "t17": "Really good, great technical support.",
+    "t18": "Great service, highly recommend!"
+  }
+}

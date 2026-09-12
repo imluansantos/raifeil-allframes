@@ -1,0 +1,118 @@
+{
+  "chrome": {
+    "backLabel": "Home",
+    "updatedLabel": "Ultimo aggiornamento: {{date}}",
+    "disclaimer": "Questo documento ha carattere puramente informativo generale. Per una revisione legale specifica per la tua attività, ti consigliamo di consultare un avvocato."
+  },
+  "privacyPolicy": {
+    "title": "Informativa sulla Privacy",
+    "updated": "Settembre 2026",
+    "intro": "Questa Informativa sulla Privacy spiega quali dati All Frames Technology raccoglie tramite questo sito, come vengono utilizzati e quali sono i tuoi diritti come interessato, in conformità con la Legge Generale sulla Protezione dei Dati del Brasile (LGPD — Legge n. 13.709/2018).",
+    "sections": [
+      {
+        "heading": "1. Quali dati raccogliamo",
+        "body": [
+          "Dati che ci fornisci direttamente: nome, telefono/WhatsApp, e-mail e, quando applicabile, indirizzo — quando ci contatti per un preventivo, assistenza o quando ti iscrivi alla nostra newsletter.",
+          "Dati di navigazione: informazioni tecniche di base raccolte automaticamente (come il tipo di dispositivo e le pagine visitate), usate solo per capire l'utilizzo del sito e migliorare l'esperienza."
+        ]
+      },
+      {
+        "heading": "2. A cosa servono i tuoi dati",
+        "body": [
+          "Rispondere a richieste di preventivo e domande inviate tramite WhatsApp, Instagram o i moduli del sito.",
+          "Inviare comunicazioni che hai scelto di ricevere, come novità via e-mail (newsletter) — puoi annullare l'iscrizione in qualsiasi momento.",
+          "Adempiere a obblighi legali e fiscali relativi ai servizi prestati.",
+          "Non vendiamo né affittiamo mai i tuoi dati personali a terzi."
+        ]
+      },
+      {
+        "heading": "3. Con chi condividiamo",
+        "body": [
+          "I tuoi dati possono essere condivisi con strumenti che usiamo per gestire il sito e l'assistenza (come provider di hosting, WhatsApp Business e servizi e-mail per la newsletter), sempre limitatamente a quanto necessario per fornire il servizio.",
+          "Possiamo condividere dati quando richiesto dalla legge o da un ordine giudiziario."
+        ]
+      },
+      {
+        "heading": "4. Cookie",
+        "body": [
+          "Utilizziamo cookie essenziali per il funzionamento del sito e, con il tuo consenso, cookie di analisi e marketing. Puoi modificare le tue preferenze in qualsiasi momento tramite il link 'Impostazioni Cookie' nel footer del sito."
+        ]
+      },
+      {
+        "heading": "5. I tuoi diritti",
+        "body": [
+          "Puoi richiedere, in qualsiasi momento: conferma che trattiamo i tuoi dati, accesso ai dati, correzione di dati incompleti o non aggiornati, cancellazione dei tuoi dati e informazioni su con chi condividiamo i tuoi dati.",
+          "Per esercitare uno qualsiasi di questi diritti, contattaci tramite WhatsApp o Instagram indicati nel footer del sito."
+        ]
+      },
+      {
+        "heading": "6. Sicurezza e conservazione",
+        "body": [
+          "Adottiamo misure ragionevoli per proteggere i tuoi dati da accessi non autorizzati, perdita o uso improprio. I dati vengono conservati solo per il tempo necessario alle finalità descritte in questa informativa o come richiesto dalla legge."
+        ]
+      },
+      {
+        "heading": "7. Modifiche a questa informativa",
+        "body": [
+          "Questa informativa può essere aggiornata periodicamente. La data in cima a questa pagina indica la versione più recente."
+        ]
+      }
+    ]
+  },
+  "termsOfUse": {
+    "title": "Termini di Utilizzo",
+    "updated": "Settembre 2026",
+    "intro": "Questi Termini di Utilizzo regolano l'accesso e l'uso del sito di All Frames Technology. Navigando su questo sito, accetti i termini descritti di seguito.",
+    "sections": [
+      {
+        "heading": "1. Sul sito",
+        "body": [
+          "Questo sito ha carattere istituzionale e commerciale: presenta i servizi di All Frames Technology (montaggio, revisione, personalizzazione e assistenza tecnica di setup) e funge da canale per preventivi e contatti, effettuati principalmente tramite WhatsApp."
+        ]
+      },
+      {
+        "heading": "2. Preventivi e servizi",
+        "body": [
+          "Prezzi, tempistiche e disponibilità dei componenti comunicati nelle conversazioni di preventivo non sono vincolanti fino alla conferma formale dell'ordine — condizioni di mercato e dei fornitori possono modificare prezzi e tempistiche.",
+          "I componenti nuovi seguono la garanzia di fabbrica di ciascun produttore. La manodopera di montaggio ha una garanzia propria di All Frames, come comunicato al momento della chiusura del preventivo."
+        ]
+      },
+      {
+        "heading": "3. Uso consentito del sito",
+        "body": [
+          "Accetti di non utilizzare questo sito per scopi illegali, per tentare di accedere ad aree riservate senza autorizzazione, o per trasmettere contenuti dannosi."
+        ]
+      },
+      {
+        "heading": "4. Proprietà intellettuale",
+        "body": [
+          "Testi, immagini, identità visiva e altri contenuti di questo sito appartengono ad All Frames Technology o sono utilizzati con autorizzazione. La riproduzione senza permesso preventivo non è consentita."
+        ]
+      },
+      {
+        "heading": "5. Link e servizi di terze parti",
+        "body": [
+          "Questo sito può contenere link a WhatsApp, Instagram e altri servizi di terze parti. Non siamo responsabili per il contenuto o le pratiche sulla privacy di questi servizi esterni."
+        ]
+      },
+      {
+        "heading": "6. Limitazione di responsabilità",
+        "body": [
+          "Facciamo il possibile per mantenere le informazioni di questo sito aggiornate e corrette, ma non garantiamo l'assenza totale di errori. In caso di dubbi su prezzi, tempistiche o specifiche, conferma direttamente tramite WhatsApp prima di decidere."
+        ]
+      },
+      {
+        "heading": "7. Modifiche a questi termini",
+        "body": [
+          "Questi termini possono essere aggiornati periodicamente. La data in cima a questa pagina indica la versione più recente."
+        ]
+      },
+      {
+        "heading": "8. Contatti",
+        "body": [
+          "Domande su questi termini possono essere inviate tramite WhatsApp o Instagram indicati nel footer del sito."
+        ]
+      }
+    ]
+  }
+}

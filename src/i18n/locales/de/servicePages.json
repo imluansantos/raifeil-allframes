@@ -1,0 +1,139 @@
+{
+  "serviceBadge": "Service {{number}}",
+  "aboutServiceEyebrow": "Über den Service",
+  "overviewEyebrow": "Überblick",
+  "overviewTitle": "Was dieser Service umfasst",
+  "overviewDescription": "Ein Überblick darüber, was normalerweise zu dieser Art von Arbeit gehört. Der endgültige Umfang wird immer mit dir abgestimmt, bevor irgendetwas beginnt.",
+  "requestablesEyebrow": "Frag genau das an, was du brauchst",
+  "requestablesDescription": "Hier gibt es kein festes Paket – du fragst nur das an, was für dein Setup Sinn ergibt. Einige Beispiele für das, was wir schon gelöst haben:",
+  "requestablesCta": "Sag uns, was du brauchst",
+  "otherServicesEyebrow": "Weitere Services",
+  "viewMore": "Mehr ansehen",
+  "ctaEyebrow": "Lass uns reden",
+  "ctaTitle": "Sag uns, was du brauchst.",
+  "ctaButton": "Auf WhatsApp chatten",
+  "services": {
+    "montagem-de-setups": {
+      "title": "Individuelle PC-Builds",
+      "lead": "Setups von Grund auf gebaut, mit den besten Teilen für dein Profil und Budget.",
+      "description": "Jeder Build beginnt mit einem Gespräch: wofür du den PC nutzt, wie groß dein Budget ist und was auf keinen Fall fehlen darf. Danach wählen wir die Teile aus, bauen mit echtem Kabelmanagement zusammen und liefern erst nach Stabilitäts- und Temperaturtests aus.",
+      "items": [
+        "Teileberatung",
+        "Professioneller Zusammenbau",
+        "System-Installation",
+        "Optimierung und Tests",
+        "Lieferung mit Support"
+      ],
+      "highlights": [
+        { "title": "Beratung ohne Umschweife", "text": "Teile ausgewählt für deine tatsächliche Nutzung, nicht um Lagerbestände loszuwerden." },
+        { "title": "Echtes Kabelmanagement", "text": "Luftstrom und Optik abgestimmt, keine losen Kabel im Gehäuse." },
+        { "title": "Getestet, bevor es die Werkbank verlässt", "text": "CPU- und GPU-Stresstests, Temperaturkontrolle und Validierung vor der Lieferung." }
+      ],
+      "requestables": [
+        "Teile- und Kompatibilitätsberatung",
+        "Kompletter Zusammenbau von Grund auf",
+        "Individuelles Kabelmanagement",
+        "Auftragen von Wärmeleitpaste",
+        "Installation des Betriebssystems",
+        "Installation von Treibern und Software",
+        "BIOS-Konfiguration",
+        "Stabilitätstest (Stresstest)",
+        "Temperaturkontrolle",
+        "RGB-Konfiguration und Beleuchtungsprofile",
+        "Kabelorganisation und -beschriftung",
+        "Transport und Lieferung an deine Adresse"
+      ]
+    },
+    "reforma-e-upgrade": {
+      "title": "Upgrades & Überholung",
+      "lead": "Wir rüsten dein aktuelles Setup auf, damit es schneller, stärker und moderner wird.",
+      "description": "Bevor wir irgendein Teil austauschen, analysieren wir, was dein aktuelles Setup wirklich braucht. Das Upgrade zielt auf das, was die Leistung bremst (Arbeitsspeicher, SSD, Kühlung oder Grafikkarte), mit vollständiger Reinigung und Benchmark-Validierung am Ende.",
+      "items": [
+        "Analyse des aktuellen Setups",
+        "Austausch von Komponenten",
+        "Reinigung und Wartung",
+        "RAM- und SSD-Upgrade",
+        "Benchmark und Validierung"
+      ],
+      "highlights": [
+        { "title": "Ehrliche Diagnose", "text": "Wir sagen dir, was sich wirklich lohnt zu tauschen, ohne Teile aufzudrängen, die du nicht brauchst." },
+        { "title": "Nutzung dessen, was schon funktioniert", "text": "Wir ersetzen nur das, was die Leistung deines Setups bremst." },
+        { "title": "Vorher-Nachher-Vergleich", "text": "Echte Benchmarks, damit du den Leistungsgewinn in der Praxis siehst." }
+      ],
+      "requestables": [
+        "Diagnose des aktuellen Setups",
+        "Austausch des Prozessors",
+        "Austausch der Grafikkarte",
+        "RAM-Upgrade",
+        "Austausch oder Ergänzung von SSD/HDD",
+        "Austausch des Netzteils",
+        "Vollständige interne Reinigung",
+        "Austausch der Wärmeleitpaste",
+        "Austausch von Kühlern und Lüftern",
+        "BIOS-Update",
+        "Vergleichender Vorher/Nachher-Benchmark",
+        "Datensicherung und -migration"
+      ]
+    },
+    "personalizacao": {
+      "title": "Personalisierung",
+      "lead": "Wir verwandeln dein Setup in eine Erweiterung deiner Identität, mit Optik und RGB.",
+      "description": "Farbe, Beleuchtung und Thema werden gemeinsam mit dir festgelegt, bevor auch nur ein Teil bewegt wird. Wir arbeiten mit maßgeschneiderten Sleeved-Kabeln, Folierung, Wraps und individueller Wasserkühlung, damit das Setup genau so aussieht wie in deinem Kopf.",
+      "items": [
+        "RGB-Verwaltung",
+        "Austausch zu Sleeved-Kabeln",
+        "Folierung und Wraps",
+        "Individuelle Wasserkühlung",
+        "Themen-Setup"
+      ],
+      "highlights": [
+        { "title": "Maßgeschneidertes Projekt", "text": "Farben, Beleuchtung und Thema gemeinsam mit dir geplant, bevor irgendein Teil getauscht wird." },
+        { "title": "Verarbeitung, die beeindruckt", "text": "Sleeved-Kabel, unsichtbare Verlegung und individuelles Sleeving." },
+        { "title": "Wasserkühlung ohne Improvisation", "text": "Sicherer Zusammenbau und Wartung individueller Loops." }
+      ],
+      "requestables": [
+        "Austausch zu Sleeved-Kabeln",
+        "Folierung und Wraps am Gehäuse",
+        "Installation von RGB-Streifen und Lüftern",
+        "Konfiguration von Beleuchtungsprofilen",
+        "Projekt für individuelle Wasserkühlung",
+        "Kühlmittelwechsel und Loop-Wartung",
+        "Lackierung interner Teile",
+        "Austausch von Seitenglas oder Acryl",
+        "Vollständige Themengestaltung (Farben und Thema)",
+        "Individuelle Gravur und Verarbeitung"
+      ]
+    },
+    "suporte-tecnico": {
+      "title": "Technischer Support",
+      "lead": "Kein Kunde wird vergessen. Wir sind immer da, um zu helfen.",
+      "description": "Der After-Sales-Support endet nicht mit der Lieferung. Ob Ferndiagnose, Systemneuinstallation oder Vor-Ort-Besuch, du sprichst direkt mit der Person, die deinen PC gebaut hat, kein Callcenter, kein Skript.",
+      "items": [
+        "Ferndiagnose",
+        "Vor-Ort-Besuch",
+        "Systemneuinstallation",
+        "Virenentfernung",
+        "Lebenslanger After-Sales-Support"
+      ],
+      "highlights": [
+        { "title": "Direkter Support von der Person, die gebaut hat", "text": "Kein Callcenter und kein Skript, du sprichst mit jemandem, der dein Setup kennt." },
+        { "title": "Persönlich oder remote", "text": "Wir lösen, was aus der Ferne geht, und kommen zu dir, wenn es nötig ist." },
+        { "title": "Lebenslanger After-Sales-Support", "text": "Eine Frage oder ein Problem nach der Lieferung, du hast immer jemanden, der hilft." }
+      ],
+      "requestables": [
+        "Ferndiagnose",
+        "Technischer Besuch vor Ort",
+        "Formatierung und Neuinstallation des Systems",
+        "Entfernung von Viren und Malware",
+        "Dateisicherung",
+        "Treiber-Updates",
+        "Datenwiederherstellung",
+        "Vorbeugende Wartung",
+        "Physische Reinigung der Geräte",
+        "Netzwerk- und Peripheriekonfiguration",
+        "Lebenslanger After-Sales-Support",
+        "Beratung über WhatsApp"
+      ]
+    }
+  }
+}

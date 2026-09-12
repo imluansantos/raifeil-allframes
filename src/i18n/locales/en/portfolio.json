@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "backLabel": "Home",
+    "eyebrow": "Portfolio",
+    "title": "A bit of what we've already built",
+    "subtitle": "From the budget to the last screw: we build it, we test it, we deliver it.",
+    "statsProjects": "documented projects",
+    "statsCategories": "categories"
+  },
+  "grid": {
+    "empty": "No projects in this category yet."
+  },
+  "filters": {
+    "label": "Filter by category",
+    "ariaLabel": "Filter projects by category",
+    "all": "All"
+  },
+  "card": {
+    "viewProject": "View project"
+  },
+  "index": {
+    "metaTitle": "Portfolio | All Frames Technology",
+    "metaDescription": "PC assembly, customization and upgrade projects built by All Frames Technology in Bento Gonçalves, Brazil.",
+    "ctaEyebrow": "Liked a project?",
+    "ctaTitle": "Your setup could be the next one here.",
+    "ctaButton": "I want to build mine"
+  },
+  "detail": {
+    "backLabel": "Portfolio",
+    "specLabels": {
+      "cpu": "CPU",
+      "gpu": "GPU",
+      "ram": "RAM",
+      "storage": "Storage",
+      "cooling": "Cooling",
+      "motherboard": "Motherboard",
+      "case": "Case"
+    },
+    "projectEyebrow": "The project",
+    "specsEyebrow": "Specs",
+    "specsDisclaimer": "Illustrative specs, to be replaced with the real build breakdown.",
+    "galleryEyebrow": "Gallery",
+    "otherProjectsEyebrow": "Other projects",
+    "ctaEyebrow": "Want something similar",
+    "ctaTitle": "Tell us what you want to build.",
+    "ctaButton": "Chat on WhatsApp",
+    "metaTitleSuffix": "All Frames Technology Portfolio",
+    "metaNotFoundTitle": "Project not found",
+    "notFound": {
+      "eyebrow": "404",
+      "title": "This project doesn't exist.",
+      "text": "We couldn't find any project at the address \"{{slug}}\".",
+      "backLink": "Back to portfolio"
+    }
+  },
+  "projects": {
+    "polar": {
+      "shortDescription": "Open glass, a water loop with white hardline tubing, and an exposed Radeon Steel Legend. Here the goal was to hide nothing.",
+      "description": "An all-white build made to be shown off, not hidden. Custom water loop with hardline tubing, white sleeved cables bent curve by curve, and a Radeon Steel Legend that sits as the centerpiece behind the glass. The client's personal touches made it into the build too: a custom nameplate, a toy car on the internal tray, all placed so nothing sits on display out of order.",
+      "objective": "Maximum hardware exposure with showcase-grade finishing, without losing internal organization.",
+      "specs": {
+        "gpu": "AMD Radeon (ASRock Steel Legend)",
+        "motherboard": "MSI",
+        "cooling": "360mm White Water Cooler",
+        "case": "White Lian Li O11 Dynamic Mini V2 case"
+      }
+    },
+    "allframes-ultra1": {
+      "shortDescription": "Red-and-black theme with ARGB fans in a zigzag pattern and an exposed GeForce RTX. Build in its final stage, still at the shop.",
+      "description": "A black build with a red-tinted side glass and ARGB fans running a zigzag pattern that matches the rest of the case. TUF Gaming motherboard, visible Kingston memory, and a GeForce RTX mounted horizontally. Still being finished before delivery.",
+      "objective": "A red-and-black themed build with components organized for delivery.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASUS TUF Gaming",
+        "ram": "Kingston",
+        "case": "Black case, red tempered glass"
+      }
+    },
+    "aurora": {
+      "shortDescription": "Synchronized RGB across every component, with the lighting treated as part of the design, not an afterthought.",
+      "description": "Here the idea was the opposite of Frostline: color everywhere, synced piece by piece, without turning messy. Every fan and every LED strip calibrated to run through the same color cycle at the same time.",
+      "objective": "Maximum visual customization without losing internal organization.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX"
+      }
+    },
+    "pc-blueout": {
+      "shortDescription": "RGB fans cycling through the color spectrum, an exposed Gigabyte Radeon and Corsair power supply in a black case.",
+      "description": "A black build with ARGB fans in all three positions (top, front and rear) cycling through several colors. A Gigabyte Radeon GPU mounted horizontally, a visible Corsair CX650M power supply at the bottom, and a small decorative ghost figure between the motherboard and the GPU.",
+      "objective": "Internal organization with RGB lighting at multiple points in the case.",
+      "specs": {
+        "gpu": "AMD Radeon (Gigabyte)",
+        "case": "Black case"
+      }
+    },
+    "snow-build": {
+      "shortDescription": "An all-white Mancer CV500L case with a Ryzen 7 5700X, Radeon RX 6650XT and water cooling. Six fans lined up in a row.",
+      "description": "Built in a white Mancer CV500L case, with a Gigabyte B550M Aorus Elite motherboard, a Ryzen 7 5700X processor and an XFX Radeon RX 6650XT GPU. Cooled with a soft-tube water cooler, six fans spread across the front and top, all matching the case's white finish.",
+      "objective": "An all-white build with organized AMD hardware and liquid cooling.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 5700X",
+        "gpu": "AMD Radeon RX 6650XT (XFX)",
+        "motherboard": "Gigabyte B550M Aorus Elite",
+        "cooling": "240mm Black RiseMode Water Cooler",
+        "case": "Mancer CV500L"
+      }
+    },
+    "frostline": {
+      "shortDescription": "A white case with a Cooler Master water cooler, pink RGB memory and an exposed GeForce RTX.",
+      "description": "An all-white build with gold accents on the case, Cooler Master water cooling, an ASRock Steel Legend motherboard and pink/purple Kingston Fury RGB memory — the only saturated splash of color among the white fans. A GeForce RTX with white sleeved cabling and a Ghostface figure decorating the side of the graphics card.",
+      "objective": "An all-white build with a single color accent on the RAM.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASRock Steel Legend",
+        "ram": "Kingston Fury RGB",
+        "cooling": "Water cooling (Cooler Master)",
+        "case": "White case"
+      }
+    },
+    "mistic": {
+      "shortDescription": "Sleeved soft-tube water cooling, a Gigabyte Radeon and Fury Beast memory inside a black case.",
+      "description": "A black build with sleeved soft-tube water cooling, a Gigabyte Radeon GPU mounted horizontally and Kingston Fury Beast memory. A Gigabyte P650B power supply visible at the bottom, with RGB lighting concentrated on the cooler and the graphics card.",
+      "objective": "Internal organization with liquid cooling and Gigabyte/Radeon components.",
+      "specs": {
+        "gpu": "AMD Radeon (Gigabyte)",
+        "ram": "Kingston Fury Beast",
+        "cooling": "Water Cooler",
+        "case": "Black case"
+      }
+    },
+    "glacial": {
+      "shortDescription": "A black case with blue RGB, an ASUS Prime A520M-R motherboard and an exposed GeForce RTX.",
+      "description": "A black build with blue RGB lighting on the fans and RAM, an ASUS Prime A520M-R motherboard and a GeForce RTX GPU mounted horizontally. Cables organized behind the tray, with blue as the build's single accent color.",
+      "objective": "A build with a single color theme (blue) and organized components.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASUS Prime A520M-R",
+        "case": "Black case"
+      }
+    },
+    "prism": {
+      "shortDescription": "Pink, blue and purple RGB fans, a Cooler Master water cooler and an exposed GeForce GPU in a black case with a side glass panel.",
+      "description": "A black build with a side glass panel and pink, blue and purple RGB lighting spread across the case's six fans. A Cooler Master water cooler with an RGB ring on the block, and a GeForce GPU mounted horizontally, fully visible through the glass.",
+      "objective": "Maximum visual presence with colorful RGB lighting throughout the case's interior.",
+      "specs": {
+        "gpu": "NVIDIA GeForce",
+        "cooling": "Water cooling (Cooler Master)",
+        "case": "Black case, tempered glass"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "eyebrow": "05 · Por que a All Frames?",
+  "title": "Você percebe a diferença nos detalhes.",
+  "subtitle": "Cada PC é pensado, montado e acompanhado pra fazer sentido pra você, antes, durante e depois da compra.",
+  "cards": {
+    "uso-real": { "title": "Uso real", "description": "Peças pensadas pro seu uso real, jogo ou trabalho." },
+    "orcamento": { "title": "Orçamento", "description": "Você entende cada troca antes de comprar." },
+    "cabos": { "title": "Cabos", "description": "Cable management e testes antes da entrega." },
+    "pos-entrega": { "title": "Pós-entrega", "description": "Vitalício, direto com quem montou o seu PC." },
+    "presencial": { "title": "Presencial", "description": "Atendimento presencial em Bento Gonçalves." },
+    "whatsapp": { "title": "WhatsApp", "description": "WhatsApp direto, sem central de atendimento." }
+  }
+}

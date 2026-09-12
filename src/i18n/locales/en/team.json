@@ -1,0 +1,24 @@
+{
+  "title": "Our Team",
+  "subtitle": "The people who make it all happen day to day.",
+  "expandAriaLabel": "See more about the role",
+  "backLabel": "Back",
+  "members": {
+    "luiz": {
+      "role": "Finance · Technical Support",
+      "bio": "Keeps the operation running smoothly and gets hands-on whenever hardware needs diagnosing."
+    },
+    "joao": {
+      "role": "Sales · Customer Relations",
+      "bio": "The first contact and the last one too: follows every project from quote to after-sales."
+    },
+    "rai": {
+      "role": "Marketing · E-commerce",
+      "bio": "Looks after the brand's presence and the shopping experience, from Instagram to delivery."
+    },
+    "gabriel": {
+      "role": "Videographer · Content Production",
+      "bio": "Documents every build. If the setup looks good, he's the one who signs off on it."
+    }
+  }
+}

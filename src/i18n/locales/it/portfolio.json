@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "backLabel": "Home",
+    "eyebrow": "Portfolio",
+    "title": "Un assaggio di ciò che abbiamo già costruito",
+    "subtitle": "Dal preventivo all'ultima vite: siamo noi a montare, siamo noi a testare, siamo noi a consegnare.",
+    "statsProjects": "progetti documentati",
+    "statsCategories": "categorie"
+  },
+  "grid": {
+    "empty": "Ancora nessun progetto in questa categoria."
+  },
+  "filters": {
+    "label": "Filtra per categoria",
+    "ariaLabel": "Filtra i progetti per categoria",
+    "all": "Tutti"
+  },
+  "card": {
+    "viewProject": "Vedi il progetto"
+  },
+  "index": {
+    "metaTitle": "Portfolio | All Frames Technology",
+    "metaDescription": "Progetti di montaggio, personalizzazione e upgrade di PC realizzati da All Frames Technology a Bento Gonçalves, Brasile.",
+    "ctaEyebrow": "Ti è piaciuto un progetto?",
+    "ctaTitle": "Il tuo setup potrebbe essere il prossimo qui.",
+    "ctaButton": "Voglio montare il mio"
+  },
+  "detail": {
+    "backLabel": "Portfolio",
+    "specLabels": {
+      "cpu": "CPU",
+      "gpu": "GPU",
+      "ram": "RAM",
+      "storage": "Archiviazione",
+      "cooling": "Raffreddamento",
+      "motherboard": "Scheda madre",
+      "case": "Case"
+    },
+    "projectEyebrow": "Il progetto",
+    "specsEyebrow": "Specs",
+    "specsDisclaimer": "Specs illustrative, da sostituire con il rilievo reale del build.",
+    "galleryEyebrow": "Galleria",
+    "otherProjectsEyebrow": "Altri progetti",
+    "ctaEyebrow": "Vuoi qualcosa di simile",
+    "ctaTitle": "Raccontaci cosa vuoi montare.",
+    "ctaButton": "Scrivi su WhatsApp",
+    "metaTitleSuffix": "Portfolio All Frames Technology",
+    "metaNotFoundTitle": "Progetto non trovato",
+    "notFound": {
+      "eyebrow": "404",
+      "title": "Questo progetto non esiste.",
+      "text": "Non abbiamo trovato nessun progetto con l'indirizzo \"{{slug}}\".",
+      "backLink": "Torna al portfolio"
+    }
+  },
+  "projects": {
+    "polar": {
+      "shortDescription": "Vetro aperto, loop ad acqua con tubo rigido bianco e una Radeon Steel Legend in bella vista. Qui l'obiettivo era non nascondere nulla.",
+      "description": "Build interamente bianco pensato per essere mostrato, non nascosto. Loop ad acqua personalizzato con tubo rigido, cavi sleeved bianchi piegati curva per curva, e una Radeon Steel Legend che resta il pezzo centrale dietro il vetro. Anche i dettagli personali del cliente sono entrati nel progetto: targhetta personalizzata, macchinina in miniatura sul vassoio interno, tutto pensato per restare in mostra senza cavi o tubi fuori posto.",
+      "objective": "Massima esposizione dell'hardware con una finitura da vetrina, senza perdere l'organizzazione interna.",
+      "specs": {
+        "gpu": "AMD Radeon (ASRock Steel Legend)",
+        "motherboard": "MSI",
+        "cooling": "Water Cooler Bianco 360mm",
+        "case": "Case bianco Lian Li O11 Dynamic Mini V2"
+      }
+    },
+    "allframes-ultra1": {
+      "shortDescription": "Tema rosso e nero con fan ARGB a zigzag e una GeForce RTX in bella vista. Build in fase finale, ancora in negozio.",
+      "description": "Build nero con vetro laterale tinto di rosso e fan ARGB con motivo a zigzag in linea con il resto del case. Scheda madre TUF Gaming, memorie Kingston visibili e una GeForce RTX montata orizzontalmente. Ancora in fase di rifinitura prima della consegna.",
+      "objective": "Montaggio a tema rosso e nero con componenti organizzati per la consegna.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASUS TUF Gaming",
+        "ram": "Kingston",
+        "case": "Case nero, vetro temperato rosso"
+      }
+    },
+    "aurora": {
+      "shortDescription": "RGB sincronizzato su ogni componente, con l'illuminazione trattata come parte del progetto, non come un extra.",
+      "description": "Qui l'idea era l'opposto di Frostline: colore ovunque, sincronizzato pezzo per pezzo, senza risultare confusionario. Ogni ventola e ogni striscia LED calibrate per attraversare lo stesso ciclo di colore nello stesso momento.",
+      "objective": "Massima personalizzazione visiva senza perdere l'organizzazione interna.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX"
+      }
+    },
+    "pc-blueout": {
+      "shortDescription": "Fan RGB che percorrono lo spettro dei colori, una Radeon Gigabyte e un alimentatore Corsair in bella vista in un case nero.",
+      "description": "Build nero con fan ARGB in tutte e tre le posizioni (alto, frontale e posteriore) che attraversano diversi colori. GPU Radeon Gigabyte montata orizzontalmente, alimentatore Corsair CX650M visibile nella parte inferiore e un piccolo fantasma decorativo tra la scheda madre e la GPU.",
+      "objective": "Organizzazione interna con illuminazione RGB in più punti del case.",
+      "specs": {
+        "gpu": "AMD Radeon (Gigabyte)",
+        "case": "Case nero"
+      }
+    },
+    "snow-build": {
+      "shortDescription": "Case Mancer CV500L interamente bianco con Ryzen 7 5700X, Radeon RX 6650XT e water cooling. Sei ventole allineate in fila.",
+      "description": "Build montato in un case Mancer CV500L bianco, con scheda madre Gigabyte B550M Aorus Elite, processore Ryzen 7 5700X e GPU Radeon RX 6650XT di XFX. Raffreddamento a liquido con tubo flessibile, sei ventole distribuite tra fronte e top, tutte nella stessa tonalità bianca del case.",
+      "objective": "Build interamente bianco con hardware AMD organizzato e raffreddamento a liquido.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 5700X",
+        "gpu": "AMD Radeon RX 6650XT (XFX)",
+        "motherboard": "Gigabyte B550M Aorus Elite",
+        "cooling": "Water Cooler 240mm Black RiseMode",
+        "case": "Mancer CV500L"
+      }
+    },
+    "frostline": {
+      "shortDescription": "Case bianco con water cooler Cooler Master, memoria RGB rosa e una GeForce RTX in bella vista.",
+      "description": "Build interamente bianco con dettagli dorati sul case, water cooling Cooler Master, scheda madre ASRock Steel Legend e memoria Kingston Fury RGB rosa/viola — l'unico tocco di colore saturo tra le ventole bianche. GPU GeForce RTX con cavo sleeved bianco e una figura Ghostface a decorare il lato della scheda video.",
+      "objective": "Build interamente bianco con un unico punto di colore di contrasto nella RAM.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASRock Steel Legend",
+        "ram": "Kingston Fury RGB",
+        "cooling": "Raffreddamento a liquido (Cooler Master)",
+        "case": "Case bianco"
+      }
+    },
+    "mistic": {
+      "shortDescription": "Water cooling con tubo flessibile sleeved, una Radeon Gigabyte e memoria Fury Beast in un case nero.",
+      "description": "Build nero con water cooler a tubo flessibile sleeved, GPU Radeon Gigabyte montata orizzontalmente e memoria Kingston Fury Beast. Alimentatore Gigabyte P650B visibile nella parte inferiore, con illuminazione RGB concentrata sul cooler e sulla scheda video.",
+      "objective": "Organizzazione interna con raffreddamento a liquido e componenti Gigabyte/Radeon.",
+      "specs": {
+        "gpu": "AMD Radeon (Gigabyte)",
+        "ram": "Kingston Fury Beast",
+        "cooling": "Water Cooler",
+        "case": "Case nero"
+      }
+    },
+    "glacial": {
+      "shortDescription": "Case nero con RGB blu, scheda madre ASUS Prime A520M-R e una GeForce RTX in bella vista.",
+      "description": "Build nero con illuminazione RGB blu sulle ventole e sulla RAM, scheda madre ASUS Prime A520M-R e GPU GeForce RTX montata orizzontalmente. Cavi organizzati dietro il vassoio, con il blu come unico colore del progetto.",
+      "objective": "Build con un unico tema di colore (blu) e componenti organizzati.",
+      "specs": {
+        "gpu": "NVIDIA GeForce RTX",
+        "motherboard": "ASUS Prime A520M-R",
+        "case": "Case nero"
+      }
+    },
+    "prism": {
+      "shortDescription": "Ventole RGB rosa, blu e viola, water cooler Cooler Master e una GPU GeForce esposta in un case nero con vetro laterale.",
+      "description": "Build nero con vetro laterale e illuminazione RGB rosa, blu e viola distribuita sulle sei ventole del case. Water cooler Cooler Master con anello RGB sul blocco, GPU GeForce montata orizzontalmente e completamente visibile attraverso il vetro.",
+      "objective": "Massima presenza visiva con illuminazione RGB colorata in tutto l'interno del case.",
+      "specs": {
+        "gpu": "NVIDIA GeForce",
+        "cooling": "Raffreddamento a liquido (Cooler Master)",
+        "case": "Case nero, vetro temperato"
+      }
+    }
+  }
+}

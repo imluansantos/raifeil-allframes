@@ -1,0 +1,139 @@
+{
+  "serviceBadge": "Servicio {{number}}",
+  "aboutServiceEyebrow": "Sobre el servicio",
+  "overviewEyebrow": "Visión general",
+  "overviewTitle": "Qué incluye este servicio",
+  "overviewDescription": "Un panorama de lo que suele formar parte de este tipo de trabajo. El alcance final siempre se acuerda contigo, antes de que empiece cualquier cosa.",
+  "requestablesEyebrow": "Pide exactamente lo que necesitas",
+  "requestablesDescription": "Acá no cerrás un paquete cerrado, pedís solo lo que tiene sentido para tu setup. Algunos ejemplos de lo que ya resolvimos:",
+  "requestablesCta": "Contanos lo que necesitas",
+  "otherServicesEyebrow": "Otros servicios",
+  "viewMore": "Ver más",
+  "ctaEyebrow": "Hablemos",
+  "ctaTitle": "Contanos lo que necesitas.",
+  "ctaButton": "Hablar por WhatsApp",
+  "services": {
+    "montagem-de-setups": {
+      "title": "Armado de Setups",
+      "lead": "Setups armados desde cero con las mejores piezas para tu perfil y presupuesto.",
+      "description": "Cada armado empieza con una charla: para qué vas a usar la PC, cuál es el presupuesto y qué no puede faltar. A partir de ahí elegimos las piezas, armamos con cable management de verdad y solo entregamos después de correr pruebas de estabilidad y temperatura.",
+      "items": [
+        "Asesoría de piezas",
+        "Armado profesional",
+        "Instalación de sistema",
+        "Optimización y pruebas",
+        "Entrega con soporte"
+      ],
+      "highlights": [
+        { "title": "Asesoría sin vueltas", "text": "Elección de piezas pensada para tu uso real, no para empujar lo que sobra en stock." },
+        { "title": "Cable management de verdad", "text": "Flujo de aire y estética alineados, sin cableado suelto dentro del gabinete." },
+        { "title": "Probado antes de salir del taller", "text": "Stress test de CPU y GPU, revisión de temperaturas y validación antes de la entrega." }
+      ],
+      "requestables": [
+        "Asesoría de piezas y compatibilidad",
+        "Armado completo desde cero",
+        "Cable management personalizado",
+        "Aplicación de pasta térmica",
+        "Instalación del sistema operativo",
+        "Instalación de drivers y programas",
+        "Configuración de BIOS",
+        "Prueba de estabilidad (stress test)",
+        "Revisión de temperaturas",
+        "Configuración de RGB y perfiles de iluminación",
+        "Organización y etiquetado de cables",
+        "Transporte y entrega en tu domicilio"
+      ]
+    },
+    "reforma-e-upgrade": {
+      "title": "Renovación y Upgrade",
+      "lead": "Actualizamos tu setup actual para hacerlo más rápido, potente y moderno.",
+      "description": "Antes de cambiar cualquier pieza, analizamos lo que tu setup actual realmente necesita. El upgrade se hace en lo que frena el rendimiento (memoria, SSD, refrigeración o placa de video), con limpieza completa y validación por benchmark al final.",
+      "items": [
+        "Análisis del setup actual",
+        "Cambio de componentes",
+        "Limpieza y mantenimiento",
+        "Upgrade de memoria y SSD",
+        "Benchmark y validación"
+      ],
+      "highlights": [
+        { "title": "Diagnóstico honesto", "text": "Te decimos qué realmente vale la pena cambiar, sin empujar piezas que no necesitas." },
+        { "title": "Aprovechamiento de lo que ya funciona", "text": "Solo reemplazamos lo que está frenando el rendimiento de tu setup." },
+        { "title": "Comparativa de antes y después", "text": "Benchmark real para que veas la ganancia de rendimiento en la práctica." }
+      ],
+      "requestables": [
+        "Diagnóstico del setup actual",
+        "Cambio de procesador",
+        "Cambio de placa de video",
+        "Upgrade de memoria RAM",
+        "Cambio o suma de SSD/HDD",
+        "Cambio de fuente de alimentación",
+        "Limpieza interna completa",
+        "Cambio de pasta térmica",
+        "Cambio de coolers y ventiladores",
+        "Actualización de BIOS",
+        "Benchmark comparativo antes/después",
+        "Backup y migración de datos"
+      ]
+    },
+    "personalizacao": {
+      "title": "Personalización",
+      "lead": "Convertimos tu setup en una extensión de tu identidad, con estética y RGB.",
+      "description": "El color, la iluminación y el tema se definen junto a ti antes de mover cualquier pieza. Trabajamos con cables sleeved a medida, adhesivado, wrap y water cooling personalizado para dejar el setup tal como lo tienes en la cabeza.",
+      "items": [
+        "Gestión de RGB",
+        "Cambio a cables sleeved",
+        "Adhesivado y wrap",
+        "Water cooling personalizado",
+        "Setup temático"
+      ],
+      "highlights": [
+        { "title": "Proyecto a medida", "text": "Colores, iluminación y tema pensados contigo antes de cambiar cualquier pieza." },
+        { "title": "Acabado que impresiona", "text": "Cables sleeved, ruteo invisible y sleeving personalizado." },
+        { "title": "Water cooling sin improvisar", "text": "Armado y mantenimiento de circuitos personalizados con seguridad." }
+      ],
+      "requestables": [
+        "Cambio de cables a sleeved",
+        "Adhesivado y wrap del gabinete",
+        "Instalación de tiras y coolers RGB",
+        "Configuración de perfiles de iluminación",
+        "Proyecto de water cooling personalizado",
+        "Cambio de líquido y mantenimiento del loop",
+        "Pintura de piezas internas",
+        "Cambio de vidrio o acrílico lateral",
+        "Tematización completa (colores y tema)",
+        "Grabado y acabado personalizado"
+      ]
+    },
+    "suporte-tecnico": {
+      "title": "Soporte Técnico",
+      "lead": "Ningún cliente olvidado. Siempre estamos acá para resolver.",
+      "description": "La posventa no termina en la entrega. Ya sea un diagnóstico remoto, una reinstalación de sistema o una visita técnica, hablas directo con quien armó tu PC, sin central de atención, sin guion armado.",
+      "items": [
+        "Diagnóstico remoto",
+        "Visita técnica",
+        "Reinstalación de sistema",
+        "Eliminación de virus",
+        "Posventa de por vida"
+      ],
+      "highlights": [
+        { "title": "Atención directa con quien armó", "text": "Sin central de atención y sin guion, hablas con quien conoce tu setup." },
+        { "title": "Presencial o remoto", "text": "Resolvemos lo que se puede a distancia y vamos hasta ti cuando hace falta." },
+        { "title": "Posventa de por vida", "text": "Duda o problema después de la entrega, siempre tienes quien te atienda." }
+      ],
+      "requestables": [
+        "Diagnóstico remoto",
+        "Visita técnica a domicilio",
+        "Formateo y reinstalación de sistema",
+        "Eliminación de virus y malware",
+        "Backup de archivos",
+        "Actualización de drivers",
+        "Recuperación de datos",
+        "Mantenimiento preventivo",
+        "Limpieza física del equipo",
+        "Configuración de red y periféricos",
+        "Soporte posventa de por vida",
+        "Orientación por WhatsApp"
+      ]
+    }
+  }
+}

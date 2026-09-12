@@ -1,0 +1,54 @@
+{
+  "title": "Einstellungen",
+  "search": "Suchen",
+  "close": "Einstellungen schließen",
+  "sections": {
+    "tema": "Design",
+    "cookies": "Cookies",
+    "idioma": "Sprache",
+    "animacoes": "Animationen",
+    "cursor": "Cursor"
+  },
+  "theme": {
+    "light": "Heller Modus",
+    "dark": "Dunkler Modus",
+    "enableDark": "Dunklen Modus aktivieren",
+    "enableLight": "Hellen Modus aktivieren",
+    "caption": "Derselbe Schalter wie in der Fußzeile der Website — hier ändern, ändert sich dort, und umgekehrt."
+  },
+  "cookies": {
+    "currentConsent": "Aktuelle Zustimmung",
+    "summaryAllAccepted": "Alle Cookies akzeptiert",
+    "summaryOptionalRefused": "Optionale Cookies abgelehnt",
+    "summaryCustom": "Individuelle Einstellungen",
+    "summaryNotSet": "Noch nicht konfiguriert (optionale Cookies standardmäßig aktiv)",
+    "editButton": "Cookie-Einstellungen bearbeiten"
+  },
+  "animations": {
+    "caption": "Diese Optionen ändern nur die visuelle Seite. Am Inhalt der Website ändert sich nichts, nur wie sie sich auf dem Bildschirm bewegt. Wenn dein Computer etwas älter ist (oder der Browser einfach viele Tabs offen hat), können diese Effekte das Surfen etwas ruckelig wirken lassen. In dem Fall lohnt es sich, zu \"Reduzierte Animationen\" oder \"Keine Animationen\" zu wechseln: Die Website wird spürbar leichter, ohne dass Informationen verloren gehen.",
+    "all": {
+      "label": "Alle Animationen",
+      "description": "Standardverhalten der Website, ohne Änderungen."
+    },
+    "reduced": {
+      "label": "Reduzierte Animationen",
+      "description": "Behält die wichtigsten Übergänge der Website bei, schaltet aber zusätzliche Glow- und Bewegungseffekte aus."
+    },
+    "none": {
+      "label": "Keine Animationen",
+      "description": "Schaltet alle Bewegungs-, Glow- und Übergangseffekte der Website aus."
+    }
+  },
+  "cursor": {
+    "default": "Standard",
+    "sword": "Diamantschwert",
+    "plane": "Papierflieger",
+    "sukuna": "Sukuna",
+    "playstation": "PlayStation",
+    "comingSoon": "Weitere Optionen bald verfügbar",
+    "caption": "Der gewählte Cursor gilt für die gesamte Website (auch über Schaltflächen und Links) und wird in diesem Browser gespeichert."
+  },
+  "language": {
+    "caption": "Wähle die Sprache der Website. Deine Einstellung wird in diesem Browser gespeichert."
+  }
+}

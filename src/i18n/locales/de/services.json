@@ -1,0 +1,23 @@
+{
+  "eyebrow": "02 · Was wir tun",
+  "title": "Was wir tun.",
+  "subtitle": "Wir behandeln jedes Setup als Erweiterung der Identität seines Nutzers, vom ersten Angebot bis zum Support nach dem Kauf.",
+  "cards": {
+    "montagem-de-setups": {
+      "title": "Setup-Zusammenbau",
+      "lead": "Setups von Grund auf zusammengebaut mit den besten Teilen für dein Profil und Budget."
+    },
+    "reforma-e-upgrade": {
+      "title": "Umbau & Upgrade",
+      "lead": "Wir bringen dein aktuelles Setup auf Vordermann – schneller, stärker und moderner."
+    },
+    "personalizacao": {
+      "title": "Individualisierung",
+      "lead": "Wir verwandeln dein Setup in eine Erweiterung deiner Identität, mit Ästhetik und RGB."
+    },
+    "suporte-tecnico": {
+      "title": "Technischer Support",
+      "lead": "Kein Kunde wird vergessen. Wir sind immer da, um zu helfen."
+    }
+  }
+}

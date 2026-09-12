@@ -1,0 +1,73 @@
+{
+  "eyebrow": "07 · Domande frequenti",
+  "title": "Prima ancora di chiedere, abbiamo già risposto.",
+  "subtitle": "Le domande che arrivano di più su WhatsApp, organizzate per argomento.",
+  "sidebarLabel": "Base di conoscenza",
+  "bottomLink": "Non hai trovato la tua risposta? Scrivici su WhatsApp",
+  "categories": [
+    {
+      "key": "budget",
+      "label": "Preventivo e tempi",
+      "description": "Come funziona il preventivo e quanto tempo richiede il montaggio.",
+      "questions": [
+        {
+          "question": "Quanto tempo ci vuole per montare un setup?",
+          "answer": "Dipende dalla disponibilità dei componenti, ma un montaggio standard viene consegnato in 2-4 giorni lavorativi dopo l'approvazione del preventivo. Per un progetto con water cooling personalizzato o cavi sleeved su misura, i tempi vengono concordati a parte."
+        },
+        {
+          "question": "Come funziona il preventivo prima di confermare il montaggio?",
+          "answer": "Ci racconti di cosa hai bisogno e prepariamo il preventivo componente per componente, senza pacchetti chiusi. Ogni modifica viene spiegata prima di qualsiasi acquisto."
+        }
+      ]
+    },
+    {
+      "key": "assembly",
+      "label": "Montaggio e componenti",
+      "description": "Componenti, compatibilità e come montiamo il tuo setup.",
+      "questions": [
+        {
+          "question": "Montate anche con componenti che ho già?",
+          "answer": "Sì, sfruttiamo tutto ciò che ha ancora senso nel tuo setup attuale e suggeriamo di sostituire solo ciò che ne vale davvero la pena. Niente componenti nuovi che non ti servono."
+        },
+        {
+          "question": "Devo capire di hardware prima di chiedere un montaggio?",
+          "answer": "No. Ci racconti il gioco a cui giochi o il programma che usi ogni giorno, e ti indichiamo i componenti giusti per quello."
+        }
+      ]
+    },
+    {
+      "key": "payment",
+      "label": "Pagamento",
+      "description": "Modalità di pagamento e rate.",
+      "questions": [
+        {
+          "question": "Si può pagare il preventivo a rate?",
+          "answer": "Sì, si può. Offriamo rate con carta e accettiamo anche un acconto più il saldo concordato. L'importo finale e le condizioni di pagamento arrivano insieme al preventivo, senza sorprese."
+        },
+        {
+          "question": "Quali metodi di pagamento accettate?",
+          "answer": "Carta, Pix e contanti. Rate e condizioni vengono concordate insieme al preventivo."
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "label": "Assistenza post-vendita",
+      "description": "Garanzia, assistenza e supporto dopo la consegna.",
+      "questions": [
+        {
+          "question": "Offrite garanzia su componenti e manodopera?",
+          "answer": "Sì. I componenti nuovi hanno la garanzia di fabbrica di ciascun produttore, e il lavoro di montaggio ha una garanzia propria di All Frames. Qualsiasi problema dopo la consegna, parli direttamente con chi ha montato il tuo PC. Nessun supporto esternalizzato."
+        },
+        {
+          "question": "Devo portare il PC in negozio o venite voi a ritirarlo?",
+          "answer": "Offriamo assistenza di persona a Bento Gonçalves, ma ritiriamo e consegniamo anche nelle città vicine. Per una manutenzione puntuale, possiamo organizzare il ritiro oppure puoi portarlo direttamente in officina."
+        },
+        {
+          "question": "Come funziona l'assistenza dopo la consegna?",
+          "answer": "Assistenza post-vendita a vita: un dubbio, un rumore strano o un futuro upgrade, scrivi su WhatsApp e vieni seguito da chi ha montato il tuo PC, non da uno script di un call center."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Il Nostro Team",
+  "subtitle": "Chi fa succedere tutto ogni giorno.",
+  "expandAriaLabel": "Vedi di più sul ruolo",
+  "backLabel": "Indietro",
+  "members": {
+    "luiz": {
+      "role": "Finanza · Assistenza Tecnica",
+      "bio": "Tiene in ordine l'operatività e mette le mani in pasta quando l'hardware ha bisogno di diagnosi."
+    },
+    "joao": {
+      "role": "Commerciale · Relazioni con i Clienti",
+      "bio": "Primo contatto e anche l'ultimo: segue ogni progetto dal preventivo al post-vendita."
+    },
+    "rai": {
+      "role": "Marketing · E-commerce",
+      "bio": "Si occupa della presenza del brand e dell'esperienza d'acquisto, da Instagram alla consegna."
+    },
+    "gabriel": {
+      "role": "Videomaker · Produzione di Contenuti",
+      "bio": "Documenta ogni build. Se il setup è venuto bene, è lui che dà l'approvazione."
+    }
+  }
+}

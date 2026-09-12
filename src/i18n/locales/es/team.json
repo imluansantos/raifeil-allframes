@@ -1,0 +1,24 @@
+{
+  "title": "Nuestro Equipo",
+  "subtitle": "Quiénes hacen que todo funcione día a día.",
+  "expandAriaLabel": "Ver más sobre el puesto",
+  "backLabel": "Volver",
+  "members": {
+    "luiz": {
+      "role": "Finanzas · Asistencia Técnica",
+      "bio": "Mantiene la operación en orden y se pone manos a la obra cuando el hardware necesita diagnóstico."
+    },
+    "joao": {
+      "role": "Comercial · Relación con Clientes",
+      "bio": "El primer contacto y también el último: acompaña cada proyecto desde el presupuesto hasta la posventa."
+    },
+    "rai": {
+      "role": "Marketing · E-commerce",
+      "bio": "Cuida la presencia de la marca y la experiencia de compra, desde Instagram hasta la entrega."
+    },
+    "gabriel": {
+      "role": "Videomaker · Producción de Contenido",
+      "bio": "Registra cada armado. Si el setup quedó bonito, es él quien lo aprueba."
+    }
+  }
+}

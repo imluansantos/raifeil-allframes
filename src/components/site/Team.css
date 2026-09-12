@@ -1,0 +1,23 @@
+/*
+  Team.css
+
+  ProfileCard.css (from reactbits.dev) sizes .pc-card with a fixed viewport
+  height (height: 80svh; max-height: 540px) — that's correct for the original
+  full-page "hero" demo, but it fights a responsive N-per-row grid: every card
+  would try to be the same tall, viewport-relative size regardless of how
+  narrow its grid column is.
+
+  This file does NOT edit ProfileCard.css (kept byte-for-byte as fetched, for
+  fidelity). It only relaxes the height *inside the team grid* so the card's
+  own aspect-ratio (0.718, from ProfileCard.css) drives its size from the
+  grid column width instead of from the viewport height.
+*/
+
+.team-grid .pc-card {
+  height: auto;
+  max-height: none;
+}
+
+.team-grid .pc-card-wrapper {
+  width: 100%;
+}

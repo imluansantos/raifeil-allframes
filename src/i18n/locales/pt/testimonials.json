@@ -1,0 +1,28 @@
+{
+  "eyebrow": "06 · Depoimentos",
+  "title": "Quem já passou pela loja, conta como foi.",
+  "clientRole": "Cliente",
+  "ratingLabel": "{{rating}} de 5 estrelas",
+  "prevLabel": "Depoimento anterior",
+  "nextLabel": "Próximo depoimento",
+  "quotes": {
+    "t01": "Resolveram o problema do meu PC com diagnóstico detalhado e em só 2 dias. Periféricos difíceis de achar e atendimento excelente!",
+    "t02": "Já fui umas 2 vezes e os caras foram bem atenciosos, muito gente boa. Me deram dicas de PC e me senti AMADO.",
+    "t03": "Excelente atendimento e produtos de muita qualidade! A equipe é atenciosa e sempre disposta a ajudar. Super recomendo!",
+    "t04": "Foi ótimo o atendimento, prestaram o serviço com excelência e agilidade. Bem mais do que o esperado! Parabéns.",
+    "t05": "Atendimento muito bom, recomendo! Levei meu note em 3 assistências da cidade, não consertaram, eles resolveram no mesmo dia.",
+    "t06": "Muito bom o atendimento! O rapaz que me atendeu teve bastante paciência e profissionalismo.",
+    "t07": "Entrei com um PC que não funcionava sem entender o porquê, saí com uma máquina e formado em montagem de tão boas as explicações.",
+    "t08": "A melhor loja de Bento Gonçalves, os meninos muito educados, sempre querendo ajudar! Periféricos e PCs de confiança é só com eles!",
+    "t09": "Maravilhosa! Atendimento com excelência, produtos de ótima qualidade e ambiente extremamente aconchegante! Super indico!",
+    "t10": "Bagual demais, os guri tão indo direto se aproveitar do de óculos ali. Atendimento 10. Montaram essa máquina pra mim. Nada a reclamar.",
+    "t11": "A melhor de Bento, só coisa boa, preços bons, baratos e justos.",
+    "t12": "Muito bom o lugar, atendentes legais e educados, com certeza voltarei.",
+    "t13": "Precisava de um PC pra trabalho pesado e jogos. O atendimento superou minhas expectativas. Se passou 1 ano e o PC continua uma máquina mortífera.",
+    "t14": "Loja ótima com profissionais que ajudam demais nas dúvidas.",
+    "t15": "Baita trabalho, pessoal é 100% confiável! Recomendo.",
+    "t16": "Simplesmente maravilhosa, uma das melhores lojas que abriu em Bento nos últimos anos. Montam PCs intergaláticos e os atendentes são muito gente boa!",
+    "t17": "Muito bom, ótima assistência técnica.",
+    "t18": "Ótimo atendimento, recomendo muito!"
+  }
+}

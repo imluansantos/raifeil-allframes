@@ -1,0 +1,17 @@
+{
+  "dialogLabel": "Cookie-Einstellungen",
+  "title": "Cookie-Einstellungen",
+  "close": "Schließen",
+  "description": "Wir verwenden essenzielle Cookies, damit die Website funktioniert, und optional Analyse- und Marketing-Cookies, um zu verstehen, wie du die Website nutzt. Du kannst deine Einstellungen unten jederzeit anpassen.",
+  "essentialLabel": "Essenziell",
+  "essentialDescription": "Für den Betrieb der Website erforderlich. Immer aktiv.",
+  "analyticsLabel": "Analyse",
+  "analyticsDescription": "Hilft uns zu verstehen, wie die Website genutzt wird.",
+  "marketingLabel": "Marketing",
+  "marketingDescription": "Für relevantere Anzeigen und Inhalte.",
+  "cancel": "Abbrechen",
+  "save": "Einstellungen speichern",
+  "saved": "Einstellungen gespeichert",
+  "whatAreCookies": "Was sind Cookies?",
+  "whatAreCookiesExplanation": "Cookies sind kleine Dateien, die die Website in deinem Browser speichert. Essenzielle Cookies sind für den Betrieb der Website erforderlich (z. B. um dein Design und deine Sprache zu merken). Analyse- und Marketing-Cookies sind dagegen optional: Sie helfen uns zu verstehen, wie die Website genutzt wird, und relevantere Inhalte zu zeigen, du kannst sie aber ablehnen, ohne dass sich das auf deine Nutzung auswirkt."
+}

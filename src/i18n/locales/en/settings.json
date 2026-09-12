@@ -1,0 +1,54 @@
+{
+  "title": "Settings",
+  "search": "Search",
+  "close": "Close settings",
+  "sections": {
+    "tema": "Theme",
+    "cookies": "Cookies",
+    "idioma": "Language",
+    "animacoes": "Animations",
+    "cursor": "Cursor"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "enableDark": "Enable dark mode",
+    "enableLight": "Enable light mode",
+    "caption": "The same switch as the site footer — change it here, it changes there, and vice versa."
+  },
+  "cookies": {
+    "currentConsent": "Current consent",
+    "summaryAllAccepted": "All cookies accepted",
+    "summaryOptionalRefused": "Optional cookies declined",
+    "summaryCustom": "Custom preferences",
+    "summaryNotSet": "Not set yet (optional cookies active by default)",
+    "editButton": "Edit cookie preferences"
+  },
+  "animations": {
+    "caption": "These options only change the visual side of things. The site's content stays exactly the same, only how it moves on screen changes. If your computer is a bit older (or your browser just has a ton of tabs open), these effects can make browsing feel a little choppy. If that's the case, switching to \"Reduced animations\" or \"No animations\" makes the site noticeably lighter, without losing any information.",
+    "all": {
+      "label": "All animations",
+      "description": "Default site behavior, with no changes."
+    },
+    "reduced": {
+      "label": "Reduced animations",
+      "description": "Keeps the site's main transitions, but turns off extra glow and motion effects."
+    },
+    "none": {
+      "label": "No animations",
+      "description": "Turns off all of the site's motion, glow, and transition effects."
+    }
+  },
+  "cursor": {
+    "default": "Default",
+    "sword": "Diamond Sword",
+    "plane": "Paper Airplane",
+    "sukuna": "Sukuna",
+    "playstation": "PlayStation",
+    "comingSoon": "More options coming soon",
+    "caption": "The chosen cursor applies to the whole site (including over buttons and links) and is saved in this browser."
+  },
+  "language": {
+    "caption": "Choose the site language. Your preference is saved in this browser."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dialogLabel": "Cookie settings",
+  "title": "Cookie settings",
+  "close": "Close",
+  "description": "We use essential cookies to make the site work and, optionally, analytics and marketing cookies to understand how you use the site. You can adjust your preferences below at any time.",
+  "essentialLabel": "Essential",
+  "essentialDescription": "Required for the site to work. Always active.",
+  "analyticsLabel": "Analytics",
+  "analyticsDescription": "Help us understand how the site is used.",
+  "marketingLabel": "Marketing",
+  "marketingDescription": "Used for more relevant ads and content.",
+  "cancel": "Cancel",
+  "save": "Save preferences",
+  "saved": "Preferences saved",
+  "whatAreCookies": "What are cookies?",
+  "whatAreCookiesExplanation": "Cookies are small files the site stores in your browser. Essential cookies are required for the site to work (like remembering your theme and language). Analytics and marketing cookies, on the other hand, are optional: they help us understand how the site is used and show more relevant content, but you can decline them without affecting your browsing."
+}

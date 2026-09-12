@@ -1,0 +1,118 @@
+{
+  "chrome": {
+    "backLabel": "Início",
+    "updatedLabel": "Última atualização: {{date}}",
+    "disclaimer": "Este documento tem caráter informativo geral. Para uma revisão jurídica específica ao seu negócio, recomendamos consultar um advogado."
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidade",
+    "updated": "Setembro de 2026",
+    "intro": "Esta Política de Privacidade explica quais dados a All Frames Technology coleta através deste site, como esses dados são usados e quais são os seus direitos como titular, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).",
+    "sections": [
+      {
+        "heading": "1. Quais dados coletamos",
+        "body": [
+          "Dados que você nos informa diretamente: nome, telefone/WhatsApp, e-mail e, quando aplicável, endereço — ao entrar em contato para orçamento, suporte ou ao se inscrever na nossa newsletter.",
+          "Dados de navegação: informações técnicas básicas coletadas automaticamente (como tipo de dispositivo e páginas visitadas), usadas apenas para entender o uso do site e melhorar a experiência."
+        ]
+      },
+      {
+        "heading": "2. Para que usamos seus dados",
+        "body": [
+          "Responder pedidos de orçamento e dúvidas enviadas pelo WhatsApp, Instagram ou formulários do site.",
+          "Enviar comunicações que você optou por receber, como novidades por e-mail (newsletter) — você pode cancelar a qualquer momento.",
+          "Cumprir obrigações legais e fiscais relacionadas aos serviços prestados.",
+          "Nunca vendemos ou alugamos seus dados pessoais a terceiros."
+        ]
+      },
+      {
+        "heading": "3. Com quem compartilhamos",
+        "body": [
+          "Seus dados podem ser compartilhados com ferramentas que usamos para operar o site e o atendimento (como provedores de hospedagem, WhatsApp Business e serviços de e-mail para a newsletter), sempre limitado ao necessário para prestar o serviço.",
+          "Podemos compartilhar dados quando exigido por lei ou ordem judicial."
+        ]
+      },
+      {
+        "heading": "4. Cookies",
+        "body": [
+          "Usamos cookies essenciais para o funcionamento do site e, com o seu consentimento, cookies de análise e marketing. Você pode ajustar suas preferências a qualquer momento no link 'Configuração de Cookies' no rodapé do site."
+        ]
+      },
+      {
+        "heading": "5. Seus direitos",
+        "body": [
+          "Você pode solicitar, a qualquer momento: confirmação de que tratamos seus dados, acesso aos dados, correção de dados incompletos ou desatualizados, exclusão dos seus dados, e informações sobre com quem compartilhamos seus dados.",
+          "Para exercer qualquer um desses direitos, fale com a gente pelo WhatsApp ou Instagram informados no rodapé do site."
+        ]
+      },
+      {
+        "heading": "6. Segurança e armazenamento",
+        "body": [
+          "Adotamos medidas razoáveis para proteger seus dados contra acesso não autorizado, perda ou uso indevido. Os dados são mantidos apenas pelo tempo necessário para as finalidades descritas nesta política ou conforme exigido por lei."
+        ]
+      },
+      {
+        "heading": "7. Alterações desta política",
+        "body": [
+          "Esta política pode ser atualizada periodicamente. A data no topo desta página indica a versão mais recente."
+        ]
+      }
+    ]
+  },
+  "termsOfUse": {
+    "title": "Termos de Uso",
+    "updated": "Setembro de 2026",
+    "intro": "Estes Termos de Uso regulam o acesso e a utilização do site da All Frames Technology. Ao navegar neste site, você concorda com os termos descritos abaixo.",
+    "sections": [
+      {
+        "heading": "1. Sobre o site",
+        "body": [
+          "Este site tem caráter institucional e comercial: apresenta os serviços da All Frames Technology (montagem, reforma, personalização e suporte técnico de setups) e serve como canal para orçamentos e contato, feitos principalmente pelo WhatsApp."
+        ]
+      },
+      {
+        "heading": "2. Orçamentos e serviços",
+        "body": [
+          "Valores, prazos e disponibilidade de peças informados em conversas de orçamento não são vinculantes até a confirmação formal do pedido — condições de mercado e de fornecedores podem alterar preços e prazos.",
+          "Peças novas seguem a garantia de fábrica de cada fabricante. A mão de obra da montagem tem garantia própria da All Frames, conforme informado no momento do fechamento do orçamento."
+        ]
+      },
+      {
+        "heading": "3. Uso permitido do site",
+        "body": [
+          "Você concorda em não usar este site para fins ilegais, para tentar acessar áreas restritas sem autorização, ou para transmitir conteúdo malicioso."
+        ]
+      },
+      {
+        "heading": "4. Propriedade intelectual",
+        "body": [
+          "Textos, imagens, identidade visual e demais conteúdos deste site pertencem à All Frames Technology ou são usados com autorização. A reprodução sem permissão prévia não é permitida."
+        ]
+      },
+      {
+        "heading": "5. Links e serviços de terceiros",
+        "body": [
+          "Este site pode conter links para o WhatsApp, Instagram e outros serviços de terceiros. Não nos responsabilizamos pelo conteúdo ou pelas práticas de privacidade desses serviços externos."
+        ]
+      },
+      {
+        "heading": "6. Limitação de responsabilidade",
+        "body": [
+          "Fazemos o possível para manter as informações deste site atualizadas e corretas, mas não garantimos ausência total de erros. Em caso de dúvida sobre preços, prazos ou especificações, confirme diretamente pelo WhatsApp antes de decidir."
+        ]
+      },
+      {
+        "heading": "7. Alterações destes termos",
+        "body": [
+          "Estes termos podem ser atualizados periodicamente. A data no topo desta página indica a versão mais recente."
+        ]
+      },
+      {
+        "heading": "8. Contato",
+        "body": [
+          "Dúvidas sobre estes termos podem ser enviadas pelo WhatsApp ou Instagram informados no rodapé do site."
+        ]
+      }
+    ]
+  }
+}

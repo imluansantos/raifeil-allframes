@@ -1,0 +1,54 @@
+{
+  "title": "Impostazioni",
+  "search": "Cerca",
+  "close": "Chiudi impostazioni",
+  "sections": {
+    "tema": "Tema",
+    "cookies": "Cookie",
+    "idioma": "Lingua",
+    "animacoes": "Animazioni",
+    "cursor": "Cursore"
+  },
+  "theme": {
+    "light": "Modalità chiara",
+    "dark": "Modalità scura",
+    "enableDark": "Attiva modalità scura",
+    "enableLight": "Attiva modalità chiara",
+    "caption": "Lo stesso interruttore del footer del sito — cambialo qui, cambia anche lì, e viceversa."
+  },
+  "cookies": {
+    "currentConsent": "Consenso attuale",
+    "summaryAllAccepted": "Tutti i cookie accettati",
+    "summaryOptionalRefused": "Cookie opzionali rifiutati",
+    "summaryCustom": "Preferenze personalizzate",
+    "summaryNotSet": "Non ancora configurato (cookie opzionali attivi di default)",
+    "editButton": "Modifica preferenze cookie"
+  },
+  "animations": {
+    "caption": "Queste opzioni cambiano solo la parte visiva. Il contenuto del sito resta lo stesso, cambia solo come si muove sullo schermo. Se il computer è un po' più datato (o il browser ha semplicemente tante schede aperte), questi effetti possono far sembrare la navigazione un po' meno fluida. In quel caso conviene passare a \"Animazioni ridotte\" o \"Nessuna animazione\": il sito diventa decisamente più leggero, senza perdere nessuna informazione.",
+    "all": {
+      "label": "Tutte le animazioni",
+      "description": "Comportamento predefinito del sito, senza alcuna modifica."
+    },
+    "reduced": {
+      "label": "Animazioni ridotte",
+      "description": "Mantiene le transizioni principali del sito, ma disattiva gli effetti extra di bagliore e movimento."
+    },
+    "none": {
+      "label": "Nessuna animazione",
+      "description": "Disattiva tutti gli effetti di movimento, bagliore e transizione del sito."
+    }
+  },
+  "cursor": {
+    "default": "Predefinito",
+    "sword": "Spada di Diamante",
+    "plane": "Aeroplanino di Carta",
+    "sukuna": "Sukuna",
+    "playstation": "PlayStation",
+    "comingSoon": "Altre opzioni in arrivo",
+    "caption": "Il cursore scelto vale per l'intero sito (anche sopra pulsanti e link) ed è salvato in questo browser."
+  },
+  "language": {
+    "caption": "Scegli la lingua del sito. La tua preferenza viene salvata in questo browser."
+  }
+}

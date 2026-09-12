@@ -1,0 +1,28 @@
+{
+  "eyebrow": "06 · Testimonianze",
+  "title": "Chi è già passato dal negozio racconta com'è andata.",
+  "clientRole": "Cliente",
+  "ratingLabel": "{{rating}} su 5 stelle",
+  "prevLabel": "Testimonianza precedente",
+  "nextLabel": "Testimonianza successiva",
+  "quotes": {
+    "t01": "Hanno risolto il problema del mio PC con una diagnosi dettagliata in soli 2 giorni. Periferiche difficili da trovare e servizio eccellente!",
+    "t02": "Ci sono già stato un paio di volte e i ragazzi sono stati molto attenti, gente davvero a posto. Mi hanno dato consigli sul PC e mi sono sentito seguito benissimo.",
+    "t03": "Servizio eccellente e prodotti di ottima qualità! Il team è attento e sempre disponibile ad aiutare. Consigliatissimo!",
+    "t04": "Il servizio è stato ottimo, hanno lavorato con eccellenza e rapidità. Ben oltre le aspettative! Complimenti.",
+    "t05": "Servizio molto buono, lo consiglio! Ho portato il mio notebook in 3 centri assistenza della città, non l'hanno riparato, loro l'hanno risolto in giornata.",
+    "t06": "Servizio molto buono! Il ragazzo che mi ha assistito ha avuto molta pazienza e professionalità.",
+    "t07": "Sono entrato con un PC che non funzionava senza capire perché, e sono uscito con una macchina funzionante e praticamente laureato in assemblaggio, tanto erano buone le spiegazioni.",
+    "t08": "Il miglior negozio di Bento Gonçalves, i ragazzi molto educati, sempre disposti ad aiutare! Per periferiche e PC affidabili, solo da loro!",
+    "t09": "Meraviglioso! Servizio eccellente, prodotti di ottima qualità e ambiente super accogliente! Consigliatissimo!",
+    "t10": "Davvero forte, i ragazzi si danno subito da fare per aiutarti. Servizio 10 e lode. Mi hanno montato questa macchina. Nulla da dire.",
+    "t11": "Il migliore di Bento, solo cose buone, prezzi buoni, economici e giusti.",
+    "t12": "Posto molto bello, personale simpatico ed educato, tornerò sicuramente.",
+    "t13": "Mi serviva un PC per lavoro pesante e giochi. Il servizio ha superato le mie aspettative. È passato 1 anno e il PC è ancora una macchina inarrestabile.",
+    "t14": "Negozio ottimo con professionisti che aiutano tantissimo con i dubbi.",
+    "t15": "Gran lavoro, il team è 100% affidabile! Consigliato.",
+    "t16": "Semplicemente meraviglioso, uno dei migliori negozi aperti a Bento negli ultimi anni. Montano PC pazzeschi e il personale è gente davvero a posto!",
+    "t17": "Molto buono, ottima assistenza tecnica.",
+    "t18": "Ottimo servizio, lo consiglio vivamente!"
+  }
+}

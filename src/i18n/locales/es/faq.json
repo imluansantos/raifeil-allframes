@@ -1,0 +1,73 @@
+{
+  "eyebrow": "07 · Preguntas frecuentes",
+  "title": "Antes de preguntar, ya respondimos.",
+  "subtitle": "Las dudas que más llegan por WhatsApp, organizadas por tema.",
+  "sidebarLabel": "Base de conocimiento",
+  "bottomLink": "¿No encontraste tu respuesta? Escríbenos por WhatsApp",
+  "categories": [
+    {
+      "key": "budget",
+      "label": "Presupuesto y plazos",
+      "description": "Cómo funciona el presupuesto y cuánto tarda el armado.",
+      "questions": [
+        {
+          "question": "¿Cuánto tiempo lleva armar un setup?",
+          "answer": "Depende de la disponibilidad de las piezas, pero un armado estándar sale en 2 a 4 días hábiles después de aprobar el presupuesto. Si es un proyecto con water cooling personalizado o cableado sleeved a medida, el plazo se acuerda aparte."
+        },
+        {
+          "question": "¿Cómo funciona el presupuesto antes de confirmar el armado?",
+          "answer": "Nos cuentas lo que necesitas y armamos el presupuesto pieza por pieza, sin paquete cerrado. Cada cambio se explica antes de cualquier compra."
+        }
+      ]
+    },
+    {
+      "key": "assembly",
+      "label": "Armado y piezas",
+      "description": "Piezas, compatibilidad y cómo armamos tu setup.",
+      "questions": [
+        {
+          "question": "¿Arman con piezas que ya tengo?",
+          "answer": "Sí, aprovechamos lo que todavía tiene sentido en tu setup actual y sugerimos cambiar solo lo que realmente vale la pena. Nada de empujar piezas nuevas que no necesitas."
+        },
+        {
+          "question": "¿Necesito entender de hardware antes de pedir un armado?",
+          "answer": "No. Nos cuentas el juego que jugás o el programa que usás en el día a día, y te indicamos las piezas correctas para eso."
+        }
+      ]
+    },
+    {
+      "key": "payment",
+      "label": "Pago",
+      "description": "Formas de pago y cuotas.",
+      "questions": [
+        {
+          "question": "¿Se puede pagar el presupuesto en cuotas?",
+          "answer": "Sí, se puede. Ofrecemos cuotas con tarjeta y también aceptamos una seña más el saldo acordado. El valor final y las condiciones de pago vienen junto con el presupuesto, sin letra chica."
+        },
+        {
+          "question": "¿Qué formas de pago aceptan?",
+          "answer": "Tarjeta, Pix y efectivo. Las cuotas y condiciones se acuerdan junto con el presupuesto."
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "label": "Posventa y soporte",
+      "description": "Garantía, atención y soporte después de la entrega.",
+      "questions": [
+        {
+          "question": "¿Dan garantía en las piezas y en el servicio?",
+          "answer": "Sí. Las piezas nuevas salen con la garantía de fábrica de cada fabricante, y la mano de obra del armado tiene garantía propia de All Frames. Cualquier problema después de la entrega, hablás directo con quien lo armó. Sin tercerizar el soporte."
+        },
+        {
+          "question": "¿Tengo que llevar la PC a la tienda o ustedes la buscan?",
+          "answer": "Atendemos de forma presencial en Bento Gonçalves, pero también buscamos y entregamos en ciudades de la región. Para un mantenimiento puntual, podemos coordinar el retiro o podés traerla directo al taller."
+        },
+        {
+          "question": "¿Cómo funciona el soporte después de la entrega?",
+          "answer": "Posventa de por vida: una duda, un ruido raro o un futuro upgrade, nos escribís por WhatsApp y te atiende quien armó tu PC, no un guion de central de atención."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "chrome": {
+    "backLabel": "Startseite",
+    "updatedLabel": "Zuletzt aktualisiert: {{date}}",
+    "disclaimer": "Dieses Dokument dient nur allgemeinen Informationszwecken. Für eine rechtliche Prüfung, die speziell auf dein Unternehmen zugeschnitten ist, empfehlen wir, einen Anwalt zu konsultieren."
+  },
+  "privacyPolicy": {
+    "title": "Datenschutzerklärung",
+    "updated": "September 2026",
+    "intro": "Diese Datenschutzerklärung erklärt, welche Daten All Frames Technology über diese Website erhebt, wie diese Daten verwendet werden und welche Rechte du als betroffene Person hast, gemäß dem brasilianischen Allgemeinen Datenschutzgesetz (LGPD — Gesetz Nr. 13.709/2018).",
+    "sections": [
+      {
+        "heading": "1. Welche Daten wir erheben",
+        "body": [
+          "Daten, die du uns direkt mitteilst: Name, Telefon-/WhatsApp-Nummer, E-Mail und, falls zutreffend, Adresse — wenn du uns für ein Angebot oder Support kontaktierst oder dich für unseren Newsletter anmeldest.",
+          "Nutzungsdaten: automatisch erfasste, grundlegende technische Informationen (wie Gerätetyp und besuchte Seiten), die nur dazu dienen, die Nutzung der Website zu verstehen und die Erfahrung zu verbessern."
+        ]
+      },
+      {
+        "heading": "2. Wofür wir deine Daten verwenden",
+        "body": [
+          "Um Angebotsanfragen und Fragen zu beantworten, die über WhatsApp, Instagram oder die Formulare der Website gesendet werden.",
+          "Um Mitteilungen zu senden, die du abonniert hast, wie z. B. Neuigkeiten per E-Mail (Newsletter) — du kannst dich jederzeit abmelden.",
+          "Um rechtliche und steuerliche Pflichten im Zusammenhang mit den erbrachten Dienstleistungen zu erfüllen.",
+          "Wir verkaufen oder vermieten deine personenbezogenen Daten niemals an Dritte."
+        ]
+      },
+      {
+        "heading": "3. Mit wem wir Daten teilen",
+        "body": [
+          "Deine Daten können mit Tools geteilt werden, die wir zum Betrieb der Website und des Kundendienstes nutzen (wie Hosting-Anbieter, WhatsApp Business und E-Mail-Dienste für den Newsletter), immer beschränkt auf das für die Erbringung der Dienstleistung Notwendige.",
+          "Wir können Daten weitergeben, wenn dies gesetzlich oder durch gerichtliche Anordnung vorgeschrieben ist."
+        ]
+      },
+      {
+        "heading": "4. Cookies",
+        "body": [
+          "Wir verwenden essenzielle Cookies für die Funktion der Website und, mit deiner Zustimmung, Analyse- und Marketing-Cookies. Du kannst deine Einstellungen jederzeit über den Link „Cookie-Einstellungen“ in der Fußzeile der Website anpassen."
+        ]
+      },
+      {
+        "heading": "5. Deine Rechte",
+        "body": [
+          "Du kannst jederzeit Folgendes verlangen: Bestätigung, dass wir deine Daten verarbeiten, Zugang zu den Daten, Berichtigung unvollständiger oder veralteter Daten, Löschung deiner Daten und Informationen darüber, mit wem wir deine Daten teilen.",
+          "Um eines dieser Rechte auszuüben, wende dich an uns über WhatsApp oder Instagram, die in der Fußzeile der Website angegeben sind."
+        ]
+      },
+      {
+        "heading": "6. Sicherheit und Speicherung",
+        "body": [
+          "Wir ergreifen angemessene Maßnahmen, um deine Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen. Die Daten werden nur so lange aufbewahrt, wie es für die in dieser Richtlinie beschriebenen Zwecke erforderlich ist oder gesetzlich vorgeschrieben ist."
+        ]
+      },
+      {
+        "heading": "7. Änderungen dieser Richtlinie",
+        "body": [
+          "Diese Richtlinie kann von Zeit zu Zeit aktualisiert werden. Das Datum oben auf dieser Seite zeigt die aktuellste Version an."
+        ]
+      }
+    ]
+  },
+  "termsOfUse": {
+    "title": "Nutzungsbedingungen",
+    "updated": "September 2026",
+    "intro": "Diese Nutzungsbedingungen regeln den Zugriff auf und die Nutzung der Website von All Frames Technology. Durch das Durchsuchen dieser Website stimmst du den unten beschriebenen Bedingungen zu.",
+    "sections": [
+      {
+        "heading": "1. Über die Website",
+        "body": [
+          "Diese Website hat institutionellen und kommerziellen Charakter: Sie stellt die Dienstleistungen von All Frames Technology vor (individuelle PC-Builds, Upgrades, Personalisierung und technischer Support) und dient als Kanal für Angebote und Kontakt, hauptsächlich über WhatsApp."
+        ]
+      },
+      {
+        "heading": "2. Angebote und Dienstleistungen",
+        "body": [
+          "In Angebotsgesprächen mitgeteilte Preise, Fristen und Teileverfügbarkeit sind bis zur formellen Bestätigung der Bestellung nicht bindend — Markt- und Lieferantenbedingungen können Preise und Fristen ändern.",
+          "Neue Teile unterliegen der Werksgarantie des jeweiligen Herstellers. Die Montagearbeit hat eine eigene Garantie von All Frames, wie beim Abschluss des Angebots mitgeteilt."
+        ]
+      },
+      {
+        "heading": "3. Erlaubte Nutzung der Website",
+        "body": [
+          "Du stimmst zu, diese Website nicht für rechtswidrige Zwecke zu nutzen, nicht zu versuchen, ohne Genehmigung auf eingeschränkte Bereiche zuzugreifen, und keine schädlichen Inhalte zu übertragen."
+        ]
+      },
+      {
+        "heading": "4. Geistiges Eigentum",
+        "body": [
+          "Texte, Bilder, visuelle Identität und andere Inhalte dieser Website gehören All Frames Technology oder werden mit Genehmigung verwendet. Eine Vervielfältigung ohne vorherige Erlaubnis ist nicht gestattet."
+        ]
+      },
+      {
+        "heading": "5. Links und Dienste Dritter",
+        "body": [
+          "Diese Website kann Links zu WhatsApp, Instagram und anderen Diensten Dritter enthalten. Wir sind nicht verantwortlich für den Inhalt oder die Datenschutzpraktiken dieser externen Dienste."
+        ]
+      },
+      {
+        "heading": "6. Haftungsbeschränkung",
+        "body": [
+          "Wir bemühen uns, die Informationen auf dieser Website aktuell und korrekt zu halten, garantieren jedoch nicht die vollständige Fehlerfreiheit. Bei Fragen zu Preisen, Fristen oder Spezifikationen bestätige bitte direkt über WhatsApp, bevor du dich entscheidest."
+        ]
+      },
+      {
+        "heading": "7. Änderungen dieser Bedingungen",
+        "body": [
+          "Diese Bedingungen können von Zeit zu Zeit aktualisiert werden. Das Datum oben auf dieser Seite zeigt die aktuellste Version an."
+        ]
+      },
+      {
+        "heading": "8. Kontakt",
+        "body": [
+          "Fragen zu diesen Bedingungen können über WhatsApp oder Instagram, die in der Fußzeile der Website angegeben sind, gesendet werden."
+        ]
+      }
+    ]
+  }
+}

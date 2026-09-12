@@ -1,0 +1,24 @@
+{
+  "title": "Unser Team",
+  "subtitle": "Wer im Alltag alles am Laufen hält.",
+  "expandAriaLabel": "Mehr über die Rolle ansehen",
+  "backLabel": "Zurück",
+  "members": {
+    "luiz": {
+      "role": "Finanzen · Technischer Support",
+      "bio": "Hält den Betrieb in Ordnung und packt selbst mit an, wenn Hardware eine Diagnose braucht."
+    },
+    "joao": {
+      "role": "Vertrieb · Kundenbeziehungen",
+      "bio": "Der erste und auch der letzte Kontakt: begleitet jedes Projekt vom Angebot bis zum After-Sales-Service."
+    },
+    "rai": {
+      "role": "Marketing · E-Commerce",
+      "bio": "Kümmert sich um die Markenpräsenz und das Einkaufserlebnis, von Instagram bis zur Lieferung."
+    },
+    "gabriel": {
+      "role": "Videograf · Content-Produktion",
+      "bio": "Dokumentiert jeden Build. Wenn das Setup gut aussieht, gibt er dafür grünes Licht."
+    }
+  }
+}

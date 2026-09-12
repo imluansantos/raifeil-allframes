@@ -1,0 +1,73 @@
+{
+  "eyebrow": "07 · Perguntas frequentes",
+  "title": "Antes de perguntar, já respondemos.",
+  "subtitle": "As dúvidas que mais chegam pelo WhatsApp, organizadas por assunto.",
+  "sidebarLabel": "Base de conhecimento",
+  "bottomLink": "Não achou sua resposta? Chama no WhatsApp",
+  "categories": [
+    {
+      "key": "budget",
+      "label": "Orçamento e prazos",
+      "description": "Como funciona o orçamento e quanto tempo leva a montagem.",
+      "questions": [
+        {
+          "question": "Quanto tempo leva pra montar um setup?",
+          "answer": "Depende da disponibilidade das peças, mas uma montagem padrão sai em 2 a 4 dias úteis depois que o orçamento é fechado. Se for um projeto com water cooling custom ou cabos sleeved sob medida, o prazo é combinado à parte."
+        },
+        {
+          "question": "Como funciona o orçamento antes de fechar a montagem?",
+          "answer": "Você conta o que precisa e a gente monta o orçamento peça por peça, sem pacote fechado. Cada troca é explicada antes de qualquer compra."
+        }
+      ]
+    },
+    {
+      "key": "assembly",
+      "label": "Montagem e peças",
+      "description": "Peças, compatibilidade e como montamos o seu setup.",
+      "questions": [
+        {
+          "question": "Vocês montam com peças que eu já tenho?",
+          "answer": "Sim, aproveitamos o que ainda faz sentido no seu setup atual e sugerimos troca só do que realmente compensa. Nada de empurrar peça nova que você não precisa."
+        },
+        {
+          "question": "Preciso entender de hardware antes de pedir uma montagem?",
+          "answer": "Não. Você conta o jogo que joga ou o programa que roda no dia a dia, e a gente indica as peças certas pra isso."
+        }
+      ]
+    },
+    {
+      "key": "payment",
+      "label": "Pagamento",
+      "description": "Formas de pagamento e parcelamento.",
+      "questions": [
+        {
+          "question": "Dá pra parcelar o orçamento?",
+          "answer": "Dá sim. Parcelamos no cartão e também aceitamos entrada + saldo combinado. O valor final e as condições de pagamento vêm junto com o orçamento, sem pegadinha."
+        },
+        {
+          "question": "Quais formas de pagamento vocês aceitam?",
+          "answer": "Cartão, Pix e dinheiro. O parcelamento e as condições ficam combinados junto com o orçamento."
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "label": "Pós-venda e suporte",
+      "description": "Garantia, atendimento e suporte depois da entrega.",
+      "questions": [
+        {
+          "question": "Vocês dão garantia nas peças e no serviço?",
+          "answer": "Sim. Peças novas saem com a garantia de fábrica de cada fabricante, e a mão de obra da montagem tem garantia própria da All Frames. Qualquer problema depois da entrega, você fala com quem montou. Sem terceirizar o suporte."
+        },
+        {
+          "question": "Preciso levar o PC até a loja ou vocês buscam?",
+          "answer": "Atendemos presencialmente em Bento Gonçalves, mas também buscamos e entregamos em cidades da região. Pra manutenção pontual, dá pra combinar retirada ou você traz direto na oficina."
+        },
+        {
+          "question": "Como funciona o suporte depois da entrega?",
+          "answer": "Pós-venda vitalício: dúvida, ruído estranho ou upgrade futuro, você chama no WhatsApp e é atendido por quem montou o seu PC, não por um script de central de atendimento."
+        }
+      ]
+    }
+  ]
+}

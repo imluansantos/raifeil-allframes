@@ -1,0 +1,23 @@
+{
+  "eyebrow": "02 · Cosa facciamo",
+  "title": "Cosa facciamo.",
+  "subtitle": "Trattiamo ogni setup come un'estensione dell'identità di chi lo usa, dal primo preventivo all'assistenza post-vendita.",
+  "cards": {
+    "montagem-de-setups": {
+      "title": "Montaggio di Setup",
+      "lead": "Setup montati da zero con i migliori componenti per il tuo profilo e budget."
+    },
+    "reforma-e-upgrade": {
+      "title": "Rinnovo e Upgrade",
+      "lead": "Aggiorniamo il tuo setup attuale per renderlo più veloce, potente e moderno."
+    },
+    "personalizacao": {
+      "title": "Personalizzazione",
+      "lead": "Trasformiamo il tuo setup in un'estensione della tua identità, con estetica e RGB."
+    },
+    "suporte-tecnico": {
+      "title": "Assistenza Tecnica",
+      "lead": "Nessun cliente dimenticato. Siamo sempre qui per risolvere."
+    }
+  }
+}
