@@ -107,7 +107,7 @@
     },
     "frostline": {
       "shortDescription": "Ein weißes Gehäuse mit Cooler-Master-Wasserkühlung, pinkem RGB-Arbeitsspeicher und einer sichtbaren GeForce RTX.",
-      "description": "Ein reinweißer Build mit goldenen Akzenten am Gehäuse, Cooler-Master-Wasserkühlung, einem ASRock-Steel-Legend-Mainboard und pink/violettem Kingston-Fury-RGB-Arbeitsspeicher — der einzige gesättigte Farbtupfer inmitten der weißen Lüfter. Eine GeForce RTX mit weißem Sleeved-Kabel und eine Ghostface-Figur, die die Seite der Grafikkarte schmückt.",
+      "description": "Ein reinweißer Build mit goldenen Akzenten am Gehäuse, Cooler-Master-Wasserkühlung, einem ASRock-Steel-Legend-Mainboard und pink/violettem Kingston-Fury-RGB-Arbeitsspeicher, der einzige gesättigte Farbtupfer inmitten der weißen Lüfter. Eine GeForce RTX mit weißem Sleeved-Kabel und eine Ghostface-Figur, die die Seite der Grafikkarte schmückt.",
       "objective": "Ein reinweißer Build mit einem einzigen Farbakzent beim Arbeitsspeicher.",
       "specs": {
         "gpu": "NVIDIA GeForce RTX",

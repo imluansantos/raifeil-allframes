@@ -46,7 +46,9 @@
     "sukuna": "Sukuna",
     "playstation": "PlayStation",
     "comingSoon": "Más opciones próximamente",
-    "caption": "El cursor elegido se aplica a todo el sitio (incluso sobre botones y enlaces) y se guarda en este navegador."
+    "caption": "El cursor elegido se aplica a todo el sitio (incluso sobre botones y enlaces) y se guarda en este navegador.",
+    "desktopOnlyTitle": "Solo disponible en computadora",
+    "desktopOnlyDescription": "El cursor personalizado depende del mouse. Como en el celular la navegación es táctil, esta opción solo está disponible al acceder al sitio desde una computadora."
   },
   "language": {
     "caption": "Elige el idioma del sitio. Tu preferencia se guarda en este navegador."

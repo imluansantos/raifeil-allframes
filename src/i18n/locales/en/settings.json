@@ -14,7 +14,7 @@
     "dark": "Dark mode",
     "enableDark": "Enable dark mode",
     "enableLight": "Enable light mode",
-    "caption": "The same switch as the site footer — change it here, it changes there, and vice versa."
+    "caption": "The same switch as the site footer: change it here, it changes there, and vice versa."
   },
   "cookies": {
     "currentConsent": "Current consent",
@@ -46,7 +46,9 @@
     "sukuna": "Sukuna",
     "playstation": "PlayStation",
     "comingSoon": "More options coming soon",
-    "caption": "The chosen cursor applies to the whole site (including over buttons and links) and is saved in this browser."
+    "caption": "The chosen cursor applies to the whole site (including over buttons and links) and is saved in this browser.",
+    "desktopOnlyTitle": "Only available on computers",
+    "desktopOnlyDescription": "Custom cursors need a mouse. Since phones and tablets are touch-based, this option is only available when you visit the site from a computer."
   },
   "language": {
     "caption": "Choose the site language. Your preference is saved in this browser."

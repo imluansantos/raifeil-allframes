@@ -14,7 +14,7 @@
     "dark": "Dunkler Modus",
     "enableDark": "Dunklen Modus aktivieren",
     "enableLight": "Hellen Modus aktivieren",
-    "caption": "Derselbe Schalter wie in der Fußzeile der Website — hier ändern, ändert sich dort, und umgekehrt."
+    "caption": "Derselbe Schalter wie in der Fußzeile der Website: hier ändern, ändert sich dort, und umgekehrt."
   },
   "cookies": {
     "currentConsent": "Aktuelle Zustimmung",
@@ -46,7 +46,9 @@
     "sukuna": "Sukuna",
     "playstation": "PlayStation",
     "comingSoon": "Weitere Optionen bald verfügbar",
-    "caption": "Der gewählte Cursor gilt für die gesamte Website (auch über Schaltflächen und Links) und wird in diesem Browser gespeichert."
+    "caption": "Der gewählte Cursor gilt für die gesamte Website (auch über Schaltflächen und Links) und wird in diesem Browser gespeichert.",
+    "desktopOnlyTitle": "Nur am Computer verfügbar",
+    "desktopOnlyDescription": "Ein benutzerdefinierter Cursor braucht eine Maus. Da auf Handy und Tablet per Touch navigiert wird, ist diese Option nur verfügbar, wenn du die Website vom Computer aus aufrufst."
   },
   "language": {
     "caption": "Wähle die Sprache der Website. Deine Einstellung wird in diesem Browser gespeichert."

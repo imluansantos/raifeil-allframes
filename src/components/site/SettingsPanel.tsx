@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import {
   Cookie,
   Globe,
+  Laptop,
   MousePointer2,
   Moon,
   Settings,
@@ -312,6 +313,11 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
 
                   {active === "cursor" && (
                     <div className="max-w-md">
+                      {/* grade de opções — some no mobile (<sm): cursor
+                          personalizado depende de mouse, então em telas de
+                          toque mostramos só o aviso "só no computador" logo
+                          abaixo, no lugar da grade. */}
+                      <div className="hidden sm:block">
                       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                         {CURSOR_OPTIONS.map((opt) => (
                           <button
@@ -379,6 +385,22 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
                       <p className="mt-3 text-[11.5px] leading-relaxed text-muted-foreground/70">
                         {t("cursor.caption")}
                       </p>
+                      </div>
+
+                      {/* aviso mobile — mesmo espírito do placeholder "coming
+                          soon" acima (borda tracejada, não é clicável): cursor
+                          customizado não faz sentido em tela de toque, então
+                          avisamos que a função é exclusiva do computador em
+                          vez de esconder a seção inteira. */}
+                      <div className="flex flex-col items-center gap-3 rounded-lg border border-dashed border-border p-6 text-center sm:hidden">
+                        <Laptop className="size-6 text-muted-foreground/50" aria-hidden />
+                        <p className="text-[13px] font-semibold text-foreground">
+                          {t("cursor.desktopOnlyTitle")}
+                        </p>
+                        <p className="text-[12px] leading-relaxed text-muted-foreground">
+                          {t("cursor.desktopOnlyDescription")}
+                        </p>
+                      </div>
                     </div>
                   )}
                 </div>

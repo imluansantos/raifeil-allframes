@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { ArrowUpRight, ChevronDown, MapPin, MousePointerClick, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SectionFade } from "@/components/site/SectionFade";
@@ -32,6 +33,27 @@ export function AboutUs() {
   const [dismissed, setDismissed] = useState(false);
   const locationOpen = showLocation || ((hovering || focused) && !dismissed);
 
+  // Guarda o tipo do último ponteiro que tocou o card (mouse/touch/caneta),
+  // atualizado bem cedo (pointerdown chega antes de focus/click). É o que
+  // deixa o onFocus abaixo saber se o foco veio de um toque ou de verdade
+  // do teclado/mouse — ver comentário ali pra entender por que isso importa.
+  const lastPointerTypeRef = useRef<"mouse" | "touch" | "pen" | null>(null);
+
+  // Segunda camada de proteção, independente da de cima: mesmo já filtrando
+  // hover/foco por pointerType, um toque real ainda dispara uma sequência de
+  // eventos (pointerover/enter/down → foco → up/out/leave → mousemove/down/up
+  // → click) num intervalo de tempo curtíssimo. Se, por qualquer motivo (um
+  // navegador específico, uma variação na ordem desses eventos), o clique
+  // "de verdade" acabar sendo entregue depois que o pop-out já apareceu na
+  // tela, ele pode cair em cima do iframe do mapa ou do link — que estão na
+  // MESMA posição do dedo. Pra isso nunca acontecer, o cartão do pop-out
+  // (iframe + link "Ver no Google Maps") só aceita clique um instante depois
+  // de abrir (`popupInteractive`); até lá ele fica com pointer-events
+  // desativado. Esse atraso é curto demais pra um usuário notar ao tentar
+  // clicar de propósito, mas suficiente pra nunca coincidir com o clique que
+  // acabou de abrir o próprio pop-out.
+  const [popupInteractive, setPopupInteractive] = useState(false);
+
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -47,6 +69,17 @@ export function AboutUs() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
+  // liga `popupInteractive` só um pouco depois do pop-out abrir, e desliga
+  // na hora se ele fechar — ver comentário acima de `popupInteractive`.
+  useEffect(() => {
+    if (!locationOpen) {
+      setPopupInteractive(false);
+      return;
+    }
+    const id = setTimeout(() => setPopupInteractive(true), 400);
+    return () => clearTimeout(id);
+  }, [locationOpen]);
 
   return (
     <section id="sobre" ref={sectionRef} className="relative">
@@ -134,11 +167,34 @@ export function AboutUs() {
                 setShowLocation((v) => !v);
               }
             }}
-            onMouseEnter={() => {
+            // pointerdown chega bem antes de focus/click na sequência que o
+            // navegador emula a partir de um toque — é o sinal mais cedo que
+            // temos do tipo real do ponteiro, por isso guardamos aqui pro
+            // onFocus (abaixo) poder consultar.
+            onPointerDown={(e: ReactPointerEvent<HTMLDivElement>) => {
+              lastPointerTypeRef.current = e.pointerType as "mouse" | "touch" | "pen";
+            }}
+            // onPointerEnter/Leave (não onMouseEnter/Leave) de propósito, com
+            // filtro por pointerType: um toque no celular também dispara
+            // eventos de mouse "sintéticos" (o navegador emula
+            // mouseover/mousemove/mousedown/focus/mouseup antes do click, pra
+            // conseguir simular clique em cima de elementos com hover). Sem
+            // esse filtro, um simples toque na foto já contava como
+            // "mouseenter" e abria o pop-out ANTES do click terminar — e
+            // então o click "de verdade" (o passo final dessa sequência)
+            // acabava sendo entregue pro que já tinha acabado de aparecer ali
+            // (o iframe do Google Maps ou o link "Ver no Google Maps"), já
+            // que a posição na tela é a mesma. Resultado: tocar a foto
+            // redirecionava direto pro Google Maps. Com o filtro, só mouse de
+            // verdade abre por hover — toque abre só pelo onClick normal
+            // (que já funciona certinho, sem esse problema).
+            onPointerEnter={(e: ReactPointerEvent<HTMLDivElement>) => {
+              if (e.pointerType !== "mouse") return;
               setHovering(true);
               setDismissed(false);
             }}
-            onMouseLeave={() => {
+            onPointerLeave={(e: ReactPointerEvent<HTMLDivElement>) => {
+              if (e.pointerType !== "mouse") return;
               // não reseta `dismissed` aqui: o clique no X deixa o próprio
               // botão com foco (comportamento normal do navegador), então
               // se isso reabilitasse o hover, o pop-out reabria assim que
@@ -146,6 +202,12 @@ export function AboutUs() {
               setHovering(false);
             }}
             onFocus={() => {
+              // mesmo motivo do onPointerEnter acima: focus também chega
+              // antes do click numa sequência emulada por toque, então um
+              // toque real (ou caneta) não deve abrir o pop-out por aqui —
+              // só clique/toque no onClick, ou foco de verdade vindo do
+              // teclado (Tab), que não passa por pointerdown antes.
+              if (lastPointerTypeRef.current === "touch" || lastPointerTypeRef.current === "pen") return;
               setFocused(true);
               setDismissed(false);
             }}
@@ -161,39 +223,45 @@ export function AboutUs() {
             // real antes de aplicar: 3/2 é o suficiente pra cortar o céu e
             // o prédio bege de cima inteiros, começando já dentro do mural
             // e indo até a calçada, igual à referência.
-            className="group relative aspect-[3/2] w-full cursor-pointer overflow-hidden rounded-md border border-border bg-surface"
+            //
+            // OBS: o overflow-hidden NÃO fica mais aqui no container — ele
+            // foi para o wrapper interno (só em volta da imagem). Isso é
+            // proposital: o card do mapa (imagem + endereço) é mais alto
+            // que essa caixa 3/2, e como ele fica centralizado por cima via
+            // flex, a parte de cima dele (onde mora o botão "X") acabava
+            // cortada pelo overflow-hidden do container — daí o "X" sumir
+            // assim que o mapa carregava de verdade. Com o corte restrito
+            // à imagem, o card do mapa pode "vazar" um pouco pra fora da
+            // caixa da foto sem nada ficar invisível.
+            className="group relative aspect-[3/2] w-full cursor-pointer rounded-md border border-border bg-surface"
           >
-            <img
-              src={storefront}
-              alt={t("storeAlt")}
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 size-full object-cover object-[50%_60%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent p-4 md:p-5">
-              <span className="font-mono text-[10px] tracking-[0.15em] text-white/85 uppercase">
-                {t("storeCaption")}
+            <div className="absolute inset-0 overflow-hidden rounded-md">
+              <img
+                src={storefront}
+                alt={t("storeAlt")}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 size-full object-cover object-[50%_60%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+              {/* dica — desktop pede pra passar o mouse, mobile pede pra tocar;
+                  some assim que o mapa abre (por hover, foco ou toque) */}
+              <span
+                className={`pointer-events-none absolute top-4 right-4 z-20 hidden items-center gap-1.5 rounded-md border border-white/20 bg-black/45 px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.1em] text-white uppercase backdrop-blur-sm transition-opacity duration-300 md:inline-flex ${
+                  locationOpen ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                <MousePointerClick className="size-3.5 shrink-0" aria-hidden />
+                {t("hoverHint")}
+              </span>
+              <span
+                className={`pointer-events-none absolute top-4 right-4 z-20 inline-flex items-center gap-1.5 rounded-md border border-white/20 bg-black/45 px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.1em] text-white uppercase backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+                  locationOpen ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                <MapPin className="size-3.5 shrink-0" aria-hidden />
+                {t("tapHint")}
               </span>
             </div>
-
-            {/* dica — desktop pede pra passar o mouse, mobile pede pra tocar;
-                some assim que o mapa abre (por hover, foco ou toque) */}
-            <span
-              className={`pointer-events-none absolute top-4 right-4 z-20 hidden items-center gap-1.5 rounded-md border border-white/20 bg-black/45 px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.1em] text-white uppercase backdrop-blur-sm transition-opacity duration-300 md:inline-flex ${
-                locationOpen ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              <MousePointerClick className="size-3.5 shrink-0" aria-hidden />
-              {t("hoverHint")}
-            </span>
-            <span
-              className={`pointer-events-none absolute top-4 right-4 z-20 inline-flex items-center gap-1.5 rounded-md border border-white/20 bg-black/45 px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.1em] text-white uppercase backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-                locationOpen ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              <MapPin className="size-3.5 shrink-0" aria-hidden />
-              {t("tapHint")}
-            </span>
 
             {/* pop-out de localização — aparece ao passar o mouse/focar (desktop) ou
                 ao tocar na foto (mobile, via o estado showLocation); o "X" força o
@@ -203,7 +271,11 @@ export function AboutUs() {
                 locationOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <div className="relative pointer-events-auto w-full max-w-[400px] overflow-hidden rounded-md border border-white/15 bg-background text-left shadow-2xl">
+              <div
+                className={`relative w-full max-w-[400px] overflow-hidden rounded-md border border-white/15 bg-background text-left shadow-2xl ${
+                  popupInteractive ? "pointer-events-auto" : "pointer-events-none"
+                }`}
+              >
                 <button
                   type="button"
                   aria-label={t("closeMapAriaLabel")}

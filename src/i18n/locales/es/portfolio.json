@@ -107,7 +107,7 @@
     },
     "frostline": {
       "shortDescription": "Gabinete blanco con water cooler Cooler Master, memoria RGB rosa y una GeForce RTX a la vista.",
-      "description": "Build all-white con detalles dorados en el gabinete, water cooling Cooler Master, placa madre ASRock Steel Legend y memoria Kingston Fury RGB en rosa/violeta — el único punto de color saturado entre los fans blancos. GPU GeForce RTX con cable sleeved blanco y un Ghostface decorando el lateral de la placa de video.",
+      "description": "Build all-white con detalles dorados en el gabinete, water cooling Cooler Master, placa madre ASRock Steel Legend y memoria Kingston Fury RGB en rosa/violeta, el único punto de color saturado entre los fans blancos. GPU GeForce RTX con cable sleeved blanco y un Ghostface decorando el lateral de la placa de video.",
       "objective": "Build all-white con un punto de contraste de color en la memoria RAM.",
       "specs": {
         "gpu": "NVIDIA GeForce RTX",

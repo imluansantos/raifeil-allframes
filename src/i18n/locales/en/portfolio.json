@@ -107,7 +107,7 @@
     },
     "frostline": {
       "shortDescription": "A white case with a Cooler Master water cooler, pink RGB memory and an exposed GeForce RTX.",
-      "description": "An all-white build with gold accents on the case, Cooler Master water cooling, an ASRock Steel Legend motherboard and pink/purple Kingston Fury RGB memory — the only saturated splash of color among the white fans. A GeForce RTX with white sleeved cabling and a Ghostface figure decorating the side of the graphics card.",
+      "description": "An all-white build with gold accents on the case, Cooler Master water cooling, an ASRock Steel Legend motherboard and pink/purple Kingston Fury RGB memory, the only saturated splash of color among the white fans. A GeForce RTX with white sleeved cabling and a Ghostface figure decorating the side of the graphics card.",
       "objective": "An all-white build with a single color accent on the RAM.",
       "specs": {
         "gpu": "NVIDIA GeForce RTX",

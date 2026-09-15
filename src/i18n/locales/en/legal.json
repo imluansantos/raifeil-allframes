@@ -7,12 +7,12 @@
   "privacyPolicy": {
     "title": "Privacy Policy",
     "updated": "September 2026",
-    "intro": "This Privacy Policy explains what data All Frames Technology collects through this website, how that data is used, and what your rights are as a data subject, in accordance with Brazil's General Data Protection Law (LGPD — Law No. 13,709/2018).",
+    "intro": "This Privacy Policy explains what data All Frames Technology collects through this website, how that data is used, and what your rights are as a data subject, in accordance with Brazil's General Data Protection Law (LGPD, Law No. 13,709/2018).",
     "sections": [
       {
         "heading": "1. What data we collect",
         "body": [
-          "Data you give us directly: name, phone/WhatsApp number, email and, when applicable, address — when you contact us for a quote or support, or when you sign up for our newsletter.",
+          "Data you give us directly: name, phone/WhatsApp number, email and, when applicable, address, when you contact us for a quote or support, or when you sign up for our newsletter.",
           "Browsing data: basic technical information collected automatically (such as device type and pages visited), used only to understand site usage and improve the experience."
         ]
       },
@@ -20,7 +20,7 @@
         "heading": "2. What we use your data for",
         "body": [
           "Responding to quote requests and questions sent through WhatsApp, Instagram or the website's forms.",
-          "Sending communications you've opted in to receive, such as email updates (newsletter) — you can unsubscribe at any time.",
+          "Sending communications you've opted in to receive, such as email updates (newsletter). You can unsubscribe at any time.",
           "Meeting legal and tax obligations related to the services provided.",
           "We never sell or rent your personal data to third parties."
         ]
@@ -73,7 +73,7 @@
       {
         "heading": "2. Quotes and services",
         "body": [
-          "Prices, timelines and parts availability shared in quote conversations aren't binding until the order is formally confirmed — market and supplier conditions can change prices and timelines.",
+          "Prices, timelines and parts availability shared in quote conversations aren't binding until the order is formally confirmed. Market and supplier conditions can change prices and timelines.",
           "New parts follow each manufacturer's factory warranty. Assembly labor carries All Frames' own warranty, as informed when the quote is finalized."
         ]
       },

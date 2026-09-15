@@ -146,11 +146,19 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="group relative hidden items-center gap-2 overflow-hidden rounded-full bg-white px-4.5 py-2.5 text-[11px] font-bold tracking-[0.1em] text-black uppercase shadow-[0_6px_24px_-8px] shadow-black/40 transition-all hover:bg-white/90 md:inline-flex"
+            // mesmo efeito de hover do CTA principal da Hero (Hero.tsx,
+            // "MONTAR MEU SETUP"): sombra mais funda + o "brilho" diagonal
+            // varrendo o pill, em vez do simples escurecimento de fundo que
+            // esse botão tinha antes. Padroniza a animação dos dois botões.
+            className="group relative hidden items-center gap-2 overflow-hidden rounded-full bg-white px-4.5 py-2.5 text-[11px] font-bold tracking-[0.1em] text-black uppercase shadow-[0_6px_24px_-8px] shadow-black/40 transition-all hover:shadow-black/60 md:inline-flex"
           >
             <WhatsAppIcon className="relative z-10 size-3.5" />
             <span className="relative z-10">{t("talkToUs")}</span>
             <ArrowUpRight className="relative z-10 size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span
+              className="absolute inset-0 -translate-x-full bg-black/10 transition-transform duration-700 ease-out group-hover:translate-x-full"
+              style={{ transform: "skewX(-20deg)" }}
+            />
           </a>
 
           {/* engrenagem — abre o painel de Configurações (SettingsPanel.tsx):

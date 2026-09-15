@@ -14,7 +14,7 @@
     "dark": "Modalità scura",
     "enableDark": "Attiva modalità scura",
     "enableLight": "Attiva modalità chiara",
-    "caption": "Lo stesso interruttore del footer del sito — cambialo qui, cambia anche lì, e viceversa."
+    "caption": "Lo stesso interruttore del footer del sito: cambialo qui, cambia anche lì, e viceversa."
   },
   "cookies": {
     "currentConsent": "Consenso attuale",
@@ -46,7 +46,9 @@
     "sukuna": "Sukuna",
     "playstation": "PlayStation",
     "comingSoon": "Altre opzioni in arrivo",
-    "caption": "Il cursore scelto vale per l'intero sito (anche sopra pulsanti e link) ed è salvato in questo browser."
+    "caption": "Il cursore scelto vale per l'intero sito (anche sopra pulsanti e link) ed è salvato in questo browser.",
+    "desktopOnlyTitle": "Disponibile solo su computer",
+    "desktopOnlyDescription": "Il cursore personalizzato richiede il mouse. Dato che su telefono e tablet la navigazione è touch, questa opzione è disponibile solo accedendo al sito da un computer."
   },
   "language": {
     "caption": "Scegli la lingua del sito. La tua preferenza viene salvata in questo browser."

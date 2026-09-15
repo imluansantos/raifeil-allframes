@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TEAM } from "@/data/site";
@@ -40,7 +40,16 @@ function TeamCard({
   // altura fixa dele — e fecha por um botão "Voltar" dedicado.
   const [expanded, setExpanded] = useState(false);
 
-  const onMove = (e: MouseEvent<HTMLDivElement>) => {
+  // onPointerMove/Leave (não onMouseMove/Leave) de propósito: um toque no
+  // celular também dispara eventos de mouse "sintéticos" pro navegador
+  // conseguir emular clique em cima de elementos com hover — inclusive
+  // mousemove, com a posição exata do toque. Sem o filtro por pointerType,
+  // isso calculava uma inclinação a partir do ponto tocado e aplicava (o
+  // "mouseleave" que desfaria nunca vem de um toque), deixando o card
+  // torto/travado depois de tocar nele no mobile. Com o filtro, só o mouse
+  // de verdade (desktop) inclina o card — toque não faz mais nada aqui.
+  const onMove = (e: PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
     const el = cardRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -55,7 +64,8 @@ function TeamCard({
     } as CSSProperties);
   };
 
-  const onLeave = () => {
+  const onLeave = (e: PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
     setStyle({
       transform: "perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)",
     });
@@ -68,8 +78,8 @@ function TeamCard({
     >
       <div
         ref={cardRef}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
+        onPointerMove={onMove}
+        onPointerLeave={onLeave}
         style={{
           transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
           boxShadow: "var(--card-shadow)",
@@ -127,13 +137,6 @@ function TeamCard({
           style={{ background: "var(--card-caption-overlay)" }}
         />
 
-        {/* index plate */}
-        <span
-          className="absolute top-4 left-4 z-20 font-mono text-[10px] tracking-[0.15em]"
-          style={{ color: "var(--foreground)", opacity: 0.6 }}
-        >
-          0{index + 1}
-        </span>
 
         {/*
           Bottom panel. Name + role are always fully shown, sized to their own

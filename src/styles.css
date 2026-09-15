@@ -393,6 +393,18 @@
   animation: none !important;
 }
 
+/* ---- Acordeão (FAQ.tsx) ----------------------------------------------
+   Duas tentativas anteriores aqui animavam `height` (a padrão do Radix/
+   tw-animate-css, e depois uma versão própria com fade de opacidade) —
+   as duas ainda ficavam com soluço/atraso perceptível, porque pra animar
+   `height` o Radix precisa MEDIR a altura real do conteúdo (ResizeObserver)
+   antes de poder animar até ela, e essa medição acontece bem no instante em
+   que a animação deveria começar. A solução ficou inteiramente em
+   ui/accordion.tsx: técnica de grid (forceMount + grid-template-rows
+   0fr↔1fr), que não depende de medir nada em JS — o navegador interpola a
+   track do grid sozinho, então a animação começa no primeiro frame de
+   verdade, sem atraso nem soluço. Nada de CSS extra precisa viver aqui. */
+
 /* ---- Assinatura do dev (easter egg / código Konami — DevSignature.tsx) ---- */
 @keyframes signatureRgbGlow {
   from {

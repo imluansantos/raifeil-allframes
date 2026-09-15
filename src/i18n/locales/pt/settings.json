@@ -14,7 +14,7 @@
     "dark": "Modo escuro",
     "enableDark": "Ativar modo escuro",
     "enableLight": "Ativar modo claro",
-    "caption": "O mesmo interruptor do rodapé do site — muda aqui, muda lá, e vice-versa."
+    "caption": "O mesmo interruptor do rodapé do site: muda aqui, muda lá, e vice-versa."
   },
   "cookies": {
     "currentConsent": "Consentimento atual",
@@ -46,7 +46,9 @@
     "sukuna": "Sukuna",
     "playstation": "PlayStation",
     "comingSoon": "Mais opções em breve",
-    "caption": "O cursor escolhido vale pro site inteiro (inclusive em cima de botões e links) e fica salvo neste navegador."
+    "caption": "O cursor escolhido vale pro site inteiro (inclusive em cima de botões e links) e fica salvo neste navegador.",
+    "desktopOnlyTitle": "Disponível apenas no computador",
+    "desktopOnlyDescription": "Cursor personalizado depende de mouse. Como no celular a navegação é por toque, essa opção só fica disponível ao acessar o site pelo computador."
   },
   "language": {
     "caption": "Escolha o idioma do site. A preferência fica salva neste navegador."

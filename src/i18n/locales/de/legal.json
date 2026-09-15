@@ -7,12 +7,12 @@
   "privacyPolicy": {
     "title": "Datenschutzerklärung",
     "updated": "September 2026",
-    "intro": "Diese Datenschutzerklärung erklärt, welche Daten All Frames Technology über diese Website erhebt, wie diese Daten verwendet werden und welche Rechte du als betroffene Person hast, gemäß dem brasilianischen Allgemeinen Datenschutzgesetz (LGPD — Gesetz Nr. 13.709/2018).",
+    "intro": "Diese Datenschutzerklärung erklärt, welche Daten All Frames Technology über diese Website erhebt, wie diese Daten verwendet werden und welche Rechte du als betroffene Person hast, gemäß dem brasilianischen Allgemeinen Datenschutzgesetz (LGPD, Gesetz Nr. 13.709/2018).",
     "sections": [
       {
         "heading": "1. Welche Daten wir erheben",
         "body": [
-          "Daten, die du uns direkt mitteilst: Name, Telefon-/WhatsApp-Nummer, E-Mail und, falls zutreffend, Adresse — wenn du uns für ein Angebot oder Support kontaktierst oder dich für unseren Newsletter anmeldest.",
+          "Daten, die du uns direkt mitteilst: Name, Telefon-/WhatsApp-Nummer, E-Mail und, falls zutreffend, Adresse, wenn du uns für ein Angebot oder Support kontaktierst oder dich für unseren Newsletter anmeldest.",
           "Nutzungsdaten: automatisch erfasste, grundlegende technische Informationen (wie Gerätetyp und besuchte Seiten), die nur dazu dienen, die Nutzung der Website zu verstehen und die Erfahrung zu verbessern."
         ]
       },
@@ -20,7 +20,7 @@
         "heading": "2. Wofür wir deine Daten verwenden",
         "body": [
           "Um Angebotsanfragen und Fragen zu beantworten, die über WhatsApp, Instagram oder die Formulare der Website gesendet werden.",
-          "Um Mitteilungen zu senden, die du abonniert hast, wie z. B. Neuigkeiten per E-Mail (Newsletter) — du kannst dich jederzeit abmelden.",
+          "Um Mitteilungen zu senden, die du abonniert hast, wie z. B. Neuigkeiten per E-Mail (Newsletter). Du kannst dich jederzeit abmelden.",
           "Um rechtliche und steuerliche Pflichten im Zusammenhang mit den erbrachten Dienstleistungen zu erfüllen.",
           "Wir verkaufen oder vermieten deine personenbezogenen Daten niemals an Dritte."
         ]
@@ -73,7 +73,7 @@
       {
         "heading": "2. Angebote und Dienstleistungen",
         "body": [
-          "In Angebotsgesprächen mitgeteilte Preise, Fristen und Teileverfügbarkeit sind bis zur formellen Bestätigung der Bestellung nicht bindend — Markt- und Lieferantenbedingungen können Preise und Fristen ändern.",
+          "In Angebotsgesprächen mitgeteilte Preise, Fristen und Teileverfügbarkeit sind bis zur formellen Bestätigung der Bestellung nicht bindend. Markt- und Lieferantenbedingungen können Preise und Fristen ändern.",
           "Neue Teile unterliegen der Werksgarantie des jeweiligen Herstellers. Die Montagearbeit hat eine eigene Garantie von All Frames, wie beim Abschluss des Angebots mitgeteilt."
         ]
       },
