@@ -332,6 +332,47 @@
         scan();
         new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
       })();
+
+      // Traduz mensagens de erro pontuais que o Decap dispara direto do
+      // backend do GitHub (avisos tipo "sua conta não tem acesso ao repo")
+      // — essas NÃO fazem parte do arquivo de idioma (locale: "pt" no
+      // config.yml só traduz a interface fixa, tipo botões e menus), então
+      // aparecem sempre em inglês, mesmo com o site todo em português.
+      // Solução: observa o DOM e, sempre que um desses textos exatos
+      // aparecer em qualquer lugar da página, troca só o texto (nó de
+      // texto), sem recriar/mover o elemento — o toast continua sendo o
+      // componente de verdade do Decap (com o mesmo botão de fechar, o
+      // mesmo tempo de sumiço automático etc.), só a frase muda de idioma.
+      // Pra adicionar mais mensagens no futuro, é só acrescentar uma linha
+      // nesse dicionário com o texto em inglês exato (copie do toast que
+      // aparecer) e a tradução.
+      (function () {
+        var DICTIONARY = {
+          "Your GitHub user account does not have access to this repo.":
+            "Sua conta do GitHub não tem acesso a este repositório.",
+        };
+
+        function translateTextNodes(node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            var text = node.nodeValue.trim();
+            if (DICTIONARY[text]) node.nodeValue = DICTIONARY[text];
+            return;
+          }
+          if (node.nodeType !== Node.ELEMENT_NODE) return;
+          var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+          var textNode;
+          while ((textNode = walker.nextNode())) {
+            var trimmed = textNode.nodeValue.trim();
+            if (DICTIONARY[trimmed]) textNode.nodeValue = DICTIONARY[trimmed];
+          }
+        }
+
+        new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(translateTextNodes);
+          });
+        }).observe(document.body, { childList: true, subtree: true });
+      })();
     </script>
   </body>
 </html>
