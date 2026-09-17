@@ -18,6 +18,8 @@ import { Route as SuporteTecnicoRouteImport } from './routes/suporte-tecnico'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio/$slug'
+import { Route as ApiDecapAuthRouteImport } from './routes/api/decap/auth'
+import { Route as ApiDecapCallbackRouteImport } from './routes/api/decap/callback'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +66,16 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/portfolio/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiDecapAuthRoute = ApiDecapAuthRouteImport.update({
+  id: '/api/decap/auth',
+  path: '/api/decap/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDecapCallbackRoute = ApiDecapCallbackRouteImport.update({
+  id: '/api/decap/callback',
+  path: '/api/decap/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +87,8 @@ export interface FileRoutesByFullPath {
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
+  '/api/decap/auth': typeof ApiDecapAuthRoute
+  '/api/decap/callback': typeof ApiDecapCallbackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +100,8 @@ export interface FileRoutesByTo {
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio': typeof PortfolioIndexRoute
+  '/api/decap/auth': typeof ApiDecapAuthRoute
+  '/api/decap/callback': typeof ApiDecapCallbackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +114,8 @@ export interface FileRoutesById {
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
+  '/api/decap/auth': typeof ApiDecapAuthRoute
+  '/api/decap/callback': typeof ApiDecapCallbackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +129,8 @@ export interface FileRouteTypes {
     | '/termos-de-uso'
     | '/portfolio/$slug'
     | '/portfolio/'
+    | '/api/decap/auth'
+    | '/api/decap/callback'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +142,8 @@ export interface FileRouteTypes {
     | '/termos-de-uso'
     | '/portfolio/$slug'
     | '/portfolio'
+    | '/api/decap/auth'
+    | '/api/decap/callback'
   id:
     | '__root__'
     | '/'
@@ -133,6 +155,8 @@ export interface FileRouteTypes {
     | '/termos-de-uso'
     | '/portfolio/$slug'
     | '/portfolio/'
+    | '/api/decap/auth'
+    | '/api/decap/callback'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +169,8 @@ export interface RootRouteChildren {
   TermosDeUsoRoute: typeof TermosDeUsoRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
+  ApiDecapAuthRoute: typeof ApiDecapAuthRoute
+  ApiDecapCallbackRoute: typeof ApiDecapCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -212,6 +238,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/decap/auth': {
+      id: '/api/decap/auth'
+      path: '/api/decap/auth'
+      fullPath: '/api/decap/auth'
+      preLoaderRoute: typeof ApiDecapAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/decap/callback': {
+      id: '/api/decap/callback'
+      path: '/api/decap/callback'
+      fullPath: '/api/decap/callback'
+      preLoaderRoute: typeof ApiDecapCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -225,6 +265,8 @@ const rootRouteChildren: RootRouteChildren = {
   TermosDeUsoRoute: TermosDeUsoRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
+  ApiDecapAuthRoute: ApiDecapAuthRoute,
+  ApiDecapCallbackRoute: ApiDecapCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

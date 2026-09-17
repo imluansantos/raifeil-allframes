@@ -1,0 +1,643 @@
+# Configuração do Decap CMS pro site da All Frames Technology.
+#
+# Login: usa o GitHub como backend (backend.name: github), autenticando
+# através de src/routes/api/decap/auth.ts e callback.ts — dois endpoints
+# pequenos no próprio site que trocam o código do GitHub por um token de
+# acesso sem nunca expor o "client secret" no navegador. Só entra quem tiver
+# acesso de escrita ("Write" ou mais) no repositório no GitHub — adicione
+# cada pessoa em Settings > Collaborators do repositório.
+#
+# Escopo desta primeira versão: só os TEXTOS em português (os arquivos de
+# tradução em src/i18n/locales/pt/*.json). Imagens (foto da loja, fotos da
+# equipe, fotos do portfólio) e as outras 4 línguas (en/es/it/de) ainda não
+# são editáveis por aqui — ficam pra uma etapa seguinte, se quiser.
+#
+# Ao salvar qualquer campo aqui, o Decap faz um commit direto na branch
+# "main" do repositório — o mesmo de quando você roda "git push". Isso só
+# atualiza o site DE VERDADE se o projeto na Vercel estiver com o deploy
+# automático ligado (Vercel > Settings > Git); confirme isso antes de
+# liberar o acesso pro cliente.
+
+backend:
+  name: github
+  repo: imluansantos/raifeil-allframes
+  branch: main
+  base_url: https://allframes.vercel.app
+  auth_endpoint: api/decap/auth
+
+# Não há campos de imagem nesta versão, mas o Decap exige esses dois
+# caminhos configurados mesmo assim — deixados prontos pro dia em que
+# imagens entrarem no CMS.
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: simple
+
+locale: "pt"
+
+collections:
+  - name: "conteudo"
+    label: "Textos do site"
+    description: "Cada item abaixo é um texto (ou grupo de textos) que aparece em algum lugar do site. Só o português é editável aqui — as outras línguas continuam como estão."
+    files:
+      - name: "header"
+        label: "Cabeçalho (menu no topo)"
+        file: "src/i18n/locales/pt/header.json"
+        fields:
+          - { label: "Botão \"Falar Conosco\"", name: "talkToUs", widget: "string" }
+          - { label: "Texto de acessibilidade — abrir configurações", name: "openSettings", widget: "string" }
+          - { label: "Texto de acessibilidade — abrir menu", name: "openMenu", widget: "string" }
+          - { label: "Texto de acessibilidade — fechar menu", name: "closeMenu", widget: "string" }
+
+      - name: "hero"
+        label: "Início (banner principal)"
+        file: "src/i18n/locales/pt/hero.json"
+        fields:
+          - { label: "Título — linha 1", name: "headline1", widget: "string" }
+          - { label: "Título — linha 2 (mais clara)", name: "headline2", widget: "string" }
+          - { label: "Título — linha 3", name: "headline3", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - { label: "Botão principal", name: "ctaPrimary", widget: "string" }
+          - { label: "Texto acima da vitrine de fotos", name: "eyebrow", widget: "string" }
+          - { label: "Link \"ver todos os projetos\"", name: "viewAllProjects", widget: "string" }
+          - { label: "Texto \"role para ver mais\"", name: "scrollForMore", widget: "string" }
+
+      - name: "nav"
+        label: "Itens do menu"
+        file: "src/i18n/locales/pt/nav.json"
+        fields:
+          - { label: "Início", name: "home", widget: "string" }
+          - { label: "Sobre Nós", name: "about", widget: "string" }
+          - { label: "Serviços", name: "services", widget: "string" }
+          - { label: "Portfólio", name: "portfolio", widget: "string" }
+          - { label: "Diferenciais", name: "differentials", widget: "string" }
+          - { label: "Depoimentos", name: "testimonials", widget: "string" }
+          - { label: "FAQ", name: "faq", widget: "string" }
+
+      - name: "aboutus"
+        label: "Sobre Nós"
+        file: "src/i18n/locales/pt/aboutus.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título — parte acinzentada", name: "titleMuted", widget: "string" }
+          - { label: "Título — parte em destaque", name: "titleRest", widget: "string" }
+          - { label: "Parágrafo 1", name: "paragraph1", widget: "text" }
+          - { label: "Parágrafo 2", name: "paragraph2", widget: "text" }
+          - { label: "Parágrafo 3 (só aparece depois de \"Ver mais\" no celular)", name: "paragraph3", widget: "text" }
+          - { label: "Botão \"Ver mais\"", name: "expandMore", widget: "string" }
+          - { label: "Botão \"Mostrar menos\"", name: "showLess", widget: "string" }
+          - { label: "Acessibilidade — ver localização no mapa", name: "mapAriaLabel", widget: "string" }
+          - { label: "Texto alternativo da foto da loja", name: "storeAlt", widget: "string" }
+          - { label: "Legenda da foto (não usada visualmente hoje)", name: "storeCaption", widget: "string" }
+          - { label: "Dica no desktop (\"passe o mouse\")", name: "hoverHint", widget: "string" }
+          - { label: "Dica no celular (\"toque\")", name: "tapHint", widget: "string" }
+          - { label: "Acessibilidade — fechar mapa", name: "closeMapAriaLabel", widget: "string" }
+          - { label: "Título \"Nossa localização\"", name: "ourLocation", widget: "string" }
+          - { label: "Botão \"Ver no Google Maps\"", name: "viewOnMaps", widget: "string" }
+
+      - name: "differentials"
+        label: "Diferenciais"
+        file: "src/i18n/locales/pt/differentials.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - label: "Cartões"
+            name: "cards"
+            widget: "object"
+            fields:
+              - label: "Uso real"
+                name: "uso-real"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Orçamento"
+                name: "orcamento"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Cabos"
+                name: "cabos"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Pós-entrega"
+                name: "pos-entrega"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Presencial"
+                name: "presencial"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+              - label: "WhatsApp"
+                name: "whatsapp"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+
+      - name: "hardware"
+        label: "Hardwares (marcas)"
+        file: "src/i18n/locales/pt/hardware.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+
+      - name: "services"
+        label: "O que fazemos (resumo dos serviços)"
+        file: "src/i18n/locales/pt/services.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - label: "Cartões de serviço"
+            name: "cards"
+            widget: "object"
+            fields:
+              - label: "Montagem de Setups"
+                name: "montagem-de-setups"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+              - label: "Reforma e Upgrade"
+                name: "reforma-e-upgrade"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+              - label: "Personalização"
+                name: "personalizacao"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+              - label: "Suporte Técnico"
+                name: "suporte-tecnico"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+
+      - name: "team"
+        label: "Nossa Equipe"
+        file: "src/i18n/locales/pt/team.json"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "string" }
+          - { label: "Acessibilidade — ver mais sobre a ocupação", name: "expandAriaLabel", widget: "string" }
+          - { label: "Botão \"Voltar\" (celular)", name: "backLabel", widget: "string" }
+          - label: "Integrantes (cargo e biografia — o nome de cada pessoa não é editável aqui)"
+            name: "members"
+            widget: "object"
+            fields:
+              - label: "Luiz Fernando Welp"
+                name: "luiz"
+                widget: "object"
+                fields:
+                  - { label: "Cargo", name: "role", widget: "string" }
+                  - { label: "Biografia", name: "bio", widget: "text" }
+              - label: "João Gabriel Guedes Galiazzi"
+                name: "joao"
+                widget: "object"
+                fields:
+                  - { label: "Cargo", name: "role", widget: "string" }
+                  - { label: "Biografia", name: "bio", widget: "text" }
+              - label: "Raí Feil dos Santos"
+                name: "rai"
+                widget: "object"
+                fields:
+                  - { label: "Cargo", name: "role", widget: "string" }
+                  - { label: "Biografia", name: "bio", widget: "text" }
+              - label: "Gabriel Dorneles"
+                name: "gabriel"
+                widget: "object"
+                fields:
+                  - { label: "Cargo", name: "role", widget: "string" }
+                  - { label: "Biografia", name: "bio", widget: "text" }
+
+      - name: "testimonials"
+        label: "Depoimentos"
+        file: "src/i18n/locales/pt/testimonials.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Rótulo \"Cliente\"", name: "clientRole", widget: "string" }
+          - { label: "Rótulo da nota (mantenha {{rating}} no texto)", name: "ratingLabel", widget: "string" }
+          - { label: "Acessibilidade — depoimento anterior", name: "prevLabel", widget: "string" }
+          - { label: "Acessibilidade — próximo depoimento", name: "nextLabel", widget: "string" }
+          - label: "Textos dos depoimentos (o nome e a nota de cada cliente não são editáveis aqui)"
+            name: "quotes"
+            widget: "object"
+            fields:
+              - { label: "Depoimento — Gabriel N.", name: "t01", widget: "text" }
+              - { label: "Depoimento — Franzoh", name: "t02", widget: "text" }
+              - { label: "Depoimento — Andressa C.", name: "t03", widget: "text" }
+              - { label: "Depoimento — Matheus S.", name: "t04", widget: "text" }
+              - { label: "Depoimento — Giulia P.", name: "t05", widget: "text" }
+              - { label: "Depoimento — Henry", name: "t06", widget: "text" }
+              - { label: "Depoimento — Lucas P.", name: "t07", widget: "text" }
+              - { label: "Depoimento — Fernanda T.", name: "t08", widget: "text" }
+              - { label: "Depoimento — Deisi G.", name: "t09", widget: "text" }
+              - { label: "Depoimento — Patrik V.", name: "t10", widget: "text" }
+              - { label: "Depoimento — Henrique D.", name: "t11", widget: "text" }
+              - { label: "Depoimento — Jean B.", name: "t12", widget: "text" }
+              - { label: "Depoimento — Luan S.", name: "t13", widget: "text" }
+              - { label: "Depoimento — Vinicius Z.", name: "t14", widget: "text" }
+              - { label: "Depoimento — Bruno M.", name: "t15", widget: "text" }
+              - { label: "Depoimento — Jennifer C.", name: "t16", widget: "text" }
+              - { label: "Depoimento — Arthur S.", name: "t17", widget: "text" }
+              - { label: "Depoimento — Eduardo G.", name: "t18", widget: "text" }
+
+      - name: "faq"
+        label: "Perguntas Frequentes (FAQ)"
+        file: "src/i18n/locales/pt/faq.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - { label: "Rótulo da barra lateral", name: "sidebarLabel", widget: "string" }
+          - { label: "Link no rodapé da seção", name: "bottomLink", widget: "string" }
+          - label: "Categorias e perguntas"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - label: "Identificador (NÃO altere — usado pelo código para escolher o ícone)"
+                name: "key"
+                widget: "select"
+                options: ["budget", "assembly", "payment", "support"]
+              - { label: "Nome da categoria", name: "label", widget: "string" }
+              - { label: "Descrição da categoria", name: "description", widget: "text" }
+              - label: "Perguntas"
+                name: "questions"
+                widget: "list"
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: "Pergunta", name: "question", widget: "string" }
+                  - { label: "Resposta", name: "answer", widget: "text" }
+
+      - name: "finalcta"
+        label: "Chamada final (antes do rodapé)"
+        file: "src/i18n/locales/pt/finalcta.json"
+        fields:
+          - { label: "Selo pequeno", name: "badge", widget: "string" }
+          - { label: "Título — primeira linha", name: "titleLine1", widget: "string" }
+          - { label: "Título — prefixo da palavra que gira", name: "titlePrefix", widget: "string" }
+          - label: "Palavras que giram no título"
+            name: "rotatingWords"
+            widget: "list"
+          - { label: "Título — sufixo (depois da palavra que gira, pode ficar vazio)", name: "titleSuffix", widget: "string", required: false }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - { label: "Botão principal", name: "ctaPrimary", widget: "string" }
+          - { label: "Selo de confiança", name: "trustBadge", widget: "string" }
+
+      - name: "footer"
+        label: "Rodapé"
+        file: "src/i18n/locales/pt/footer.json"
+        fields:
+          - { label: "Título \"Fique conectado\"", name: "stayConnected", widget: "string" }
+          - { label: "Texto da newsletter", name: "newsletterText", widget: "text" }
+          - { label: "Mensagem de sucesso ao assinar", name: "newsletterSuccess", widget: "string" }
+          - { label: "Rótulo do campo de e-mail", name: "emailLabel", widget: "string" }
+          - { label: "Texto de exemplo do campo de e-mail", name: "emailPlaceholder", widget: "string" }
+          - { label: "Botão \"Assinar\"", name: "subscribe", widget: "string" }
+          - { label: "Texto do botão enquanto envia", name: "subscribing", widget: "string" }
+          - { label: "Título \"Navegação\"", name: "navHeading", widget: "string" }
+          - { label: "Título \"Contato\"", name: "contactHeading", widget: "string" }
+          - { label: "Título \"Redes Sociais\"", name: "socialHeading", widget: "string" }
+          - { label: "Direitos autorais (mantenha {{year}} no texto)", name: "copyright", widget: "string" }
+          - { label: "\"Site desenvolvido por\"", name: "developedBy", widget: "string" }
+          - { label: "Link \"Política de Privacidade\"", name: "privacyPolicy", widget: "string" }
+          - { label: "Link \"Termos de Uso\"", name: "termsOfUse", widget: "string" }
+          - { label: "Link \"Configuração de Cookies\"", name: "cookieSettings", widget: "string" }
+
+      - name: "cookies"
+        label: "Aviso de cookies"
+        file: "src/i18n/locales/pt/cookies.json"
+        fields:
+          - { label: "Rótulo de acessibilidade do painel", name: "dialogLabel", widget: "string" }
+          - { label: "Título do painel", name: "title", widget: "string" }
+          - { label: "Botão \"Fechar\"", name: "close", widget: "string" }
+          - { label: "Descrição geral", name: "description", widget: "text" }
+          - { label: "Rótulo \"Essenciais\"", name: "essentialLabel", widget: "string" }
+          - { label: "Descrição \"Essenciais\"", name: "essentialDescription", widget: "text" }
+          - { label: "Rótulo \"Análise\"", name: "analyticsLabel", widget: "string" }
+          - { label: "Descrição \"Análise\"", name: "analyticsDescription", widget: "text" }
+          - { label: "Rótulo \"Marketing\"", name: "marketingLabel", widget: "string" }
+          - { label: "Descrição \"Marketing\"", name: "marketingDescription", widget: "text" }
+          - { label: "Botão \"Cancelar\"", name: "cancel", widget: "string" }
+          - { label: "Botão \"Salvar preferências\"", name: "save", widget: "string" }
+          - { label: "Mensagem \"Preferências salvas\"", name: "saved", widget: "string" }
+          - { label: "Título \"O que são cookies?\"", name: "whatAreCookies", widget: "string" }
+          - { label: "Explicação sobre cookies", name: "whatAreCookiesExplanation", widget: "text" }
+
+      - name: "projectsSection"
+        label: "Vitrine de projetos (na Home)"
+        file: "src/i18n/locales/pt/projectsSection.json"
+        fields:
+          - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - { label: "Texto da chamada", name: "ctaText", widget: "text" }
+          - { label: "Link \"Explorar o portfólio\"", name: "exploreLink", widget: "string" }
+          - { label: "Contador de projetos (mantenha {{count}} no texto)", name: "projectsCount", widget: "string" }
+
+      - name: "servicePages"
+        label: "Páginas de cada serviço"
+        file: "src/i18n/locales/pt/servicePages.json"
+        fields:
+          - { label: "Selo (mantenha {{number}} no texto)", name: "serviceBadge", widget: "string" }
+          - { label: "Texto pequeno — Sobre o serviço", name: "aboutServiceEyebrow", widget: "string" }
+          - { label: "Texto pequeno — Visão geral", name: "overviewEyebrow", widget: "string" }
+          - { label: "Título — Visão geral", name: "overviewTitle", widget: "string" }
+          - { label: "Descrição — Visão geral", name: "overviewDescription", widget: "text" }
+          - { label: "Texto pequeno — Peça o que precisa", name: "requestablesEyebrow", widget: "string" }
+          - { label: "Descrição — Peça o que precisa", name: "requestablesDescription", widget: "text" }
+          - { label: "Botão — Peça o que precisa", name: "requestablesCta", widget: "string" }
+          - { label: "Texto pequeno — Outros serviços", name: "otherServicesEyebrow", widget: "string" }
+          - { label: "Link \"Ver mais\"", name: "viewMore", widget: "string" }
+          - { label: "Texto pequeno — Chamada final", name: "ctaEyebrow", widget: "string" }
+          - { label: "Título — Chamada final", name: "ctaTitle", widget: "string" }
+          - { label: "Botão — Chamada final", name: "ctaButton", widget: "string" }
+          - label: "Cada serviço"
+            name: "services"
+            widget: "object"
+            fields:
+              - label: "Montagem de Setups"
+                name: "montagem-de-setups"
+                widget: "object"
+                fields: &servicePageFields
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+                  - { label: "Descrição completa", name: "description", widget: "text" }
+                  - { label: "Lista de itens (resumo)", name: "items", widget: "list" }
+                  - label: "Destaques"
+                    name: "highlights"
+                    widget: "list"
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: "Título", name: "title", widget: "string" }
+                      - { label: "Texto", name: "text", widget: "text" }
+                  - { label: "O que dá pra pedir (lista completa)", name: "requestables", widget: "list" }
+              - label: "Reforma e Upgrade"
+                name: "reforma-e-upgrade"
+                widget: "object"
+                fields: *servicePageFields
+              - label: "Personalização"
+                name: "personalizacao"
+                widget: "object"
+                fields: *servicePageFields
+              - label: "Suporte Técnico"
+                name: "suporte-tecnico"
+                widget: "object"
+                fields: *servicePageFields
+
+      - name: "portfolio"
+        label: "Portfólio"
+        file: "src/i18n/locales/pt/portfolio.json"
+        fields:
+          - label: "Topo da página"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Botão \"Início\"", name: "backLabel", widget: "string" }
+              - { label: "Texto pequeno", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "text" }
+              - { label: "Rótulo \"projetos documentados\"", name: "statsProjects", widget: "string" }
+              - { label: "Rótulo \"categorias\"", name: "statsCategories", widget: "string" }
+          - label: "Grade de projetos"
+            name: "grid"
+            widget: "object"
+            fields:
+              - { label: "Mensagem — nenhum projeto na categoria", name: "empty", widget: "string" }
+          - label: "Filtros"
+            name: "filters"
+            widget: "object"
+            fields:
+              - { label: "Rótulo \"Filtrar por categoria\"", name: "label", widget: "string" }
+              - { label: "Acessibilidade do filtro", name: "ariaLabel", widget: "string" }
+              - { label: "Opção \"Todos\"", name: "all", widget: "string" }
+          - label: "Cartão de projeto"
+            name: "card"
+            widget: "object"
+            fields:
+              - { label: "Botão \"Ver projeto\"", name: "viewProject", widget: "string" }
+          - label: "Página inicial do portfólio"
+            name: "index"
+            widget: "object"
+            fields:
+              - { label: "Título da aba do navegador", name: "metaTitle", widget: "string" }
+              - { label: "Descrição pra buscadores", name: "metaDescription", widget: "text" }
+              - { label: "Texto pequeno da chamada final", name: "ctaEyebrow", widget: "string" }
+              - { label: "Título da chamada final", name: "ctaTitle", widget: "string" }
+              - { label: "Botão da chamada final", name: "ctaButton", widget: "string" }
+          - label: "Página de cada projeto"
+            name: "detail"
+            widget: "object"
+            fields:
+              - { label: "Botão \"Portfólio\"", name: "backLabel", widget: "string" }
+              - label: "Nomes das especificações técnicas"
+                name: "specLabels"
+                widget: "object"
+                fields:
+                  - { label: "CPU", name: "cpu", widget: "string" }
+                  - { label: "GPU", name: "gpu", widget: "string" }
+                  - { label: "RAM", name: "ram", widget: "string" }
+                  - { label: "Armazenamento", name: "storage", widget: "string" }
+                  - { label: "Refrigeração", name: "cooling", widget: "string" }
+                  - { label: "Placa-mãe", name: "motherboard", widget: "string" }
+                  - { label: "Gabinete", name: "case", widget: "string" }
+              - { label: "Texto pequeno \"O projeto\"", name: "projectEyebrow", widget: "string" }
+              - { label: "Texto pequeno \"Specs\"", name: "specsEyebrow", widget: "string" }
+              - { label: "Aviso sobre as specs", name: "specsDisclaimer", widget: "text" }
+              - { label: "Texto pequeno \"Galeria\"", name: "galleryEyebrow", widget: "string" }
+              - { label: "Texto pequeno \"Outros projetos\"", name: "otherProjectsEyebrow", widget: "string" }
+              - { label: "Texto pequeno da chamada final", name: "ctaEyebrow", widget: "string" }
+              - { label: "Título da chamada final", name: "ctaTitle", widget: "string" }
+              - { label: "Botão da chamada final", name: "ctaButton", widget: "string" }
+              - { label: "Sufixo do título da aba do navegador", name: "metaTitleSuffix", widget: "string" }
+              - { label: "Título da aba — projeto não encontrado", name: "metaNotFoundTitle", widget: "string" }
+              - label: "Projeto não encontrado (erro 404)"
+                name: "notFound"
+                widget: "object"
+                fields:
+                  - { label: "Selo", name: "eyebrow", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto (mantenha {{slug}} no texto)", name: "text", widget: "text" }
+                  - { label: "Link \"Voltar ao portfólio\"", name: "backLink", widget: "string" }
+          - label: "Textos de cada build (fotos e specs técnicas não são editáveis aqui)"
+            name: "projects"
+            widget: "object"
+            fields:
+              - label: "Polar"
+                name: "polar"
+                widget: "object"
+                fields: &portfolioProjectFields
+                  - { label: "Descrição curta (aparece no cartão)", name: "shortDescription", widget: "text" }
+                  - { label: "Descrição completa (aparece na página do projeto)", name: "description", widget: "text" }
+                  - { label: "Objetivo do projeto", name: "objective", widget: "text" }
+              - label: "AllFrames Ultra 1"
+                name: "allframes-ultra1"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Aurora"
+                name: "aurora"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "PC Blueout"
+                name: "pc-blueout"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Snow Build"
+                name: "snow-build"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Frostline"
+                name: "frostline"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Mistic"
+                name: "mistic"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Glacial"
+                name: "glacial"
+                widget: "object"
+                fields: *portfolioProjectFields
+              - label: "Prism"
+                name: "prism"
+                widget: "object"
+                fields: *portfolioProjectFields
+
+      - name: "settings"
+        label: "Painel de Configurações do site"
+        file: "src/i18n/locales/pt/settings.json"
+        fields:
+          - { label: "Título do painel", name: "title", widget: "string" }
+          - { label: "Placeholder de busca", name: "search", widget: "string" }
+          - { label: "Botão \"Fechar configurações\"", name: "close", widget: "string" }
+          - label: "Nomes das seções"
+            name: "sections"
+            widget: "object"
+            fields:
+              - { label: "Tema", name: "tema", widget: "string" }
+              - { label: "Cookies", name: "cookies", widget: "string" }
+              - { label: "Idioma", name: "idioma", widget: "string" }
+              - { label: "Animações", name: "animacoes", widget: "string" }
+              - { label: "Cursor", name: "cursor", widget: "string" }
+          - label: "Seção Tema"
+            name: "theme"
+            widget: "object"
+            fields:
+              - { label: "Modo claro", name: "light", widget: "string" }
+              - { label: "Modo escuro", name: "dark", widget: "string" }
+              - { label: "Ativar modo escuro", name: "enableDark", widget: "string" }
+              - { label: "Ativar modo claro", name: "enableLight", widget: "string" }
+              - { label: "Legenda", name: "caption", widget: "text" }
+          - label: "Seção Cookies"
+            name: "cookies"
+            widget: "object"
+            fields:
+              - { label: "\"Consentimento atual\"", name: "currentConsent", widget: "string" }
+              - { label: "Resumo — todos aceitos", name: "summaryAllAccepted", widget: "string" }
+              - { label: "Resumo — opcionais recusados", name: "summaryOptionalRefused", widget: "string" }
+              - { label: "Resumo — preferências personalizadas", name: "summaryCustom", widget: "string" }
+              - { label: "Resumo — ainda não configurado", name: "summaryNotSet", widget: "string" }
+              - { label: "Botão \"Editar preferências\"", name: "editButton", widget: "string" }
+          - label: "Seção Animações"
+            name: "animations"
+            widget: "object"
+            fields:
+              - { label: "Legenda geral", name: "caption", widget: "text" }
+              - label: "Opção \"Todas as animações\""
+                name: "all"
+                widget: "object"
+                fields:
+                  - { label: "Nome", name: "label", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "string" }
+              - label: "Opção \"Animações reduzidas\""
+                name: "reduced"
+                widget: "object"
+                fields:
+                  - { label: "Nome", name: "label", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "string" }
+              - label: "Opção \"Nenhuma animação\""
+                name: "none"
+                widget: "object"
+                fields:
+                  - { label: "Nome", name: "label", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "string" }
+          - label: "Seção Cursor"
+            name: "cursor"
+            widget: "object"
+            fields:
+              - { label: "Padrão", name: "default", widget: "string" }
+              - { label: "Espada de Diamante", name: "sword", widget: "string" }
+              - { label: "Avião de Papel", name: "plane", widget: "string" }
+              - { label: "Sukuna", name: "sukuna", widget: "string" }
+              - { label: "PlayStation", name: "playstation", widget: "string" }
+              - { label: "\"Mais opções em breve\"", name: "comingSoon", widget: "string" }
+              - { label: "Legenda geral", name: "caption", widget: "text" }
+              - { label: "Título — só no computador", name: "desktopOnlyTitle", widget: "string" }
+              - { label: "Descrição — só no computador", name: "desktopOnlyDescription", widget: "text" }
+          - label: "Seção Idioma"
+            name: "language"
+            widget: "object"
+            fields:
+              - { label: "Legenda", name: "caption", widget: "text" }
+
+      - name: "legal"
+        label: "Política de Privacidade e Termos de Uso"
+        file: "src/i18n/locales/pt/legal.json"
+        fields:
+          - label: "Cabeçalho comum das duas páginas"
+            name: "chrome"
+            widget: "object"
+            fields:
+              - { label: "Botão \"Início\"", name: "backLabel", widget: "string" }
+              - { label: "\"Última atualização\" (mantenha {{date}} no texto)", name: "updatedLabel", widget: "string" }
+              - { label: "Aviso legal geral", name: "disclaimer", widget: "text" }
+          - label: "Política de Privacidade"
+            name: "privacyPolicy"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Data de atualização", name: "updated", widget: "string" }
+              - { label: "Introdução", name: "intro", widget: "text" }
+              - label: "Seções"
+                name: "sections"
+                widget: "list"
+                summary: "{{fields.heading}}"
+                fields:
+                  - { label: "Título da seção", name: "heading", widget: "string" }
+                  - label: "Parágrafos"
+                    name: "body"
+                    widget: "list"
+                    field: { label: "Parágrafo", name: "paragraph", widget: "text" }
+          - label: "Termos de Uso"
+            name: "termsOfUse"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Data de atualização", name: "updated", widget: "string" }
+              - { label: "Introdução", name: "intro", widget: "text" }
+              - label: "Seções"
+                name: "sections"
+                widget: "list"
+                summary: "{{fields.heading}}"
+                fields:
+                  - { label: "Título da seção", name: "heading", widget: "string" }
+                  - label: "Parágrafos"
+                    name: "body"
+                    widget: "list"
+                    field: { label: "Parágrafo", name: "paragraph", widget: "text" }

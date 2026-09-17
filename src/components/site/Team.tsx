@@ -3,12 +3,12 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TEAM } from "@/data/site";
 import { SectionFade } from "@/components/site/SectionFade";
-import rai1 from "@/assets/rai-1.webp";
+import raif from "@/assets/rai-1.webp"
 import joaog from "@/assets/joao-g.webp"
 import luizw from "@/assets/luiz-w.webp";
 import gabrield from "@/assets/gabriel-d.webp";
 
-const PHOTOS: (string | undefined)[] = [luizw, joaog, rai1, gabrield];
+const PHOTOS: (string | undefined)[] = [luizw, joaog, raif, gabrield];
 
 function initials(name: string) {
   const parts = name.split(" ");

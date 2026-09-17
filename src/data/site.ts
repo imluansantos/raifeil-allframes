@@ -79,20 +79,13 @@ export const BRANDS = [
   "Cooler Master",
 ];
 
-// `key` bate com src/i18n/locales/<idioma>/team.json → members.<key> — role e
-// bio agora vêm traduzidos de lá (Team.tsx faz t(`members.${key}.role`) etc.),
-// só o nome de cada pessoa continua fixo aqui (nome próprio não se traduz).
 export const TEAM = [
   { name: "Luiz Fernando Welp", key: "luiz" },
   { name: "João Gabriel Guedes Galiazzi", key: "joao" },
-  { name: "Raí Feil dos Santos", key: "rai" },
+  { name: "Rai Feil dos Santos", key: "rai" },
   { name: "Gabriel Dorneles", key: "gabriel" },
 ] as const;
 
-// Comparativo usado na seção Diferenciais. Cada linha contrasta como uma
-// etapa costuma acontecer numa assistência comum e como ela acontece aqui.
-// Frases curtas e diretas de propósito (formato compacto tipo tabela).
-// Tom deliberadamente factual e sóbrio, site institucional, sem valores.
 export const COMPARISON = [
   {
     topic: "Consultoria de peças",
@@ -126,14 +119,6 @@ export const COMPARISON = [
   },
 ];
 
-// Sem campo de cidade de propósito: os depoimentos abaixo vieram sem
-// confirmação de onde cada cliente mora, então o card mostra só nome + cargo
-// (ver ReviewCard em marquee-01.tsx, que já trata "cidade" como opcional).
-//
-// `key` bate com src/i18n/locales/<idioma>/testimonials.json → quotes.<key> —
-// o texto do depoimento e o cargo ("Cliente") agora vêm traduzidos de lá
-// (marquee-01.tsx faz t(`quotes.${key}`) e t("clientRole")); nome e nota
-// (rating) continuam fixos aqui.
 export const TESTIMONIALS = [
   { key: "t01", name: "Gabriel N.", rating: 5 },
   { key: "t02", name: "Franzoh", rating: 5 },
