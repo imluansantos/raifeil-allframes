@@ -67,6 +67,54 @@
           sans-serif;
       }
 
+      /* Textura padrão do site (grid técnico + grain), reproduzida da regra
+         equivalente em src/styles.css (body, tier 1 escuro) — mesmas cores,
+         mesmos tamanhos. Essa página não passa pelo build do Tailwind, então
+         é a mesma receita reescrita em CSS puro em vez de reaproveitada. */
+      body {
+        background-image:
+          radial-gradient(rgba(255, 255, 255, 0.14) 0.4px, transparent 0.4px),
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size:
+          5px 5px,
+          56px 56px,
+          56px 56px;
+        background-position:
+          2.5px 2.5px,
+          0 0,
+          0 0;
+      }
+
+      /* Degradês no topo e no rodapé da tela (mesma técnica de
+         SectionFade.tsx): o grid vai sumindo perto das bordas, dando um
+         "vinheta" suave em vez de terminar de forma seca. z-index acima do
+         grid do body, mas abaixo do conteúdo do login (#nc-root, logo
+         abaixo) — nunca cobre a logo/título/botão. */
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 224px;
+        pointer-events: none;
+        z-index: 1;
+      }
+      body::before {
+        top: 0;
+        background-image: linear-gradient(to bottom, #08090b 0%, transparent 100%);
+      }
+      body::after {
+        bottom: 0;
+        background-image: linear-gradient(to top, #08090b 0%, transparent 100%);
+      }
+
+      #nc-root {
+        position: relative;
+        z-index: 2;
+      }
+
       [class*="StyledAuthenticationPage"] {
         background: transparent !important;
         min-height: 100vh;
@@ -128,7 +176,14 @@
         text-align: center;
       }
 
-      [class*="StyledAuthenticationPage"] [class*="LoginButton"] {
+      /* Qualificado com a tag `button` de propósito: "LoginButton" também é
+         substring do <span> do ÍCONE dentro do botão
+         (IconWrapper-LoginButtonIcon), que é um <span>, não um <button>. Sem
+         esse filtro, o seletor pegava os dois elementos — o span do ícone
+         virava um segundo "pill" branco por trás do botão de verdade, com o
+         próprio padding de 14px/30px, deslocado (foi o bug do retângulo
+         branco solto atrás do texto). */
+      [class*="StyledAuthenticationPage"] button[class*="LoginButton"] {
         display: inline-flex !important;
         align-items: center;
         gap: 10px;
@@ -149,7 +204,7 @@
           transform 0.2s ease;
       }
 
-      [class*="StyledAuthenticationPage"] [class*="LoginButton"]:hover {
+      [class*="StyledAuthenticationPage"] button[class*="LoginButton"]:hover {
         box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.9);
         transform: translateY(-1px);
       }
