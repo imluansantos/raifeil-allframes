@@ -26,7 +26,13 @@ export const Route = createFileRoute("/api/decap/auth")({
         const authorizeUrl = new URL("https://github.com/login/oauth/authorize");
         authorizeUrl.searchParams.set("client_id", clientId);
         authorizeUrl.searchParams.set("redirect_uri", redirectUri);
-        authorizeUrl.searchParams.set("scope", "repo,user");
+        // O GitHub exige os escopos separados por ESPAÇO, não por vírgula —
+        // "repo,user" era interpretado como um escopo inválido só, e o token
+        // saía sem nenhuma permissão de repositório de verdade. Foi essa a
+        // causa real do erro "does not have access to this repo", inclusive
+        // pra você mesmo (dono do repositório): o login concluía normal, mas
+        // o token gerado não carregava a permissão de repo nenhuma.
+        authorizeUrl.searchParams.set("scope", "repo user");
         authorizeUrl.searchParams.set("state", state);
 
         return new Response(null, {
