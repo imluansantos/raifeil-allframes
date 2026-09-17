@@ -1,11 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MapPin, Instagram, ArrowUpRight, Settings } from "lucide-react";
 import { NAV, WHATSAPP_URL, INSTAGRAM, INSTAGRAM_URL, ADDRESS } from "@/data/site";
 import { scrollToSection } from "@/lib/scrollToSection";
-import { SettingsPanel } from "@/components/site/SettingsPanel";
 import logo from "@/assets/logo.webp";
+
+// SettingsPanel carregado sob demanda (React.lazy), não mais com import
+// estático no topo do arquivo. Motivo: o Header aparece em TODA página do
+// site, e o import estático antigo trazia a SettingsPanel — e com ela a lib
+// "motion" (motion/react) que ela usa por baixo — pro bundle inicial de
+// qualquer visitante, mesmo que 99% nunca cliquem na engrenagem. O
+// PageSpeed apontou ~325 KiB de "JavaScript não usado" no carregamento
+// inicial; essa lib era a suspeita mais forte. Com lazy(), esse pedaço só é
+// baixado quando alguém realmente abre o painel (ver `settingsLoaded`
+// abaixo) — o painel em si continua idêntico, só o momento do download
+// muda.
+const SettingsPanel = lazy(() =>
+  import("@/components/site/SettingsPanel").then((mod) => ({ default: mod.SettingsPanel })),
+);
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -25,6 +38,12 @@ export function Header() {
   const [overHero, setOverHero] = useState(true);
   const [open, setOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  // true assim que a engrenagem é clicada pela PRIMEIRA vez — depois disso
+  // o componente lazy fica montado pra sempre (precisa continuar montado
+  // mesmo com settingsOpen=false, porque a própria SettingsPanel usa
+  // AnimatePresence por dentro pra fazer a animação de fechar; desmontar
+  // na hora cortaria essa animação pela metade).
+  const [settingsLoaded, setSettingsLoaded] = useState(false);
   const [activeHash, setActiveHash] = useState(NAV[0]!.href);
 
   useEffect(() => {
@@ -32,7 +51,7 @@ export function Header() {
     // topo já passou por baixo da barra fixa, não assim que encosta nela.
     const headerOffset = 160;
 
-    const onScroll = () => {
+    const updateFromScrollPosition = () => {
       const heroEl = document.getElementById("top");
       const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
       setOverHero(heroBottom > 96);
@@ -47,9 +66,27 @@ export function Header() {
       setActiveHash(`#${current}`);
     };
 
-    onScroll();
+    // Throttle via requestAnimationFrame — mesmo padrão já usado no scroll
+    // do carrossel (ShowcaseMarquee.tsx). Antes esse handler rodava por
+    // INTEIRO (getElementById + getBoundingClientRect em ~7 elementos) a
+    // cada evento nativo de "scroll", que no mobile pode disparar dezenas
+    // de vezes por segundo — era um dos maiores suspeitos das "tarefas
+    // longas" do PageSpeed, e roda em toda página do site (esse Header
+    // aparece em todas). Com o rAF, no máximo 1 execução por frame
+    // (~60x/s), não importa quantos eventos de scroll cheguem entre um
+    // frame e outro.
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(updateFromScrollPosition);
+    };
+
+    updateFromScrollPosition();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   // Trava o scroll da página por trás enquanto o menu mobile está aberto,
@@ -168,7 +205,10 @@ export function Header() {
               configurações fazem sentido tanto no mobile quanto no desktop. */}
           <button
             type="button"
-            onClick={() => setSettingsOpen(true)}
+            onClick={() => {
+              setSettingsLoaded(true);
+              setSettingsOpen(true);
+            }}
             aria-label={t("openSettings")}
             className="flex size-10 shrink-0 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10"
           >
@@ -263,7 +303,11 @@ export function Header() {
         </div>
       )}
 
-      <SettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      {settingsLoaded && (
+        <Suspense fallback={null}>
+          <SettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+        </Suspense>
+      )}
     </header>
   );
 }

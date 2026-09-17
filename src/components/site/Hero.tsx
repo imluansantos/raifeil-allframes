@@ -24,6 +24,17 @@ export function Hero() {
             alt=""
             aria-hidden
             draggable={false}
+            // fetchPriority="high": essa é a imagem de fundo da Hero — na
+            // prática, quase sempre o elemento LCP (maior conteúdo visível)
+            // da home. O PageSpeed apontou "descoberta de solicitações de
+            // LCP" como problema no mobile: sem essa dica, o navegador só
+            // prioriza essa imagem depois de descobrir o resto da página
+            // (CSS, JS), atrasando o LCP. Com fetchPriority="high", ela
+            // entra na fila de download com prioridade máxima assim que o
+            // HTML é parseado, do mesmo jeito que já não tem loading="lazy"
+            // (continua carregando imediatamente, nunca adiado).
+            fetchPriority="high"
+            decoding="async"
             className="h-full w-full scale-110 object-cover object-center blur-[6px]"
           />
           {/* véu escuro base */}

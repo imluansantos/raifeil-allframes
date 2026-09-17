@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Loader2, MapPin, Send, Youtube } from "lucide-react";
@@ -16,7 +16,6 @@ import {
 import { SiteTexture } from "@/components/site/SiteTexture";
 import { SectionFade } from "@/components/site/SectionFade";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
-import { CookiePreferencesModal } from "@/components/site/CookiePreferencesModal";
 import { scrollToSection } from "@/lib/scrollToSection";
 import logo from "@/assets/logo.webp";
 
@@ -41,6 +40,16 @@ function WhatsAppIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+// CookiePreferencesModal carregado sob demanda — mesmo motivo do
+// SettingsPanel em Header.tsx: o Footer aparece em toda página, mas esse
+// modal só é usado por quem clica em "Preferências de cookies", então não
+// precisa entrar no JS baixado por todo mundo de cara.
+const CookiePreferencesModal = lazy(() =>
+  import("@/components/site/CookiePreferencesModal").then((mod) => ({
+    default: mod.CookiePreferencesModal,
+  })),
+);
 
 // Duração do "loading" do formulário de newsletter, escolhida aleatoriamente
 // a cada envio (não é uma faixa contínua, é um sorteio entre esses 5
@@ -342,7 +351,11 @@ export function Footer({ noTopBorder = false }: { noTopBorder?: boolean }) {
         </div>
       </div>
 
-      {cookieModalOpen && <CookiePreferencesModal onClose={() => setCookieModalOpen(false)} />}
+      {cookieModalOpen && (
+        <Suspense fallback={null}>
+          <CookiePreferencesModal onClose={() => setCookieModalOpen(false)} />
+        </Suspense>
+      )}
     </footer>
   );
 }

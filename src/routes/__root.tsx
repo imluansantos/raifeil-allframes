@@ -110,15 +110,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://allframestechnology.com.br/og-image.jpg" },
     ],
     links: [
+      // preconnect continua estático (não bloqueia nada — é só um aviso pro
+      // navegador já abrir a conexão/TLS com o Google Fonts adiantado,
+      // deixando o carregamento assíncrono do <script> abaixo mais rápido).
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        // Press+Start+2P: fonte pixelada da página 404 "8-bit" (.retro em
-        // styles.css) — carregada junto da Inter pra não abrir uma segunda
-        // conexão com o Google Fonts.
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap",
-      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -132,11 +128,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+// URL da folha de estilo do Google Fonts (Inter + Press Start 2P da página
+// 404) — extraída pra uma constante porque agora é referenciada duas vezes
+// logo abaixo (carregamento assíncrono via <script> + <noscript> de
+// fallback), em vez de uma só (era um <link rel="stylesheet"> direto no
+// array `links` do head() acima).
+const GOOGLE_FONTS_HREF =
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap";
+
+// Carrega a folha do Google Fonts sem bloquear a renderização inicial.
+// Antes ela vinha como <link rel="stylesheet"> direto no <head> (no array
+// `links` do head() acima) — isso é uma das causas confirmadas pelo
+// PageSpeed de "solicitações que bloqueiam a renderização": o navegador
+// precisa buscar essa folha (em outro domínio, com sua própria negociação
+// de DNS/TLS) antes de poder pintar qualquer coisa na tela.
+//
+// A técnica abaixo (clássica, usada por ferramentas como o loadCSS antes do
+// `rel="preload"` pegar suporte universal) injeta o <link> via JavaScript
+// DEPOIS que o HTML já começou a ser processado — um <link> criado dessa
+// forma não entra na lista de recursos que bloqueiam o primeiro paint,
+// então o texto aparece imediatamente com a fonte de sistema (fallback) e
+// troca pra Inter assim que ela chegar (o `&display=swap` na URL já garante
+// essa troca suave, sem "flash de texto invisível"). O `<noscript>` logo
+// abaixo é só uma rede de segurança pros raríssimos casos de JS desligado.
+const LOAD_FONTS_SCRIPT = `
+(function () {
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = ${JSON.stringify(GOOGLE_FONTS_HREF)};
+  document.head.appendChild(link);
+})();
+`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: LOAD_FONTS_SCRIPT }} />
+        <noscript>
+          <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
+        </noscript>
       </head>
       <body>
         {children}
