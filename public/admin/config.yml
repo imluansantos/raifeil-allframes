@@ -25,6 +25,18 @@ backend:
   base_url: https://allframes.vercel.app
   auth_endpoint: api/decap/auth
 
+# Marca própria: troca a logo cor-de-rosa padrão do Decap pela logo da All
+# Frames Technology, tanto na tela de login quanto no topo do painel depois
+# de logado (show_in_header). O CSS de identidade visual (fundo escuro,
+# fonte Inter etc.) está em admin/index.html, não aqui.
+logo:
+  src: /admin/logo.webp
+  show_in_header: true
+
+# Link "voltar pro site" que aparece fixo no topo do painel, depois de logado.
+site_url: https://allframes.vercel.app
+display_url: https://allframes.vercel.app
+
 # Não há campos de imagem nesta versão, mas o Decap exige esses dois
 # caminhos configurados mesmo assim — deixados prontos pro dia em que
 # imagens entrarem no CMS.

@@ -14,6 +14,111 @@
          do site, onde não existe nada) em vez de "/admin/config.yml" — foi
          exatamente esse o erro 404 visto em produção. -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+
+    <!-- Mesma fonte (Inter) do site principal, ver src/routes/__root.tsx —
+         só pra tela de login e o topo do painel logado terem a mesma cara. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*
+        Identidade visual da All Frames Technology aplicada por cima do
+        Decap CMS "de fábrica" (sem forkar/reescrever a biblioteca).
+
+        Cores extraídas direto de src/styles.css (mesmas variáveis
+        --background/--foreground/etc. do tier 1, escuro, do site) e
+        convertidas de oklch() pra hex simples, já que esse CSS aqui é
+        isolado do build do Tailwind do resto do projeto.
+
+        Duas camadas, de propósito:
+
+        1) html/body — pinta o "fundo" da página inteira, tanto na tela de
+           login quanto (nas margens/vãos) depois de logado no editor. Isso é
+           sempre seguro: o Decap não pinta nada de si mesmo em cima disso
+           (#nc-root é transparente), então não corre risco nenhum de tapar
+           ou ilegibilizar os painéis do editor.
+
+        2) [class*="StyledAuthenticationPage"] — essa é a seção que o Decap
+           usa POR DENTRO só na tela de login (confirmado inspecionando o
+           HTML renderizado em produção). Ela nunca existe depois que você
+           loga, então qualquer regra dentro desse escopo é impossível de
+           vazar pro editor autenticado (Salvar, Publicar, listagem de
+           conteúdo etc. continuam exatamente como o Decap desenha por
+           padrão). Usamos `[class*="..."]` (contém, não igual) porque o
+           Decap gera um sufixo de hash único a cada build nesse nome de
+           classe — só a parte legível do meio ("StyledAuthenticationPage",
+           "LoginButton") é estável entre deploys.
+
+        Se uma atualização futura do Decap mudar esses nomes internos, o
+        pior que acontece é a tela de login voltar a aparecer com o visual
+        padrão dele (rosa/cinza-claro) — nada quebra, é só cosmético.
+      */
+
+      html,
+      body {
+        background: #08090b !important;
+        color: #f4f5f6;
+        font-family:
+          "Inter",
+          ui-sans-serif,
+          system-ui,
+          sans-serif;
+      }
+
+      [class*="StyledAuthenticationPage"] {
+        background: transparent !important;
+        min-height: 100vh;
+        gap: 32px;
+      }
+
+      /* logo da All Frames (vem de config.yml → logo.src) um pouco maior e
+         com uma respiração maior até o botão abaixo dela */
+      [class*="StyledAuthenticationPage"] img {
+        width: auto;
+        height: 56px;
+        max-width: 80vw;
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="LoginButton"] {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 10px;
+        background: #ffffff !important;
+        color: #08090b !important;
+        border: none !important;
+        border-radius: 999px !important;
+        padding: 14px 30px !important;
+        font-family: inherit !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.6);
+        transition:
+          box-shadow 0.3s ease,
+          transform 0.2s ease;
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="LoginButton"]:hover {
+        box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.9);
+        transform: translateY(-1px);
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="LoginButton"] svg {
+        fill: currentColor;
+      }
+
+      /* mensagens de erro de login (credenciais recusadas etc.) — mantém
+         legível no fundo escuro em vez do texto escuro padrão do Decap */
+      [class*="StyledAuthenticationPage"] [class*="ErrorMessage"] {
+        color: #f4a3a3 !important;
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
