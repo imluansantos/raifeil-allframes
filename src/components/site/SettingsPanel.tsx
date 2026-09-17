@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "motion/react";
 import {
   Cookie,
-  Globe,
   Laptop,
   MousePointer2,
   Moon,
@@ -16,7 +15,6 @@ import {
 import { useTheme } from "@/hooks/use-theme";
 import { useAnimationLevel, type AnimationLevel } from "@/hooks/use-animation-level";
 import { useCursor, CURSOR_OPTIONS } from "@/hooks/use-cursor";
-import { LANGUAGES } from "@/i18n/languages";
 import { CookieConsentFields } from "@/components/site/CookieConsentFields";
 
 // Só os valores aqui — label e description vêm traduzidos de settings.json
@@ -24,14 +22,19 @@ import { CookieConsentFields } from "@/components/site/CookieConsentFields";
 // useTranslation. Mesma ideia em CURSOR_OPTIONS (use-cursor.ts).
 const ANIMATION_LEVELS: AnimationLevel[] = ["all", "reduced", "none"];
 
-type SectionKey = "tema" | "cookies" | "idioma" | "animacoes" | "cursor";
+type SectionKey = "tema" | "cookies" | "animacoes" | "cursor";
 
 // Só chave + ícone aqui — o label vem traduzido de settings.json → sections.*
-// (useTranslation), pra sidebar/abas mudarem de idioma junto com o resto.
+// (useTranslation).
+//
+// A seção "Idioma" existiu aqui (troca entre pt/en/es/de/it) e foi removida
+// por decisão do cliente — o site passou a ser só em português. O texto
+// continua vindo de src/i18n/locales/pt/*.json via t("chave") normalmente
+// (isso é o que o painel do Decap edita), só não existe mais nenhum jeito de
+// trocar de idioma pela interface. Ver src/i18n/index.ts.
 const SECTIONS: { key: SectionKey; icon: ReactNode }[] = [
   { key: "tema", icon: <Sun className="size-4" aria-hidden /> },
   { key: "cookies", icon: <Cookie className="size-4" aria-hidden /> },
-  { key: "idioma", icon: <Globe className="size-4" aria-hidden /> },
   { key: "animacoes", icon: <Sparkles className="size-4" aria-hidden /> },
   { key: "cursor", icon: <MousePointer2 className="size-4" aria-hidden /> },
 ];
@@ -40,11 +43,11 @@ const SECTIONS: { key: SectionKey; icon: ReactNode }[] = [
 // centralizado com sidebar de categorias à esquerda + conteúdo à direita,
 // no mesmo layout de "Configurações" do Claude (pedido explícito): lista
 // vertical de seções, uma ativa por vez, painel de conteúdo rolável do lado
-// direito. Tema, Cookies, Animações, Cursor e Idioma funcionam de verdade —
-// cada um reaproveitando seu respectivo hook (use-theme, use-animation-level,
-// use-cursor, i18next via useTranslation).
+// direito. Tema, Cookies, Animações e Cursor funcionam de verdade — cada um
+// reaproveitando seu respectivo hook (use-theme, use-animation-level,
+// use-cursor).
 export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { t, i18n } = useTranslation("settings");
+  const { t } = useTranslation("settings");
   const { theme, toggle: toggleTheme } = useTheme();
   const { level, setLevel } = useAnimationLevel();
   const { cursor, setCursor } = useCursor();
@@ -227,42 +230,6 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
                   {active === "cookies" && (
                     <div className="max-w-md">
                       <CookieConsentFields compact />
-                    </div>
-                  )}
-
-                  {active === "idioma" && (
-                    <div className="max-w-md">
-                      <div className="space-y-2">
-                        {LANGUAGES.map((lang) => (
-                          <button
-                            key={lang.code}
-                            type="button"
-                            onClick={() => i18n.changeLanguage(lang.code)}
-                            aria-pressed={i18n.language === lang.code}
-                            className={`flex w-full items-center justify-between gap-3 rounded-lg border p-3.5 text-left transition-colors ${
-                              i18n.language === lang.code
-                                ? "border-foreground/40 bg-surface-2"
-                                : "border-border hover:border-foreground/20"
-                            }`}
-                          >
-                            <p className="text-[13px] font-semibold text-foreground">{lang.label}</p>
-                            <span
-                              className={`inline-flex size-4 shrink-0 items-center justify-center rounded-full border ${
-                                i18n.language === lang.code
-                                  ? "border-foreground bg-foreground"
-                                  : "border-border"
-                              }`}
-                            >
-                              {i18n.language === lang.code && (
-                                <span className="size-1.5 rounded-full bg-background" />
-                              )}
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                      <p className="mt-3 text-[11.5px] leading-relaxed text-muted-foreground/70">
-                        {t("language.caption")}
-                      </p>
                     </div>
                   )}
 

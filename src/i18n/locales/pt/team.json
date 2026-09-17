@@ -6,19 +6,23 @@
   "members": {
     "luiz": {
       "role": "Financeiro · Assistência Técnica",
-      "bio": "Mantém a operação em ordem e coloca a mão na massa quando o hardware pede diagnóstico."
+      "bio": "Mantém a operação em ordem e coloca a mão na massa quando o hardware pede diagnóstico.",
+      "photo": "/uploads/equipe/luiz.webp"
     },
     "joao": {
       "role": "Comercial · Relacionamento com Clientes",
-      "bio": "Primeiro contato e último também: acompanha cada projeto do orçamento ao pós-venda."
+      "bio": "Primeiro contato e último também: acompanha cada projeto do orçamento ao pós-venda.",
+      "photo": "/uploads/equipe/joao.webp"
     },
     "rai": {
       "role": "Marketing · E-commerce",
-      "bio": "Cuida da presença da marca e da experiência de compra, do Instagram à entrega."
+      "bio": "Cuida da presença da marca e da experiência de compra, do Instagram à entrega.",
+      "photo": "/uploads/equipe/rai.webp"
     },
     "gabriel": {
       "role": "Videomaker · Produção de Conteúdo",
-      "bio": "Registra cada build. Se o setup ficou bonito, é ele quem aprova."
+      "bio": "Registra cada build. Se o setup ficou bonito, é ele quem aprova.",
+      "photo": "/uploads/equipe/gabriel.webp"
     }
   }
 }

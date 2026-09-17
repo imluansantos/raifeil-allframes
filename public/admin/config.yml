@@ -217,24 +217,52 @@ collections:
                 fields:
                   - { label: "Cargo", name: "role", widget: "string" }
                   - { label: "Biografia", name: "bio", widget: "text" }
+                  - {
+                      label: "Foto",
+                      name: "photo",
+                      widget: "image",
+                      media_folder: "/public/uploads/equipe",
+                      public_folder: "/uploads/equipe",
+                    }
               - label: "João Gabriel Guedes Galiazzi"
                 name: "joao"
                 widget: "object"
                 fields:
                   - { label: "Cargo", name: "role", widget: "string" }
                   - { label: "Biografia", name: "bio", widget: "text" }
+                  - {
+                      label: "Foto",
+                      name: "photo",
+                      widget: "image",
+                      media_folder: "/public/uploads/equipe",
+                      public_folder: "/uploads/equipe",
+                    }
               - label: "Raí Feil dos Santos"
                 name: "rai"
                 widget: "object"
                 fields:
                   - { label: "Cargo", name: "role", widget: "string" }
                   - { label: "Biografia", name: "bio", widget: "text" }
+                  - {
+                      label: "Foto",
+                      name: "photo",
+                      widget: "image",
+                      media_folder: "/public/uploads/equipe",
+                      public_folder: "/uploads/equipe",
+                    }
               - label: "Gabriel Dorneles"
                 name: "gabriel"
                 widget: "object"
                 fields:
                   - { label: "Cargo", name: "role", widget: "string" }
                   - { label: "Biografia", name: "bio", widget: "text" }
+                  - {
+                      label: "Foto",
+                      name: "photo",
+                      widget: "image",
+                      media_folder: "/public/uploads/equipe",
+                      public_folder: "/uploads/equipe",
+                    }
 
       - name: "testimonials"
         label: "Depoimentos"

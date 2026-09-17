@@ -3,12 +3,6 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TEAM } from "@/data/site";
 import { SectionFade } from "@/components/site/SectionFade";
-import raif from "@/assets/rai-1.webp"
-import joaog from "@/assets/joao-g.webp"
-import luizw from "@/assets/luiz-w.webp";
-import gabrield from "@/assets/gabriel-d.webp";
-
-const PHOTOS: (string | undefined)[] = [luizw, joaog, raif, gabrield];
 
 function initials(name: string) {
   const parts = name.split(" ");
@@ -255,18 +249,27 @@ export function Team() {
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-          {TEAM.map((member, i) => (
-            <TeamCard
-              key={member.name}
-              index={i}
-              name={member.name}
-              role={t(`members.${member.key}.role`)}
-              bio={t(`members.${member.key}.bio`)}
-              photo={PHOTOS[i]}
-              visible={visible}
-              delay={160 + i * 80}
-            />
-          ))}
+          {TEAM.map((member, i) => {
+            // A foto agora vem do mesmo team.json editado pelo painel do
+            // Decap (campo "Foto" de cada integrante) em vez de um import
+            // fixo — { defaultValue: "" } + `|| undefined` garante que, se
+            // algum dia faltar a foto de alguém, cai no placeholder com as
+            // iniciais (ver TeamCard acima) em vez de tentar renderizar uma
+            // <img> com a própria chave de tradução como src.
+            const photo = t(`members.${member.key}.photo`, { defaultValue: "" }) || undefined;
+            return (
+              <TeamCard
+                key={member.name}
+                index={i}
+                name={member.name}
+                role={t(`members.${member.key}.role`)}
+                bio={t(`members.${member.key}.bio`)}
+                photo={photo}
+                visible={visible}
+                delay={160 + i * 80}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
