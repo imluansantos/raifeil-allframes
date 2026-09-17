@@ -27,35 +27,33 @@
     <style>
       /*
         Identidade visual da All Frames Technology aplicada por cima do
-        Decap CMS "de fábrica" (sem forkar/reescrever a biblioteca).
+        Decap CMS "de fábrica", sem forkar/reescrever a biblioteca nem tocar
+        na autenticação. Duas camadas, de propósito:
 
-        Cores extraídas direto de src/styles.css (mesmas variáveis
-        --background/--foreground/etc. do tier 1, escuro, do site) e
-        convertidas de oklch() pra hex simples, já que esse CSS aqui é
-        isolado do build do Tailwind do resto do projeto.
+        1) html/body — pinta o fundo da página inteira. Sempre seguro: o
+           Decap não pinta nada de si mesmo em cima disso (#nc-root é
+           transparente), então nunca tapa nem ilegibiliza os painéis do
+           editor autenticado.
 
-        Duas camadas, de propósito:
+        2) [class*="StyledAuthenticationPage"] — a seção que o Decap usa POR
+           DENTRO só na tela de login (confirmado inspecionando o HTML
+           renderizado em produção). Ela nunca existe depois que você loga,
+           então nada aqui dentro pode vazar pro editor (Salvar, Publicar,
+           listagem de conteúdo etc. continuam exatamente como o Decap
+           desenha por padrão). Usamos `[class*="..."]` (contém, não igual)
+           porque o Decap gera um sufixo de hash novo a cada build nesse
+           nome de classe — só a parte legível do meio ("StyledAuthentication
+           Page", "LoginButton", "CustomIconWrapper", "GoBackButtonStyle",
+           "NetlifyCreditIcon") é estável entre deploys. Se uma atualização
+           futura do Decap mudar esses nomes internos, o pior que acontece é
+           a tela voltar a aparecer com o visual padrão dele — nada quebra,
+           é só cosmético.
 
-        1) html/body — pinta o "fundo" da página inteira, tanto na tela de
-           login quanto (nas margens/vãos) depois de logado no editor. Isso é
-           sempre seguro: o Decap não pinta nada de si mesmo em cima disso
-           (#nc-root é transparente), então não corre risco nenhum de tapar
-           ou ilegibilizar os painéis do editor.
-
-        2) [class*="StyledAuthenticationPage"] — essa é a seção que o Decap
-           usa POR DENTRO só na tela de login (confirmado inspecionando o
-           HTML renderizado em produção). Ela nunca existe depois que você
-           loga, então qualquer regra dentro desse escopo é impossível de
-           vazar pro editor autenticado (Salvar, Publicar, listagem de
-           conteúdo etc. continuam exatamente como o Decap desenha por
-           padrão). Usamos `[class*="..."]` (contém, não igual) porque o
-           Decap gera um sufixo de hash único a cada build nesse nome de
-           classe — só a parte legível do meio ("StyledAuthenticationPage",
-           "LoginButton") é estável entre deploys.
-
-        Se uma atualização futura do Decap mudar esses nomes internos, o
-        pior que acontece é a tela de login voltar a aparecer com o visual
-        padrão dele (rosa/cinza-claro) — nada quebra, é só cosmético.
+        O título/frase/descrição abaixo da logo NÃO são um recurso nativo do
+        Decap (o config.yml só permite trocar a logo) — são 3 elementos que
+        o <script> lá embaixo insere no DOM depois que essa seção aparece,
+        sem tocar no botão de login nem no link "Voltar ao site" (só lê o
+        texto do botão pra deixar mais curto). Ver comentário no <script>.
       */
 
       html,
@@ -72,15 +70,62 @@
       [class*="StyledAuthenticationPage"] {
         background: transparent !important;
         min-height: 100vh;
-        gap: 32px;
+        gap: 22px !important;
+        padding: 32px 24px;
+        animation: af-fade-in 0.6s ease-out both;
       }
 
-      /* logo da All Frames (vem de config.yml → logo.src) um pouco maior e
-         com uma respiração maior até o botão abaixo dela */
+      @media (prefers-reduced-motion: reduce) {
+        [class*="StyledAuthenticationPage"] {
+          animation: none;
+        }
+      }
+
+      @keyframes af-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* logo da All Frames (vem de config.yml → logo.src) — discreta, só
+         pra identificar a marca, sem competir com o título abaixo dela */
       [class*="StyledAuthenticationPage"] img {
         width: auto;
-        height: 56px;
-        max-width: 80vw;
+        height: 40px;
+        max-width: 70vw;
+      }
+
+      /* título + frase + descrição inseridos via JS (ver <script>) */
+      .af-login-title {
+        margin: 4px 0 0;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #f4f5f6;
+        text-align: center;
+      }
+
+      .af-login-tagline {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        color: #f4f5f6;
+        text-align: center;
+        opacity: 0.92;
+      }
+
+      .af-login-desc {
+        margin: -8px 0 0;
+        max-width: 300px;
+        font-size: 12.5px;
+        line-height: 1.5;
+        color: #8f9397;
+        text-align: center;
       }
 
       [class*="StyledAuthenticationPage"] [class*="LoginButton"] {
@@ -113,14 +158,120 @@
         fill: currentColor;
       }
 
+      /* "Voltar ao site" — mantido, mas rebaixado visualmente (menor, mais
+         apagado) pra não competir com o botão de login */
+      [class*="StyledAuthenticationPage"] [class*="GoBackButtonStyle"] {
+        margin-top: 6px;
+        opacity: 0.55;
+        transition: opacity 0.2s ease;
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="GoBackButtonStyle"]:hover {
+        opacity: 0.9;
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="GoBackButtonStyle"] svg path {
+        fill: #f4f5f6 !important;
+      }
+
+      [class*="StyledAuthenticationPage"] [class*="ButtonText"] {
+        color: #f4f5f6 !important;
+        font-size: 12px !important;
+      }
+
+      /* remove a marca "Decap"/logo do rodapé da tela — o cliente final não
+         precisa saber qual tecnologia roda por baixo do painel */
+      [class*="NetlifyCreditIcon"] {
+        display: none !important;
+      }
+
       /* mensagens de erro de login (credenciais recusadas etc.) — mantém
          legível no fundo escuro em vez do texto escuro padrão do Decap */
       [class*="StyledAuthenticationPage"] [class*="ErrorMessage"] {
         color: #f4a3a3 !important;
       }
+
+      @media (max-width: 480px) {
+        [class*="StyledAuthenticationPage"] {
+          gap: 16px !important;
+        }
+        [class*="StyledAuthenticationPage"] img {
+          height: 32px;
+        }
+        .af-login-title {
+          font-size: 19px;
+        }
+        .af-login-tagline {
+          font-size: 13px;
+        }
+        .af-login-desc {
+          font-size: 12px;
+          max-width: 260px;
+        }
+        [class*="StyledAuthenticationPage"] [class*="LoginButton"] {
+          padding: 12px 24px !important;
+        }
+      }
     </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // O Decap não tem um jeito nativo (via config.yml) de adicionar
+      // título/frase/descrição na tela de login — só a logo é configurável.
+      // Então observamos o DOM até a seção de login aparecer e inserimos
+      // esses 3 elementos como IRMÃOS dos que o Decap já renderiza (entre a
+      // logo e o botão), sem substituir, clonar ou desmontar nada que o
+      // Decap controla. O botão de login e o link "Voltar ao site" continuam
+      // sendo exatamente os elementos originais do Decap, com o mesmo
+      // onClick/href de sempre — só o texto do botão é encurtado ("Entrar
+      // com o GitHub" → "Entrar com GitHub"), trocando apenas o nó de texto,
+      // nunca o elemento em si.
+      (function () {
+        function enhance(section) {
+          if (section.dataset.afEnhanced) return;
+
+          var button = section.querySelector('[class*="LoginButton"]');
+          if (!button) return; // ainda não renderizou tudo, tenta de novo depois
+
+          section.dataset.afEnhanced = "true";
+
+          var title = document.createElement("h1");
+          title.className = "af-login-title";
+          title.textContent = "Editor Visual do Site";
+
+          var tagline = document.createElement("p");
+          tagline.className = "af-login-tagline";
+          tagline.textContent = "Seu site, sempre atualizado.";
+
+          var desc = document.createElement("p");
+          desc.className = "af-login-desc";
+          desc.textContent =
+            "Edite conteúdos, imagens e informações de forma rápida e simples, sem precisar mexer no código.";
+
+          button.insertAdjacentElement("beforebegin", title);
+          button.insertAdjacentElement("beforebegin", tagline);
+          button.insertAdjacentElement("beforebegin", desc);
+
+          // encurta o texto do botão sem recriar o elemento (preserva o
+          // onClick que o Decap já anexou nele)
+          for (var i = 0; i < button.childNodes.length; i++) {
+            var node = button.childNodes[i];
+            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim()) {
+              node.nodeValue = "Entrar com GitHub";
+              break;
+            }
+          }
+        }
+
+        function scan() {
+          var section = document.querySelector('[class*="StyledAuthenticationPage"]');
+          if (section) enhance(section);
+        }
+
+        scan();
+        new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>
