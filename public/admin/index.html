@@ -58,7 +58,12 @@
 
       html,
       body {
-        background: #08090b !important;
+        /* `background-color`, não o atalho `background` — o atalho reseta
+           todas as sub-propriedades não citadas (inclusive background-image)
+           pro valor inicial ("none"), e como isso vinha com !important,
+           cancelava silenciosamente o grid definido logo abaixo. Foi
+           exatamente esse o motivo do grid não aparecer. */
+        background-color: #08090b !important;
         color: #f4f5f6;
         font-family:
           "Inter",
@@ -293,16 +298,16 @@
 
           var title = document.createElement("h1");
           title.className = "af-login-title";
-          title.textContent = "Editor Visual do Site";
+          title.textContent = "Central do Administrador";
 
           var tagline = document.createElement("p");
           tagline.className = "af-login-tagline";
-          tagline.textContent = "Seu site, sempre atualizado.";
+          tagline.textContent = "Acesso restrito ao ambiente administrativo.";
 
           var desc = document.createElement("p");
           desc.className = "af-login-desc";
           desc.textContent =
-            "Edite conteúdos, imagens e informações de forma rápida e simples, sem precisar mexer no código.";
+            "Ambiente reservado para administradores, onde é possível gerenciar conteúdos, informações e recursos da plataforma em um único lugar, com praticidade, organização e controle.";
 
           button.insertAdjacentElement("beforebegin", title);
           button.insertAdjacentElement("beforebegin", tagline);
