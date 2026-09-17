@@ -8,6 +8,12 @@
          no repositório do GitHub consegue entrar aqui — ver config.yml
          nesta mesma pasta pra entender o que dá pra editar e como o login
          funciona (src/routes/api/decap/auth.ts e callback.ts). -->
+    <!-- Caminho absoluto de propósito: sem isso, o Decap busca "config.yml"
+         relativo à URL atual, e se a página for acessada como "/admin" (sem
+         barra no final) o navegador resolve isso pra "/config.yml" (na raiz
+         do site, onde não existe nada) em vez de "/admin/config.yml" — foi
+         exatamente esse o erro 404 visto em produção. -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
