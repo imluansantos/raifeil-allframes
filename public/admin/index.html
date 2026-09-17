@@ -54,10 +54,21 @@
         o <script> lá embaixo insere no DOM depois que essa seção aparece,
         sem tocar no botão de login nem no link "Voltar ao site" (só lê o
         texto do botão pra deixar mais curto). Ver comentário no <script>.
+
+        IMPORTANTE: todo o tema escuro abaixo (fundo, grid, degradês) fica
+        dentro de `html.af-login-screen` — uma classe que o <script> lá
+        embaixo liga na tag <html> só enquanto a seção de login existe, e
+        desliga assim que ela some (ou seja, assim que você loga). Antes essas
+        regras eram em `html, body` direto, sem essa classe — funcionavam na
+        tela de login, mas continuavam ativas DEPOIS de logar também, e o
+        editor do Decop (que espera um fundo claro) ficava com as telas de
+        edição de texto/imagem completamente pretas e sem nada visível por
+        cima. Com a classe, o tema escuro nunca chega a existir fora da tela
+        de login — o editor volta a usar o visual padrão dele, intacto.
       */
 
-      html,
-      body {
+      html.af-login-screen,
+      html.af-login-screen body {
         /* `background-color`, não o atalho `background` — o atalho reseta
            todas as sub-propriedades não citadas (inclusive background-image)
            pro valor inicial ("none"), e como isso vinha com !important,
@@ -76,7 +87,7 @@
          equivalente em src/styles.css (body, tier 1 escuro) — mesmas cores,
          mesmos tamanhos. Essa página não passa pelo build do Tailwind, então
          é a mesma receita reescrita em CSS puro em vez de reaproveitada. */
-      body {
+      html.af-login-screen body {
         background-image:
           radial-gradient(rgba(255, 255, 255, 0.14) 0.4px, transparent 0.4px),
           linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
@@ -96,8 +107,8 @@
          "vinheta" suave em vez de terminar de forma seca. z-index acima do
          grid do body, mas abaixo do conteúdo do login (#nc-root, logo
          abaixo) — nunca cobre a logo/título/botão. */
-      body::before,
-      body::after {
+      html.af-login-screen body::before,
+      html.af-login-screen body::after {
         content: "";
         position: fixed;
         left: 0;
@@ -106,16 +117,16 @@
         pointer-events: none;
         z-index: 1;
       }
-      body::before {
+      html.af-login-screen body::before {
         top: 0;
         background-image: linear-gradient(to bottom, #08090b 0%, transparent 100%);
       }
-      body::after {
+      html.af-login-screen body::after {
         bottom: 0;
         background-image: linear-gradient(to top, #08090b 0%, transparent 100%);
       }
 
-      #nc-root {
+      html.af-login-screen #nc-root {
         position: relative;
         z-index: 2;
       }
@@ -326,7 +337,15 @@
 
         function scan() {
           var section = document.querySelector('[class*="StyledAuthenticationPage"]');
-          if (section) enhance(section);
+          if (section) {
+            // Liga o tema escuro (ver bloco html.af-login-screen no <style>)
+            // só enquanto essa seção existir — ela some assim que o login dá
+            // certo, então isso nunca fica ligado dentro do editor.
+            document.documentElement.classList.add("af-login-screen");
+            enhance(section);
+          } else {
+            document.documentElement.classList.remove("af-login-screen");
+          }
         }
 
         scan();
@@ -370,6 +389,46 @@
         new MutationObserver(function (mutations) {
           mutations.forEach(function (m) {
             m.addedNodes.forEach(translateTextNodes);
+          });
+        }).observe(document.body, { childList: true, subtree: true });
+      })();
+
+      // Depois de qualquer erro de login (credenciais recusadas, sem acesso
+      // ao repo etc.), o botão "Entrar com GitHub" fica travado/sem reação —
+      // isso é um comportamento do próprio Decap (o estado interno de
+      // "carregando" não é limpo quando a popup fecha com erro) e não tem
+      // como consertar por dentro sem reescrever a biblioteca. A saída mais
+      // simples e segura é reproduzir o que o F5 já resolve: assim que um
+      // toast de erro aparece (react-toastify, usado por baixo do Decap, tem
+      // classe "Toastify__toast--error" — nome estável, não muda a cada
+      // build como as classes do restante da tela), recarrega a página
+      // sozinho depois de alguns segundos, tempo suficiente pra pessoa ler a
+      // mensagem antes da tela reiniciar com o botão liberado de novo.
+      (function () {
+        var reloadScheduled = false;
+
+        function scheduleReload(delayMs) {
+          if (reloadScheduled) return;
+          reloadScheduled = true;
+          setTimeout(function () {
+            location.reload();
+          }, delayMs);
+        }
+
+        function looksLikeErrorToast(el) {
+          if (!el.className || typeof el.className !== "string") return false;
+          return el.className.indexOf("Toastify__toast--error") !== -1;
+        }
+
+        new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(function (node) {
+              if (node.nodeType !== Node.ELEMENT_NODE) return;
+              var isError =
+                looksLikeErrorToast(node) ||
+                (node.querySelector && node.querySelector('[class*="Toastify__toast--error"]'));
+              if (isError) scheduleReload(4000);
+            });
           });
         }).observe(document.body, { childList: true, subtree: true });
       })();
