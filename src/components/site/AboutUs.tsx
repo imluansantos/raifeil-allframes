@@ -17,6 +17,12 @@ const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(MAPS_
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`;
 export function AboutUs() {
   const { t } = useTranslation("aboutus");
+  // "Foto da loja (seção Sobre Nós)" no CMS (Sobre Nós > storePhoto) — campo
+  // opcional, vazio por padrão: sem edição pelo painel continua usando a
+  // mesma foto de sempre (storefront, importada acima). Mesmo padrão de
+  // fallback já usado no fundo da Hero (Hero.tsx) e nas fotos da equipe
+  // (Team.tsx).
+  const customStorePhoto = t("storePhoto", { defaultValue: "" });
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [showLocation, setShowLocation] = useState(false);
@@ -237,7 +243,7 @@ export function AboutUs() {
           >
             <div className="absolute inset-0 overflow-hidden rounded-md">
               <img
-                src={storefront}
+                src={customStorePhoto || storefront}
                 alt={t("storeAlt")}
                 loading="lazy"
                 decoding="async"

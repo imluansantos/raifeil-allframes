@@ -63,7 +63,8 @@
         "motherboard": "MSI",
         "cooling": "Water Cooler Branco 360mm",
         "case": "Gabinete branco Lian Li O11 Dynamic Mini V2"
-      }
+      },
+      "coverImage": ""
     },
     "allframes-ultra1": {
       "shortDescription": "Tema vermelho e preto com fans ARGB em zigue-zague e GeForce RTX à mostra. Build em fase final, ainda na loja.",
@@ -74,7 +75,8 @@
         "motherboard": "ASUS TUF Gaming",
         "ram": "Kingston",
         "case": "Gabinete preto, vidro temperado vermelho"
-      }
+      },
+      "coverImage": ""
     },
     "aurora": {
       "shortDescription": "RGB sincronizado em cada componente, com a iluminação tratada como parte do projeto, não como extra.",
@@ -82,7 +84,8 @@
       "objective": "Máximo de personalização visual sem perder organização interna.",
       "specs": {
         "gpu": "NVIDIA GeForce RTX"
-      }
+      },
+      "coverImage": ""
     },
     "pc-blueout": {
       "shortDescription": "Fans em RGB percorrendo o espectro de cores, Radeon Gigabyte e fonte Corsair à mostra em um gabinete preto.",
@@ -91,7 +94,8 @@
       "specs": {
         "gpu": "AMD Radeon (Gigabyte)",
         "case": "Gabinete preto"
-      }
+      },
+      "coverImage": ""
     },
     "snow-build": {
       "shortDescription": "Gabinete Mancer CV500L all-white com Ryzen 7 5700X, Radeon RX 6650XT e water cooling. Seis fans organizados em fileira.",
@@ -103,7 +107,8 @@
         "motherboard": "Gigabyte B550M Aorus Elite",
         "cooling": "Water Cooler 240mm Black RiseMode",
         "case": "Mancer CV500L"
-      }
+      },
+      "coverImage": ""
     },
     "frostline": {
       "shortDescription": "Gabinete branco com water Cooler Master, memória RGB rosa e GeForce RTX à mostra.",
@@ -115,7 +120,8 @@
         "ram": "Kingston Fury RGB",
         "cooling": "Water cooling (Cooler Master)",
         "case": "Gabinete branco"
-      }
+      },
+      "coverImage": ""
     },
     "mistic": {
       "shortDescription": "Water cooling com tubo flexível sleeved, Radeon Gigabyte e memória Fury Beast em um gabinete preto.",
@@ -126,7 +132,8 @@
         "ram": "Kingston Fury Beast",
         "cooling": "Water Cooler",
         "case": "Gabinete preto"
-      }
+      },
+      "coverImage": ""
     },
     "glacial": {
       "shortDescription": "Gabinete preto com RGB azul, placa-mãe ASUS Prime A520M-R e GeForce RTX à mostra.",
@@ -136,7 +143,8 @@
         "gpu": "NVIDIA GeForce RTX",
         "motherboard": "ASUS Prime A520M-R",
         "case": "Gabinete preto"
-      }
+      },
+      "coverImage": ""
     },
     "prism": {
       "shortDescription": "Fans em RGB rosa, azul e roxo, water cooler Cooler Master e GeForce GPU exposta em um gabinete preto com vidro lateral.",
@@ -146,7 +154,8 @@
         "gpu": "NVIDIA GeForce",
         "cooling": "Water cooling (Cooler Master)",
         "case": "Gabinete preto, vidro temperado"
-      }
+      },
+      "coverImage": ""
     }
   }
 }

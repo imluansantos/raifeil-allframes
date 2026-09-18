@@ -9,6 +9,13 @@ import storefront from "@/assets/frentedaloja.webp";
 
 export function Hero() {
   const { t } = useTranslation("hero");
+  // "Foto de fundo do banner principal" no CMS (Início > backgroundImage) —
+  // campo opcional (required: false em config.yml): vazio por padrão, então
+  // sem ninguém trocar nada pelo painel o site continua usando exatamente a
+  // mesma foto de sempre (storefront, importada acima). Assim que o admin
+  // subir uma foto ali, ela passa a ganhar prioridade — mesmo padrão já
+  // usado pelas fotos da equipe em Team.tsx.
+  const customBackground = t("backgroundImage", { defaultValue: "" });
   return (
     <section id="top" className="relative overflow-hidden bg-background">
       {/* background padrão do site — grid técnico + grain. Só aparece
@@ -20,7 +27,7 @@ export function Hero() {
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={storefront}
+            src={customBackground || storefront}
             alt=""
             aria-hidden
             draggable={false}

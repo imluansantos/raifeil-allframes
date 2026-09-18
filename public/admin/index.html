@@ -283,6 +283,216 @@
           padding: 12px 24px !important;
         }
       }
+
+      /* =====================================================================
+       * PAINEL LOGADO (depois do login) — mesma identidade visual acima,
+       * agora aplicada na tela de verdade que o administrador usa no dia a
+       * dia (listagem de coleções + tela de edição). Diferente da tela de
+       * login (styled-components com hash instável, por isso o seletor
+       * `[class*="StyledAuthenticationPage"]`), essas telas usam Emotion e
+       * têm uma parte do nome de classe ESTÁVEL só que HOJE (versão
+       * decap-cms@3.x) — ex: "css-t7s16-AppHeaderSiteLink-AppHeaderLink-...".
+       * O hash no início/meio muda a cada build, mas o pedaço legível
+       * (AppHeader, SidebarContainer, ListCard, ControlPaneContainer etc.)
+       * foi confirmado inspecionando o HTML renderizado em produção — mesmo
+       * princípio de `[class*="..."]` usado acima, só que numa lib de CSS
+       * diferente por baixo. Se uma atualização futura do Decap mudar esses
+       * nomes, o pior que acontece é o painel voltar a aparecer com a cor
+       * "de fábrica" dele — nada quebra, é só cosmético (mesma garantia da
+       * tela de login).
+       *
+       * `!important` em quase tudo aqui não é descuido: o Decap injeta o
+       * CSS dele via JavaScript (Emotion), depois que essa tag <style>
+       * já existe no <head> — ou seja, sem `!important` o "empate" de
+       * especificidade seria decidido pela ORDEM de inserção, e a regra
+       * dele (inserida depois) venceria a nossa. É a mesma razão pela qual
+       * o bloco de login acima também usa `!important` bastante.
+       *
+       * Paleta: os mesmos tokens de cor do tema escuro do site
+       * (src/styles.css, bloco `:root`/tier 1) copiados em oklch() puro —
+       * essa tela não passa pelo Tailwind, então os valores são colados
+       * direto em vez de reaproveitados via classe utilitária.
+       *   --af-bg:        oklch(0.14 0.004 250)   → fundo (igual --background)
+       *   --af-surface:   oklch(0.175 0.005 250)  → cartões/inputs (--surface)
+       *   --af-surface-2: oklch(0.215 0.006 250)  → hover/секundário (--surface-2)
+       *   --af-fg:        oklch(0.97 0.002 250)   → texto principal (--foreground)
+       *   --af-muted:     oklch(0.66 0.008 250)   → texto apagado (--muted-foreground)
+       *   --af-border:    oklch(1 0 0 / 8%)        → borda fraca (--border)
+       *   --af-border-2:  oklch(1 0 0 / 16%)       → borda forte (--border-strong)
+       * ===================================================================== */
+
+      :root {
+        --af-bg: oklch(0.14 0.004 250);
+        --af-surface: oklch(0.175 0.005 250);
+        --af-surface-2: oklch(0.215 0.006 250);
+        --af-fg: oklch(0.97 0.002 250);
+        --af-muted: oklch(0.66 0.008 250);
+        --af-border: oklch(1 0 0 / 8%);
+        --af-border-2: oklch(1 0 0 / 16%);
+        --af-glow: 0 0 0 1px oklch(1 0 0 / 35%), 0 8px 40px -12px oklch(1 0 0 / 35%);
+      }
+
+      /* ---- Cabeçalho fixo (abas Conteúdos/Mídia, link do site, avatar) ---- */
+      [class*="AppHeader-css"] {
+        background: var(--af-bg) !important;
+        border-bottom: 1px solid var(--af-border) !important;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+      }
+      [class*="AppHeaderNavList"] [class*="AppHeaderButton"],
+      [class*="AppHeaderNavList"] [class*="AppHeaderNavLink"] {
+        color: var(--af-muted) !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.02em;
+      }
+      [class*="AppHeaderNavList"] [class*="AppHeaderButton"].header-link-active,
+      [class*="AppHeaderNavList"] [class*="AppHeaderNavLink"].header-link-active {
+        color: var(--af-fg) !important;
+      }
+      /* link "allframes.vercel.app" → some o texto original (font-size: 0,
+         sem apagar o elemento) e escreve "Admin" no lugar via ::after — o
+         <a> continua sendo o mesmo elemento, com o mesmo href/onClick do
+         Decap, então clicar nele ainda leva de volta ao site publicado. */
+      [class*="AppHeaderSiteLink"] {
+        font-size: 0 !important;
+        color: var(--af-muted) !important;
+        text-decoration: none !important;
+      }
+      [class*="AppHeaderSiteLink"]::after {
+        content: "Admin";
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      [class*="AppHeaderSiteLink"]:hover {
+        color: var(--af-fg) !important;
+      }
+      [class*="AvatarDropdownButton"] {
+        border-radius: 999px !important;
+      }
+
+      /* ---- Barra lateral (Coleções + busca) ---- */
+      [class*="SidebarContainer"] {
+        background: var(--af-bg) !important;
+        border-right: 1px solid var(--af-border) !important;
+      }
+      [class*="SidebarHeading"] {
+        color: var(--af-muted) !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.1em !important;
+        text-transform: uppercase;
+      }
+      [class*="SearchContainer"],
+      [class*="InputContainer"] {
+        background: var(--af-surface) !important;
+        border: 1px solid var(--af-border) !important;
+      }
+      [class*="SearchInput"] {
+        background: transparent !important;
+        color: var(--af-fg) !important;
+      }
+      [class*="SidebarContainer"] a {
+        color: var(--af-fg) !important;
+      }
+
+      /* ---- Área principal + topo da coleção ("Textos do site") ---- */
+      [class*="AppMainContainer"],
+      [class*="CollectionContainer"],
+      [class*="CollectionMain"] {
+        background: var(--af-bg) !important;
+      }
+      [class*="CollectionTopContainer"] {
+        background: var(--af-bg) !important;
+        border-bottom: 1px solid var(--af-border) !important;
+      }
+      [class*="CollectionTopHeading"] {
+        color: var(--af-fg) !important;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+      }
+      [class*="CollectionTopRow"] p {
+        color: var(--af-muted) !important;
+      }
+
+      /* ---- Cartões da listagem ("Cabeçalho (menu no topo)" etc.) ---- */
+      [class*="ListCard"] {
+        background: var(--af-surface) !important;
+        border: 1px solid var(--af-border) !important;
+        border-radius: 12px !important;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      [class*="ListCard"]:hover {
+        border-color: var(--af-border-2) !important;
+        transform: translateY(-1px);
+      }
+      [class*="ListCardTitle"] {
+        color: var(--af-fg) !important;
+        font-weight: 600 !important;
+      }
+
+      /* ---- Tela de edição: barra de ferramentas (Publicado, Salvar...) ---- */
+      [class*="ToolbarContainer"] {
+        background: var(--af-bg) !important;
+        border-bottom: 1px solid var(--af-border) !important;
+      }
+      [class*="ToolbarContainer"] * {
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+      }
+      [class*="ToolbarButton"] {
+        color: var(--af-fg) !important;
+      }
+      /* selo "Publicado" — vira um badge discreto em vez do verde padrão do
+         Decap, seguindo a mesma linguagem visual "pill" usada nos botões do
+         site (ver Hero.tsx, botão principal). */
+      [class*="PublishedButton"] {
+        background: var(--af-surface-2) !important;
+        border: 1px solid var(--af-border-2) !important;
+        border-radius: 999px !important;
+      }
+
+      /* ---- Tela de edição: coluna de campos (esquerda) ---- */
+      [class*="EditorContainer"] {
+        background: var(--af-bg) !important;
+      }
+      [class*="ControlPaneContainer"] {
+        background: var(--af-bg) !important;
+      }
+      [class*="ControlPaneContainer"] label {
+        color: var(--af-muted) !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.06em;
+      }
+      [class*="ControlPaneContainer"] input,
+      [class*="ControlPaneContainer"] textarea,
+      [class*="ControlPaneContainer"] select {
+        background: var(--af-surface) !important;
+        color: var(--af-fg) !important;
+        border: 1px solid var(--af-border) !important;
+        border-radius: 8px !important;
+      }
+      /* mesmo "glow" de foco usado nos inputs do site de verdade
+         (--shadow-glow em src/styles.css) — reaproveitado aqui em oklch()
+         puro pra a mesma sensação ao digitar. */
+      [class*="ControlPaneContainer"] input:focus,
+      [class*="ControlPaneContainer"] textarea:focus,
+      [class*="ControlPaneContainer"] select:focus {
+        outline: none !important;
+        box-shadow: var(--af-glow) !important;
+        border-color: transparent !important;
+      }
+
+      /* ---- Tela de edição: painel de pré-visualização (direita) ----
+         Sem preview customizado (registerPreviewTemplate) configurado, o
+         Decap mostra um preview genérico claro — em vez de forçar isso pra
+         escuro (exigiria mexer no <iframe>, fora do escopo de um CSS
+         "por cima"), a moldura ganha respiro/contraste como se fosse uma
+         folha de papel sobre a mesa escura — leitura intencional, não
+         acidente. */
+      [class*="PreviewPaneContainer"] {
+        background: var(--af-surface) !important;
+        border-left: 1px solid var(--af-border) !important;
+      }
     </style>
   </head>
   <body>

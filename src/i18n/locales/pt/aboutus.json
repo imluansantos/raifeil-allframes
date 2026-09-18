@@ -14,5 +14,6 @@
   "tapHint": "Toque para ver a localização",
   "closeMapAriaLabel": "Fechar mapa",
   "ourLocation": "Nossa localização",
-  "viewOnMaps": "Ver no Google Maps"
+  "viewOnMaps": "Ver no Google Maps",
+  "storePhoto": ""
 }

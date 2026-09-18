@@ -42,7 +42,8 @@
         "Configuração de RGB e perfis de iluminação",
         "Organização e etiquetagem de cabos",
         "Transporte e entrega no endereço"
-      ]
+      ],
+      "bannerImage": ""
     },
     "reforma-e-upgrade": {
       "title": "Reforma e Upgrade",
@@ -73,7 +74,8 @@
         "Atualização de BIOS",
         "Benchmark comparativo antes/depois",
         "Backup e migração de dados"
-      ]
+      ],
+      "bannerImage": ""
     },
     "personalizacao": {
       "title": "Personalização",
@@ -102,7 +104,8 @@
         "Troca de vidro ou acrílico lateral",
         "Tematização completa (cores e tema)",
         "Gravação e acabamento personalizado"
-      ]
+      ],
+      "bannerImage": ""
     },
     "suporte-tecnico": {
       "title": "Suporte Técnico",
@@ -133,7 +136,8 @@
         "Configuração de rede e periféricos",
         "Suporte pós-venda vitalício",
         "Orientação por WhatsApp"
-      ]
+      ],
+      "bannerImage": ""
     }
   }
 }

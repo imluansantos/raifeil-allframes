@@ -69,7 +69,15 @@ export function Services() {
               <TiltCard
                 title={t(`cards.${service.slug}.title`)}
                 description={t(`cards.${service.slug}.lead`)}
-                imageSrc={service.image}
+                // "servicePages:" força a busca no namespace servicePages.json
+                // mesmo com o `t` daqui preso ao namespace "services" — igual
+                // ao `t("nav:about")` já usado em Hero.tsx. bannerImage é o
+                // campo opcional do CMS (Serviços > [cada serviço] > "Foto do
+                // banner desta página"); vazio por padrão, cai na imagem fixa
+                // de sempre (service.image, de servicePages.ts).
+                imageSrc={
+                  t(`servicePages:services.${service.slug}.bannerImage`, { defaultValue: "" }) || service.image
+                }
                 imageAlt=""
                 imagePosition={service.imagePosition}
                 href={service.path}

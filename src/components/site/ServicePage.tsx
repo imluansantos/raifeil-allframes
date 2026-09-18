@@ -61,6 +61,11 @@ export function ServicePage({ service }: { service: ServicePageData }) {
   const requestables = t(`services.${service.slug}.requestables`, {
     returnObjects: true,
   }) as string[];
+  // "Foto do banner desta página" no CMS — campo opcional, vazio por
+  // padrão: sem edição pelo painel, continua usando a imagem fixa de
+  // sempre (service.image, de servicePages.ts). Mesmo fallback do Hero e
+  // do Sobre Nós.
+  const bannerImage = t(`services.${service.slug}.bannerImage`, { defaultValue: "" }) || service.image;
 
   // banner é o primeiro fold — anima ao montar, sem esperar scroll (mesmo
   // padrão do Hero.tsx/PortfolioHero.tsx). As outras 3 seções ficam abaixo
@@ -82,7 +87,7 @@ export function ServicePage({ service }: { service: ServicePageData }) {
         <section id="service-hero" className="relative overflow-hidden">
           <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]">
             <img
-              src={service.image}
+              src={bannerImage}
               alt={title}
               fetchPriority="high"
               decoding="async"
@@ -274,6 +279,7 @@ function OtherServiceCard({
   const { t } = useTranslation("servicePages");
   const title = t(`services.${service.slug}.title`);
   const lead = t(`services.${service.slug}.lead`);
+  const bannerImage = t(`services.${service.slug}.bannerImage`, { defaultValue: "" }) || service.image;
 
   return (
     <div
@@ -282,7 +288,7 @@ function OtherServiceCard({
     >
       <div className="aspect-[16/9] overflow-hidden">
         <img
-          src={service.image}
+          src={bannerImage}
           alt=""
           loading="lazy"
           decoding="async"

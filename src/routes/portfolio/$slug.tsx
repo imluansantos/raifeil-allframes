@@ -55,6 +55,9 @@ function ProjectDetailPage() {
   const specEntries = project.specKeys.filter((key) => specValues[key]);
   const gallery = project.gallery ?? [];
   const related = PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 3);
+  // "Foto de capa do projeto" no CMS — mesmo campo opcional lido em
+  // ProjectCard.tsx; aqui também serve de poster do banner (foto ou vídeo).
+  const coverImage = t(`projects.${project.slug}.coverImage`, { defaultValue: "" }) || project.cover;
 
   return (
     <div className="min-h-screen bg-background">
@@ -71,7 +74,7 @@ function ProjectDetailPage() {
             {project.video && !isReducedOrNone ? (
               <video
                 src={project.video}
-                poster={project.videoPoster ?? project.cover}
+                poster={project.videoPoster ?? coverImage}
                 autoPlay
                 muted
                 loop
@@ -81,7 +84,7 @@ function ProjectDetailPage() {
               />
             ) : (
               <img
-                src={project.videoPoster ?? project.cover}
+                src={project.videoPoster ?? coverImage}
                 alt={`${project.title}, ${project.category}`}
                 fetchPriority="high"
                 decoding="async"

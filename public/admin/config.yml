@@ -73,6 +73,14 @@ collections:
           - { label: "Texto acima da vitrine de fotos", name: "eyebrow", widget: "string" }
           - { label: "Link \"ver todos os projetos\"", name: "viewAllProjects", widget: "string" }
           - { label: "Texto \"role para ver mais\"", name: "scrollForMore", widget: "string" }
+          - {
+              label: "Foto de fundo do banner principal",
+              name: "backgroundImage",
+              widget: "image",
+              required: false,
+              media_folder: "/public/uploads/inicio",
+              public_folder: "/uploads/inicio",
+            }
 
       - name: "nav"
         label: "Itens do menu"
@@ -106,6 +114,14 @@ collections:
           - { label: "Acessibilidade — fechar mapa", name: "closeMapAriaLabel", widget: "string" }
           - { label: "Título \"Nossa localização\"", name: "ourLocation", widget: "string" }
           - { label: "Botão \"Ver no Google Maps\"", name: "viewOnMaps", widget: "string" }
+          - {
+              label: "Foto da loja (seção Sobre Nós)",
+              name: "storePhoto",
+              widget: "image",
+              required: false,
+              media_folder: "/public/uploads/sobre-nos",
+              public_folder: "/uploads/sobre-nos",
+            }
 
       - name: "differentials"
         label: "Diferenciais"
@@ -428,6 +444,14 @@ collections:
                       - { label: "Título", name: "title", widget: "string" }
                       - { label: "Texto", name: "text", widget: "text" }
                   - { label: "O que dá pra pedir (lista completa)", name: "requestables", widget: "list" }
+                  - {
+                      label: "Foto do banner desta página",
+                      name: "bannerImage",
+                      widget: "image",
+                      required: false,
+                      media_folder: "/public/uploads/servicos",
+                      public_folder: "/uploads/servicos",
+                    }
               - label: "Reforma e Upgrade"
                 name: "reforma-e-upgrade"
                 widget: "object"
@@ -526,6 +550,14 @@ collections:
                   - { label: "Descrição curta (aparece no cartão)", name: "shortDescription", widget: "text" }
                   - { label: "Descrição completa (aparece na página do projeto)", name: "description", widget: "text" }
                   - { label: "Objetivo do projeto", name: "objective", widget: "text" }
+                  - {
+                      label: "Foto de capa do projeto",
+                      name: "coverImage",
+                      widget: "image",
+                      required: false,
+                      media_folder: "/public/uploads/portfolio",
+                      public_folder: "/uploads/portfolio",
+                    }
               - label: "AllFrames Ultra 1"
                 name: "allframes-ultra1"
                 widget: "object"

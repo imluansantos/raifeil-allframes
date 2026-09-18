@@ -21,6 +21,10 @@ export function ProjectCard({
 }) {
   const { t } = useTranslation("portfolio");
   const shortDescription = t(`projects.${project.slug}.shortDescription`);
+  // "Foto de capa do projeto" no CMS (Portfólio > [cada projeto] > coverImage)
+  // — campo opcional, vazio por padrão: sem edição pelo painel, continua
+  // usando a foto fixa de sempre (project.cover, de src/data/projects.ts).
+  const coverImage = t(`projects.${project.slug}.coverImage`, { defaultValue: "" }) || project.cover;
   const glowRef = useRef<HTMLDivElement>(null);
 
   const handleMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -50,7 +54,7 @@ export function ProjectCard({
       }}
     >
       <img
-        src={project.cover}
+        src={coverImage}
         alt={`${project.title}, ${project.category}`}
         loading="lazy"
         decoding="async"
