@@ -39,6 +39,11 @@ export function PortfolioHero() {
   const { t } = useTranslation("portfolio");
   const projectCount = useCountUp(PROJECTS.length);
   const categoryCount = useCountUp(PROJECT_CATEGORIES.length, 900);
+  // Mesma "Foto da loja" do CMS (Sobre Nós > storePhoto) usada em
+  // AboutUs.tsx — "aboutus:" força a busca nesse namespace mesmo com o `t`
+  // daqui preso a "portfolio" (igual t("nav:about") em Hero.tsx). Vazio por
+  // padrão, cai na foto fixa de sempre (storefront).
+  const storePhoto = t("aboutus:storePhoto", { defaultValue: "" }) || storefront;
 
   return (
     // id="portfolio-hero" — usado pelo PortfolioBackButton.tsx (renderizado
@@ -78,7 +83,7 @@ export function PortfolioHero() {
             nenhum fundo. O grid técnico logo abaixo continua por cima dela,
             então ela nunca disputa atenção com o título/conteúdo. */}
         <img
-          src={storefront}
+          src={storePhoto}
           alt=""
           aria-hidden
           draggable={false}

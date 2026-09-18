@@ -180,7 +180,8 @@ collections:
           - { label: "Subtítulo", name: "subtitle", widget: "text" }
 
       - name: "services"
-        label: "O que fazemos (resumo dos serviços)"
+        label: "Serviços — Resumo (cards da Home)"
+        description: "Textos dos 4 cards de serviço da página inicial. As FOTOS de cada serviço ficam no item logo abaixo, \"Serviços — Fotos e páginas completas\" — a mesma foto aparece automaticamente aqui e na página do serviço."
         file: "src/i18n/locales/pt/services.json"
         fields:
           - { label: "Texto pequeno acima do título", name: "eyebrow", widget: "string" }
@@ -214,6 +215,65 @@ collections:
                 fields:
                   - { label: "Título", name: "title", widget: "string" }
                   - { label: "Texto curto", name: "lead", widget: "text" }
+
+      - name: "servicePages"
+        label: "Serviços — Fotos e páginas completas"
+        description: "As fotos de cada serviço (aparecem tanto no card da Home quanto no banner da página completa dele) e todo o conteúdo das 4 páginas de serviço."
+        file: "src/i18n/locales/pt/servicePages.json"
+        fields:
+          - { label: "Selo (mantenha {{number}} no texto)", name: "serviceBadge", widget: "string" }
+          - { label: "Texto pequeno — Sobre o serviço", name: "aboutServiceEyebrow", widget: "string" }
+          - { label: "Texto pequeno — Visão geral", name: "overviewEyebrow", widget: "string" }
+          - { label: "Título — Visão geral", name: "overviewTitle", widget: "string" }
+          - { label: "Descrição — Visão geral", name: "overviewDescription", widget: "text" }
+          - { label: "Texto pequeno — Peça o que precisa", name: "requestablesEyebrow", widget: "string" }
+          - { label: "Descrição — Peça o que precisa", name: "requestablesDescription", widget: "text" }
+          - { label: "Botão — Peça o que precisa", name: "requestablesCta", widget: "string" }
+          - { label: "Texto pequeno — Outros serviços", name: "otherServicesEyebrow", widget: "string" }
+          - { label: "Link \"Ver mais\"", name: "viewMore", widget: "string" }
+          - { label: "Texto pequeno — Chamada final", name: "ctaEyebrow", widget: "string" }
+          - { label: "Título — Chamada final", name: "ctaTitle", widget: "string" }
+          - { label: "Botão — Chamada final", name: "ctaButton", widget: "string" }
+          - label: "Cada serviço"
+            name: "services"
+            widget: "object"
+            fields:
+              - label: "Montagem de Setups"
+                name: "montagem-de-setups"
+                widget: "object"
+                fields: &servicePageFields
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto curto", name: "lead", widget: "text" }
+                  - { label: "Descrição completa", name: "description", widget: "text" }
+                  - { label: "Lista de itens (resumo)", name: "items", widget: "list" }
+                  - label: "Destaques"
+                    name: "highlights"
+                    widget: "list"
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: "Título", name: "title", widget: "string" }
+                      - { label: "Texto", name: "text", widget: "text" }
+                  - { label: "O que dá pra pedir (lista completa)", name: "requestables", widget: "list" }
+                  - {
+                      label: "Foto do banner desta página",
+                      name: "bannerImage",
+                      widget: "image",
+                      required: false,
+                      media_folder: "/public/uploads/servicos",
+                      public_folder: "/uploads/servicos",
+                    }
+              - label: "Reforma e Upgrade"
+                name: "reforma-e-upgrade"
+                widget: "object"
+                fields: *servicePageFields
+              - label: "Personalização"
+                name: "personalizacao"
+                widget: "object"
+                fields: *servicePageFields
+              - label: "Suporte Técnico"
+                name: "suporte-tecnico"
+                widget: "object"
+                fields: *servicePageFields
 
       - name: "team"
         label: "Nossa Equipe"
@@ -406,64 +466,6 @@ collections:
           - { label: "Texto da chamada", name: "ctaText", widget: "text" }
           - { label: "Link \"Explorar o portfólio\"", name: "exploreLink", widget: "string" }
           - { label: "Contador de projetos (mantenha {{count}} no texto)", name: "projectsCount", widget: "string" }
-
-      - name: "servicePages"
-        label: "Páginas de cada serviço"
-        file: "src/i18n/locales/pt/servicePages.json"
-        fields:
-          - { label: "Selo (mantenha {{number}} no texto)", name: "serviceBadge", widget: "string" }
-          - { label: "Texto pequeno — Sobre o serviço", name: "aboutServiceEyebrow", widget: "string" }
-          - { label: "Texto pequeno — Visão geral", name: "overviewEyebrow", widget: "string" }
-          - { label: "Título — Visão geral", name: "overviewTitle", widget: "string" }
-          - { label: "Descrição — Visão geral", name: "overviewDescription", widget: "text" }
-          - { label: "Texto pequeno — Peça o que precisa", name: "requestablesEyebrow", widget: "string" }
-          - { label: "Descrição — Peça o que precisa", name: "requestablesDescription", widget: "text" }
-          - { label: "Botão — Peça o que precisa", name: "requestablesCta", widget: "string" }
-          - { label: "Texto pequeno — Outros serviços", name: "otherServicesEyebrow", widget: "string" }
-          - { label: "Link \"Ver mais\"", name: "viewMore", widget: "string" }
-          - { label: "Texto pequeno — Chamada final", name: "ctaEyebrow", widget: "string" }
-          - { label: "Título — Chamada final", name: "ctaTitle", widget: "string" }
-          - { label: "Botão — Chamada final", name: "ctaButton", widget: "string" }
-          - label: "Cada serviço"
-            name: "services"
-            widget: "object"
-            fields:
-              - label: "Montagem de Setups"
-                name: "montagem-de-setups"
-                widget: "object"
-                fields: &servicePageFields
-                  - { label: "Título", name: "title", widget: "string" }
-                  - { label: "Texto curto", name: "lead", widget: "text" }
-                  - { label: "Descrição completa", name: "description", widget: "text" }
-                  - { label: "Lista de itens (resumo)", name: "items", widget: "list" }
-                  - label: "Destaques"
-                    name: "highlights"
-                    widget: "list"
-                    summary: "{{fields.title}}"
-                    fields:
-                      - { label: "Título", name: "title", widget: "string" }
-                      - { label: "Texto", name: "text", widget: "text" }
-                  - { label: "O que dá pra pedir (lista completa)", name: "requestables", widget: "list" }
-                  - {
-                      label: "Foto do banner desta página",
-                      name: "bannerImage",
-                      widget: "image",
-                      required: false,
-                      media_folder: "/public/uploads/servicos",
-                      public_folder: "/uploads/servicos",
-                    }
-              - label: "Reforma e Upgrade"
-                name: "reforma-e-upgrade"
-                widget: "object"
-                fields: *servicePageFields
-              - label: "Personalização"
-                name: "personalizacao"
-                widget: "object"
-                fields: *servicePageFields
-              - label: "Suporte Técnico"
-                name: "suporte-tecnico"
-                widget: "object"
-                fields: *servicePageFields
 
       - name: "portfolio"
         label: "Portfólio"
