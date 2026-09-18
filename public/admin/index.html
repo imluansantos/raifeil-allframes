@@ -395,11 +395,30 @@
         color: var(--af-fg) !important;
       }
 
-      /* ---- Área principal + topo da coleção ("Textos do site") ---- */
+      /* ---- Área principal + topo da coleção ("Textos do site") ----
+       * Essa área é bem mais larga que a lista de cartões (o Decap não
+       * estica os cartões pra ocupar a tela toda) — sobra um espaço vazio
+       * grande à direita. Num fundo branco isso nem se nota; virando fundo
+       * escuro sólido, esse vazio parece um retângulo preto quebrado. Pra
+       * não parecer erro, ele ganha a MESMA textura (grid técnico + grain)
+       * do resto do site escuro — reproduzida de src/styles.css, igual já
+       * foi feito na tela de login acima. */
       [class*="AppMainContainer"],
       [class*="CollectionContainer"],
       [class*="CollectionMain"] {
-        background: var(--af-bg) !important;
+        background-color: var(--af-bg) !important;
+        background-image:
+          radial-gradient(oklch(1 0 0 / 14%) 0.4px, transparent 0.4px),
+          linear-gradient(oklch(1 0 0 / 5%) 1px, transparent 1px),
+          linear-gradient(to right, oklch(1 0 0 / 5%) 1px, transparent 1px) !important;
+        background-size:
+          5px 5px,
+          56px 56px,
+          56px 56px !important;
+        background-position:
+          2.5px 2.5px,
+          0 0,
+          0 0 !important;
       }
       [class*="CollectionTopContainer"] {
         background: var(--af-bg) !important;
