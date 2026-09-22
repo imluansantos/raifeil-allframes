@@ -20,7 +20,6 @@ O próprio projeto já é um retrato desse cuidado. É um site multilíngue (por
 - TanStack Start e TanStack Router (roteamento baseado em arquivos)
 - TanStack Query
 - Tailwind CSS v4
-- i18next / react-i18next (5 idiomas: português, inglês, espanhol, alemão e italiano)
 - GSAP e Motion (animações)
 - TypeScript
 - Vite (build) e Nitro (servidor)
