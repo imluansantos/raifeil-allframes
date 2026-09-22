@@ -104,7 +104,7 @@ function TeamCard({
             alt={name}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 size-full object-cover object-[center_20%] scale-[1.12] grayscale-[10%] transition-transform duration-700 ease-out group-hover:scale-[1.18]"
+            className="absolute inset-0 size-full object-cover object-top scale-[1.12] -translate-y-[6%] grayscale-[10%] transition-transform duration-700 ease-out group-hover:scale-[1.06] md:scale-100 md:translate-y-0"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(160deg,theme(colors.surface)_0%,theme(colors.background)_100%)]">
