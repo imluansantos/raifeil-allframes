@@ -82,7 +82,7 @@ export const BRANDS = [
 export const TEAM = [
   { name: "Luiz Fernando Welp", key: "luiz" },
   { name: "João Gabriel Guedes Galiazzi", key: "joao" },
-  { name: "Rai Feil dos Santos", key: "rai" },
+  { name: "Raí Feil dos Santos", key: "rai" },
   { name: "Gabriel Dorneles", key: "gabriel" },
 ] as const;
 
