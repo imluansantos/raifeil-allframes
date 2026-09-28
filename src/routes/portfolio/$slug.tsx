@@ -21,7 +21,9 @@ export const Route = createFileRoute("/portfolio/$slug")({
     const projectPt = project
       ? (ptPortfolio.projects as Record<string, { shortDescription: string }>)[project.slug]
       : undefined;
-    const title = project ? `${project.title} | Portfólio All Frames Technology` : "Projeto não encontrado";
+    const title = project
+      ? `${project.title || `PC ${project.id}`} | Portfólio All Frames Technology`
+      : "Projeto não encontrado";
     return {
       meta: [
         { title },
@@ -85,7 +87,7 @@ function ProjectDetailPage() {
             ) : (
               <img
                 src={project.videoPoster ?? coverImage}
-                alt={`${project.title}, ${project.category}`}
+                alt={project.title || `PC ${project.id}`}
                 fetchPriority="high"
                 decoding="async"
                 className="absolute inset-0 size-full object-cover"
@@ -109,10 +111,12 @@ function ProjectDetailPage() {
             </div>
 
             <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1600px] px-6 pb-10 lg:px-14 md:pb-14">
-              <span className="font-mono text-[11px] tracking-[0.15em] text-white/60">
-                PROJECT {project.id}
-              </span>
-              <h1 className="display mt-2 text-4xl text-white md:text-6xl">{project.title}</h1>
+              {project.title && (
+                <>
+                  <span className="font-mono text-[11px] tracking-[0.15em] text-white/60">PROJECT {project.id}</span>
+                  <h1 className="display mt-2 text-4xl text-white md:text-6xl">{project.title}</h1>
+                </>
+              )}
             </div>
           </div>
         </section>

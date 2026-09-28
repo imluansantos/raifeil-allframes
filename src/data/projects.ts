@@ -31,8 +31,7 @@ export interface Project {
   /** Segmento de URL: /portfolio/[slug] — também usado como chave de tradução
    *  em i18n/locales/<idioma>/portfolio.json (projects.<slug>). */
   slug: string;
-  /** Rótulo do build — mantido igual em todos os idiomas. Apenas o AF Ultra
-   *  usa nome próprio; os demais são identificados pelo número do projeto. */
+  /** Nome próprio do build — só o AF Ultra usa; os demais ficam sem título. */
   title: string;
   category: ProjectCategory;
   cover: string;
@@ -82,7 +81,7 @@ export const PROJECTS: Project[] = [
   {
     id: "001",
     slug: "polar",
-    title: "PC 001",
+    title: "",
     category: "PC White",
     cover: build6,
     video: polarHeroVideo,
@@ -105,7 +104,7 @@ export const PROJECTS: Project[] = [
   {
     id: "003",
     slug: "aurora",
-    title: "PC 003",
+    title: "",
     category: "RGB",
     cover: build10,
     specKeys: ["gpu"],
@@ -114,7 +113,7 @@ export const PROJECTS: Project[] = [
   {
     id: "004",
     slug: "pc-blueout",
-    title: "PC 004",
+    title: "",
     category: "PC Black",
     cover: build8,
     imagePosition: "50% 90%",
@@ -125,7 +124,7 @@ export const PROJECTS: Project[] = [
   {
     id: "005",
     slug: "snow-build",
-    title: "PC 005",
+    title: "",
     category: "PC White",
     cover: build13,
     specKeys: ["cpu", "gpu", "motherboard", "cooling", "case"],
@@ -134,7 +133,7 @@ export const PROJECTS: Project[] = [
   {
     id: "006",
     slug: "frostline",
-    title: "PC 006",
+    title: "",
     category: "PC White",
     cover: build7,
     specKeys: ["gpu", "motherboard", "ram", "cooling", "case"],
@@ -143,7 +142,7 @@ export const PROJECTS: Project[] = [
   {
     id: "007",
     slug: "mistic",
-    title: "PC 007",
+    title: "",
     category: "RGB",
     cover: build9,
     specKeys: ["gpu", "ram", "cooling", "case"],
@@ -152,7 +151,7 @@ export const PROJECTS: Project[] = [
   {
     id: "008",
     slug: "glacial",
-    title: "PC 008",
+    title: "",
     category: "PC Black",
     cover: build1,
     specKeys: ["gpu", "motherboard", "case"],
@@ -161,7 +160,7 @@ export const PROJECTS: Project[] = [
   {
     id: "009",
     slug: "prism",
-    title: "PC 009",
+    title: "",
     category: "RGB",
     cover: build3,
     specKeys: ["gpu", "cooling", "case"],

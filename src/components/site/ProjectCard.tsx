@@ -21,6 +21,7 @@ export function ProjectCard({
 }) {
   const { t } = useTranslation("portfolio");
   const shortDescription = t(`projects.${project.slug}.shortDescription`);
+  const hasName = Boolean(project.title);
   // "Foto de capa do projeto" no CMS (Portfólio > [cada projeto] > coverImage)
   // — campo opcional, vazio por padrão: sem edição pelo painel, continua
   // usando a foto fixa de sempre (project.cover, de src/data/projects.ts).
@@ -55,15 +56,17 @@ export function ProjectCard({
     >
       <img
         src={coverImage}
-        alt={`${project.title}, ${project.category}`}
+        alt={project.title || `PC ${project.id}`}
         loading="lazy"
         decoding="async"
         style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
         className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
       />
 
-      {/* legibility gradient — fixed dark overlay so the white caption text stays readable over any photo, regardless of site theme */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/15" />
+      {hasName && (
+        /* legibility gradient — only named projects have a visible caption */
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/15" />
+      )}
 
       {/* cursor-tracked spotlight */}
       <div ref={glowRef} className="pointer-events-none absolute inset-0 transition-opacity duration-300" />
@@ -78,28 +81,28 @@ export function ProjectCard({
       {/* corner bracket */}
       <div className="pointer-events-none absolute top-4 right-4 size-6 border-t border-r border-white/0 transition-all duration-300 group-hover:border-white/60" />
 
-      <div className="absolute inset-x-0 top-0 p-4 md:p-5">
-        <span className="font-mono text-[10px] tracking-[0.15em] text-white/70">
-          {/* "PROJECT" mantido em inglês de propósito — microtipografia técnica
-              do design, já era assim mesmo na versão em português original. */}
-          PROJECT {project.id}
-        </span>
-      </div>
+      {hasName && (
+        <>
+          <div className="absolute inset-x-0 top-0 p-4 md:p-5">
+            <span className="font-mono text-[10px] tracking-[0.15em] text-white/70">PROJECT {project.id}</span>
+          </div>
 
-      <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
-        <h3 className="display text-lg text-white transition-transform duration-300 group-hover:-translate-y-0.5 sm:text-xl md:text-2xl">
-          {project.title}
-        </h3>
-        {showDescription && (
-          <p className="mt-2 hidden max-w-md text-[13px] leading-relaxed text-white/75 sm:block">
-            {shortDescription}
-          </p>
-        )}
-        <div className="mt-3 hidden items-center gap-2 text-[11px] font-semibold tracking-[0.14em] text-white uppercase opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100 sm:flex">
-          {t("card.viewProject")}
-          <ArrowUpRight className="size-3.5" />
-        </div>
-      </div>
+          <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+            <h3 className="display text-lg text-white transition-transform duration-300 group-hover:-translate-y-0.5 sm:text-xl md:text-2xl">
+              {project.title}
+            </h3>
+            {showDescription && (
+              <p className="mt-2 hidden max-w-md text-[13px] leading-relaxed text-white/75 sm:block">
+                {shortDescription}
+              </p>
+            )}
+            <div className="mt-3 hidden items-center gap-2 text-[11px] font-semibold tracking-[0.14em] text-white uppercase opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100 sm:flex">
+              {t("card.viewProject")}
+              <ArrowUpRight className="size-3.5" />
+            </div>
+          </div>
+        </>
+      )}
     </Link>
   );
 }
