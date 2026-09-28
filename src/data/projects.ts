@@ -31,9 +31,8 @@ export interface Project {
   /** Segmento de URL: /portfolio/[slug] — também usado como chave de tradução
    *  em i18n/locales/<idioma>/portfolio.json (projects.<slug>). */
   slug: string;
-  /** Nome do build — mantido igual em todos os idiomas (nome próprio, como o
-   *  dos membros da equipe ou os "AF Ultra"/"PC White" das categorias), não é
-   *  traduzido. */
+  /** Rótulo do build — mantido igual em todos os idiomas. Apenas o AF Ultra
+   *  usa nome próprio; os demais são identificados pelo número do projeto. */
   title: string;
   category: ProjectCategory;
   cover: string;
@@ -83,7 +82,7 @@ export const PROJECTS: Project[] = [
   {
     id: "001",
     slug: "polar",
-    title: "Polar",
+    title: "PC 001",
     category: "PC White",
     cover: build6,
     video: polarHeroVideo,
@@ -106,7 +105,7 @@ export const PROJECTS: Project[] = [
   {
     id: "003",
     slug: "aurora",
-    title: "Aurora",
+    title: "PC 003",
     category: "RGB",
     cover: build10,
     specKeys: ["gpu"],
@@ -115,7 +114,7 @@ export const PROJECTS: Project[] = [
   {
     id: "004",
     slug: "pc-blueout",
-    title: "Blue-Out",
+    title: "PC 004",
     category: "PC Black",
     cover: build8,
     imagePosition: "50% 90%",
@@ -126,7 +125,7 @@ export const PROJECTS: Project[] = [
   {
     id: "005",
     slug: "snow-build",
-    title: "Snow Build",
+    title: "PC 005",
     category: "PC White",
     cover: build13,
     specKeys: ["cpu", "gpu", "motherboard", "cooling", "case"],
@@ -135,7 +134,7 @@ export const PROJECTS: Project[] = [
   {
     id: "006",
     slug: "frostline",
-    title: "Frostiline",
+    title: "PC 006",
     category: "PC White",
     cover: build7,
     specKeys: ["gpu", "motherboard", "ram", "cooling", "case"],
@@ -144,7 +143,7 @@ export const PROJECTS: Project[] = [
   {
     id: "007",
     slug: "mistic",
-    title: "Mistic",
+    title: "PC 007",
     category: "RGB",
     cover: build9,
     specKeys: ["gpu", "ram", "cooling", "case"],
@@ -153,7 +152,7 @@ export const PROJECTS: Project[] = [
   {
     id: "008",
     slug: "glacial",
-    title: "Glacial",
+    title: "PC 008",
     category: "PC Black",
     cover: build1,
     specKeys: ["gpu", "motherboard", "case"],
@@ -162,7 +161,7 @@ export const PROJECTS: Project[] = [
   {
     id: "009",
     slug: "prism",
-    title: "Prism",
+    title: "PC 009",
     category: "RGB",
     cover: build3,
     specKeys: ["gpu", "cooling", "case"],
