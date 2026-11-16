@@ -9,8 +9,8 @@ export const ADDRESS = "Rua Marechal Floriano, 205, Centro, Bento Gonçalves/RS"
 
 // crédito do desenvolvedor no rodapé — nome próprio, não traduzido em
 // nenhum idioma (mesmo padrão de "AF Ultra"/"PC White"). Ver Footer.tsx.
-export const DEVELOPER_NAME = "Lunding Technology";
-export const DEVELOPER_URL = "https://lunding.com.br";
+export const DEVELOPER_NAME = "Luan Santos • Sites & Sistemas Web";
+export const DEVELOPER_URL = "https://imluansantos.com.br";
 
 // `key` bate com as chaves de src/i18n/locales/<idioma>/nav.json — Header.tsx
 // e Footer.tsx traduzem via t(`nav:${item.key}`) em vez de usar um label fixo
