@@ -11,6 +11,11 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { FAQ } from "@/components/site/FAQ";
+import {
+  BlackFramesCornerBadge,
+  BlackFramesFooterPromo,
+  BlackFramesHero,
+} from "@/components/site/BlackFramesCampaign";
 
 const title = "All Frames Technology";
 const description =
@@ -35,6 +40,7 @@ function Index() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <BlackFramesHero />
         <Hero />
         <AboutUs />
         <Team />
@@ -46,9 +52,11 @@ function Index() {
         <FAQ />
         <FinalCTA />
       </main>
+      <BlackFramesFooterPromo />
       {/* sem a borda de cima aqui: o FinalCTA termina num arco decorativo, e a
           linha reta cortava em cima da curva. Só nesta página. */}
       <Footer noTopBorder />
+      <BlackFramesCornerBadge />
     </div>
   );
 }
